@@ -29,13 +29,13 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+   /* private void OnMouseDown()
     {
 
         if (PlayerInRange)
         {
             this.transform.rotation = this.transform.rotation * Quaternion.Euler(0, 90, 0);
         }
-    }
+    } */
    
 }

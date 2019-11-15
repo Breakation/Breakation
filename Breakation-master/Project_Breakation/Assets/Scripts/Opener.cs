@@ -42,7 +42,9 @@ public class Opener : MonoBehaviour
             PlayerInRange = false;
             
             OpenPanel.SetActive(false);
+            obj.material = inactivMaterial;
         }
+        
     }
 
     private bool isOpenPanelActive
@@ -62,21 +64,24 @@ public class Opener : MonoBehaviour
          }
      }
     */
-    private void OnMouseEnter()
+    
+
+    private void OnMouseOver()
     {
         if (PlayerInRange)
         {
-            
-            obj.material = setMaterial;       
+
+            obj.material = setMaterial;
         }
     }
 
     private void OnMouseExit()
     {
-        if(PlayerInRange)
-        obj.material = inactivMaterial;
+        if (PlayerInRange)
+        {
 
-        
+            obj.material = inactivMaterial;
+        }
     }
 
 
@@ -90,4 +95,6 @@ public class Opener : MonoBehaviour
             _animator.SetBool("open", isOpen);
         }
     }
+
+
 }
