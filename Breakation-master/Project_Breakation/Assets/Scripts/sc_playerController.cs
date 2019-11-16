@@ -17,7 +17,7 @@ public class sc_playerController : MonoBehaviour
     //Diese Referenzen sind für die Kontrolle der Spielerrotation in correspondance with the camera
     public Transform pivot; //der Spieler orientiert sich nicht an die Camera selbst sondern einer Art Pivotpunkt 
     public float rotateSpeed;
-
+    //public GameObject playerModel; Dafür ist der 3D Modell von Samira notwendig!
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +46,7 @@ public class sc_playerController : MonoBehaviour
         {//we rotate: we need to be facing wherever our pivot point is facing
             transform.rotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y/*whatever rotation makes our camera rotate horizontally*/, 0f);
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z)); // LookRotation : you give this function a point in the world and it makes the object look at that point (face its direction)
-            //transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
+            //playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
         }
 
         //changes animation if player is not on the ground (for jumping but we don't need that )
