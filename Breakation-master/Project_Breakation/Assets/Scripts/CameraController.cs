@@ -43,20 +43,20 @@ public class CameraController : MonoBehaviour
         pivot.transform.position = target.transform.position;
 
         // x position der Mouse holen und mit dem Pivot rotatieren 
-        //float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;
-        pivot.Rotate(0, transform.position.y, 0);
+        float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;
+        pivot.Rotate(0, horizontal, 0);
 
         //y position der Mouse holen und mit dem Pivot rotatieren 
-        //float vertical = Input.GetAxis("Mouse Y") * rotateSpeed;
+        float vertical = Input.GetAxis("Mouse Y") * rotateSpeed;
 
         //Rotation der Camera abhängig von dem Pivot
         if (invertY)
         {
-            pivot.Rotate(transform.position.x, 0, 0);
+            pivot.Rotate(vertical, 0, 0);
         }
         else
         {
-            pivot.Rotate(-transform.position.x, 0, 0);
+            pivot.Rotate(-vertical, 0, 0);
         }
 
 
