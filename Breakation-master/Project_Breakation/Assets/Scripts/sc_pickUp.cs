@@ -5,11 +5,11 @@ using UnityEngine;
 /*
  *this script will tell the Gamemanager how many  Items (aka Gold bars for the demo) the player has picked
  */
-public class pickUp : MonoBehaviour
+public class sc_pickUp : MonoBehaviour
 {
 
     public int valueOfItem;
-    public GameObject pickUpEffekt;
+    public GameObject pickUpEffekt; //Particle effekt hier einfügen!!
 
     // Start is called before the first frame update
     void Start()
