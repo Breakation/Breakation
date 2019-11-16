@@ -12,7 +12,7 @@ public class sc_playerController : MonoBehaviour
     public float gravityScale;
 
     //für den Animator : ist implementiert. brauche nur Samira's Modell einzuintegrieren
-    public Animator anim;
+    //public Animator anim;
 
     //Diese Referenzen sind für die Kontrolle der Spielerrotation in correspondance with the camera
     public Transform pivot; //der Spieler orientiert sich nicht an die Camera selbst sondern einer Art Pivotpunkt 
@@ -46,13 +46,13 @@ public class sc_playerController : MonoBehaviour
         {//we rotate: we need to be facing wherever our pivot point is facing
             transform.rotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y/*whatever rotation makes our camera rotate horizontally*/, 0f);
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z)); // LookRotation : you give this function a point in the world and it makes the object look at that point (face its direction)
-            //playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
         }
 
         //changes animation if player is not on the ground (for jumping but we don't need that )
-        anim.SetBool("isOnGround", controller.isGrounded);
+        //anim.SetBool("isOnGround", controller.isGrounded);
         //changes animation if player is moving (if there is any vertical or horizontal input the value of GetAxis is 1 and so its greater than 0.1
-        anim.SetFloat("speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
+        //anim.SetFloat("speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
     }
 
 }

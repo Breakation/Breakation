@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valueOfItem: 1
-  pickUpEffekt: {fileID: 0}
+  pickUpEffekt: {fileID: 77932528645092509, guid: 2983d3113922f3143b96914c4feeca6c,
+    type: 3}
 --- !u!65 &3370668161323974243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71,6 +72,7 @@ GameObject:
   - component: {fileID: 3370668161959424922}
   - component: {fileID: 3370668161959424901}
   - component: {fileID: 3370668161959424900}
+  - component: {fileID: 2806248765526404293}
   m_Layer: 0
   m_Name: ob_goldBar
   m_TagString: Untagged
@@ -86,7 +88,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3370668161959424902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.172, z: 0}
   m_LocalScale: {x: 0.37368697, y: 0.07750182, z: 0.16712698}
   m_Children: []
   m_Father: {fileID: 3370668161323974242}
@@ -138,3 +140,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &2806248765526404293
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370668161959424902}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8ad26dd5cadc8b44bc86cccc7b5ec2b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
