@@ -8,7 +8,7 @@ public class Opener : MonoBehaviour
     private bool isOpen = false;
     private bool PlayerInRange = false;
   
-    public GameObject OpenPanel = null;
+   // public GameObject OpenPanel = null;
     private Animator _animator;
     public Renderer obj;
     private Material inactivMaterial;
@@ -29,7 +29,7 @@ public class Opener : MonoBehaviour
         if(other.tag == "Player")
         {
             PlayerInRange = true;
-            OpenPanel.SetActive(true);
+          //  OpenPanel.SetActive(true);
             //UpdatePanelText();
         }
     }
@@ -41,13 +41,13 @@ public class Opener : MonoBehaviour
         {
             PlayerInRange = false;
             
-            OpenPanel.SetActive(false);
+           // OpenPanel.SetActive(false);
             obj.material = inactivMaterial;
         }
         
     }
 
-    private bool isOpenPanelActive
+  /*  private bool isOpenPanelActive
     {
         get
         {
@@ -55,7 +55,7 @@ public class Opener : MonoBehaviour
         }
     }
 
-    /* private void UpdatePanelText()
+     private void UpdatePanelText()
      {
          Text panelText = OpenPanel.transform.Find("Text").GetComponent<Text>();
          if(panelText != null)
