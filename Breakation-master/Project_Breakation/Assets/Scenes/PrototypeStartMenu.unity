@@ -1133,7 +1133,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play as Jailbreaker
+  m_Text: Create Room
 --- !u!222 &1449662438
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1210,7 +1210,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play as Supporter
+  m_Text: Find Room
 --- !u!222 &1471607835
 CanvasRenderer:
   m_ObjectHideFlags: 0

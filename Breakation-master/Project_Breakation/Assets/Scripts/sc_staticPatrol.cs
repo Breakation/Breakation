@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Patrol : MonoBehaviour
+public class sc_staticPatrol : MonoBehaviour
 {
 
     public float speed;
@@ -11,6 +11,7 @@ public class Patrol : MonoBehaviour
 
     public Transform[] moveSpots;
     private int randomSpot;
+    private int counter = 0;
 
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class Patrol : MonoBehaviour
 
         randomSpot = Random.Range(0, moveSpots.Length);
 
+        counter = 0;
 
 
     }
@@ -28,12 +30,19 @@ public class Patrol : MonoBehaviour
     void Update()
     {
 
-        transform.position = Vector3.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, moveSpots[counter].position, speed * Time.deltaTime);
 
-        if(Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f){
+        if(Vector3.Distance(transform.position, moveSpots[counter].position) < 0.2f){
             if(waitTime <= 0)
             {
-                randomSpot = Random.Range(0, moveSpots.Length);
+
+                counter++;
+
+                if(counter >= moveSpots.Length)
+                {
+                    counter = 0;
+                }
+
                 waitTime = startWaitTime;
             }
             else
@@ -45,7 +54,7 @@ public class Patrol : MonoBehaviour
 
         }
 
-        Vector3 direction = moveSpots[randomSpot].position - transform.position;
+        Vector3 direction = moveSpots[counter].position - transform.position;
 
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = rotation;
