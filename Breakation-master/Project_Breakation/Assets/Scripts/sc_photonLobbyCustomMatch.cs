@@ -31,6 +31,7 @@ public class sc_photonLobbyCustomMatch : MonoBehaviourPunCallbacks, ILobbyCallba
     public override void OnConnectedToMaster()
     {
         Debug.Log("Player has connected to the Photon master server");
+        // next line loads every player in the same scene
         PhotonNetwork.AutomaticallySyncScene = true;
     }
 
