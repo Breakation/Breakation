@@ -1,0 +1,10 @@
+Photon Transform View : 
+ - Synchronisierung von Transformation, Rotation , Scale
+ - PhotonView Variable
+ - GetComponent<PhotonView>()
+ - Bei Aufruf von Bewegungsmethoden : if(PV.isMine){"Bewegungsmethoden"}
+
+
+
+
+
