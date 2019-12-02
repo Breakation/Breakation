@@ -49,10 +49,29 @@ public class sc_playerController : MonoBehaviour
             //playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
         }
 
+        this.Menu(); // damit lässt sich der InventoryPanel schließen (Tab drücken)!
         //changes animation if player is not on the ground (for jumping but we don't need that )
         //anim.SetBool("isOnGround", controller.isGrounded);
         //changes animation if player is moving (if there is any vertical or horizontal input the value of GetAxis is 1 and so its greater than 0.1
         //anim.SetFloat("speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
+    }
+
+    public void Menu()//this function enables/disables the InventoryPanel using setActive()
+    { // !!!! the  InventoryPanel should be disables first!!!!
+
+        if (Input.GetKeyDown(KeyCode.Tab))// be able to open/close the InventoryPanel by pressing Tab
+        {
+            GameObject ip = sc_Inventory.instance.inventoryPanel;
+
+            if (!ip.activeSelf)
+            {
+                ip.SetActive(true);
+            }
+            else
+            {
+                ip.SetActive(false);
+            }
+        }
     }
 
 }

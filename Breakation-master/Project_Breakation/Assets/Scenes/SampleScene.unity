@@ -807,6 +807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory_Slot (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8676740201505468651, guid: ec44ce786fd8a8a40808932bcedf8e8c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8676740201505468648, guid: ec44ce786fd8a8a40808932bcedf8e8c,
         type: 3}
       propertyPath: m_LocalPosition.x

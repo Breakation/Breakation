@@ -43,7 +43,7 @@ public class sc_Inventory : MonoBehaviour
 
     public void Add(sc_item item)
     {
-        if(list.Count < 4) //Momentan nur vier slots sind angezeigt
+        if(list.Count < 6) //Momentan nur sechs slots sind angezeigt
         {
             list.Add(item);
         }
