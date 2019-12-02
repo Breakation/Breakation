@@ -10,6 +10,7 @@ public class sc_item : ScriptableObject //ScriptableObjects exist outside of the
 
     public string itemName;
     public Sprite icon;
+    public GameObject pickUpEffekt; //Particle effekt hier einfügen!!
 
     // Use this for initialization
     void Start()

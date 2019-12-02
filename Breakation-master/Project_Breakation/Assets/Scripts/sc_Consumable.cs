@@ -15,12 +15,12 @@ public class Consumable : sc_item //this object will inherit from Item
     public override void Use()//This override function will replace the Use() method of the Item class.
     {
         //ask the inventory instance for the player
-        GameObject player = Inventory.instance.player;
+        //GameObject player = Inventory.instance.player;
 
         //do what is supposed to do
 
         //After the player is healed use the static Inventory instance to remove the consumable
-        Inventory.instance.Remove(this); // the item will remove itself form the list when you use it
+        //Inventory.instance.Remove(this); // the item will remove itself form the list when you use it
     }
 
 }
