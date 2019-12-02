@@ -31,7 +31,7 @@ public class sc_pickUp : MonoBehaviour
 
             //Instantiate creates a copy of whatever object we give its refrence to; here the pickUp object
             Instantiate(pickUpEffekt, transform.position, transform.rotation); //the position and rotation are those of the pickup object attached to the script
-
+            sc_Inventory.instance.Add(new Consumable());
             Destroy(gameObject);
         }
     }
