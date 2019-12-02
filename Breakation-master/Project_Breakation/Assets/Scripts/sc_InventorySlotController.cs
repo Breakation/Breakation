@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlotController : MonoBehaviour
+public class sc_InventorySlotController : MonoBehaviour
 { //This Script will store the item corresponding to the Slot it is attached to.
 
 

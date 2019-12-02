@@ -2,14 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Inventory : MonoBehaviour
+public class sc_Inventory : MonoBehaviour
 {
 
     public List<sc_item> list = new List<sc_item>();
     public GameObject player;
     public GameObject inventoryPanel;
 
-    public static Inventory instance;
+    public static sc_Inventory instance;
 
     // Use this for initialization
     void Start()
@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
         foreach (Transform child in inventoryPanel.transform)// child sind also die Objekte Slot, Slot1, Slot2 etc...
         {
             //update slot[i]'s name and icon to the name and icon of the corresponding Item by calling slot[i]'s updateInfo() method
-            InventorySlotController slot = child.GetComponent<InventorySlotController>();
+            sc_InventorySlotController slot = child.GetComponent<sc_InventorySlotController>();
 
             if(i < list.Count) //If the list contains an item at this index
             {
