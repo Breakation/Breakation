@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomName: 
-  roomListingPrefab: {fileID: 4941771121129999401, guid: 6633d2e1fa6c6014fb17a9f5eab6bf70,
+  roomListingPrefab: {fileID: 3453684448406891263, guid: 6633d2e1fa6c6014fb17a9f5eab6bf70,
     type: 3}
   roomsPanel: {fileID: 1305201917}
   roomGo: {fileID: 893019366}
