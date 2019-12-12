@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using Photon.Pun;
 
-public class Clock : MonoBehaviour, IPunObservable {
+public class Clock : MonoBehaviourPun, IPunObservable {
 //-----------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -16,6 +16,8 @@ public class Clock : MonoBehaviour, IPunObservable {
     //-- set start time 00:00
     public int minutes = 0;
     public int hour = 0;
+    private bool timeChanged = false;
+    private PhotonView pv;
     
     //-- time speed factor
     public float clockSpeed = 1.0f;     // 1.0f = realtime, < 1.0f = slower, > 1.0f = faster
@@ -29,20 +31,21 @@ public class Clock : MonoBehaviour, IPunObservable {
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(pointerSeconds.transform.localEulerAngles);
-            stream.SendNext(pointerMinutes.transform.localEulerAngles);
-            stream.SendNext(pointerHours.transform.localEulerAngles);
-            Debug.Log("TestW");
-        }
-        else
-        {
-            this.pointerSeconds.transform.localEulerAngles = (Vector3)stream.ReceiveNext();
-            this.pointerMinutes.transform.localEulerAngles = (Vector3)stream.ReceiveNext();
-            this.pointerHours.transform.localEulerAngles = (Vector3)stream.ReceiveNext();
-            Debug.Log("TestR");
-        }
+        //if (stream.IsWriting && timeChanged)
+        //{
+        //    stream.SendNext(seconds);
+        //    stream.SendNext(minutes);
+        //    stream.SendNext(hour);
+        //    Debug.Log("TestW");
+        //    timeChanged = false;
+        //}
+        //else if(stream.IsReading)
+        //{
+        //    this.seconds = (int)stream.ReceiveNext();
+        //    this.minutes = (int)stream.ReceiveNext();
+        //    this.hour = (int)stream.ReceiveNext();
+        //    Debug.Log("TestR");
+        //}
     }
 
     //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -50,6 +53,8 @@ public class Clock : MonoBehaviour, IPunObservable {
     //-----------------------------------------------------------------------------------------------------------------------------------------
     void Start() 
 {
+        pv = GetComponent<PhotonView>();
+
     pointerSeconds = transform.Find("rotation_axis_pointer_seconds").gameObject;
     pointerMinutes = transform.Find("rotation_axis_pointer_minutes").gameObject;
     pointerHours   = transform.Find("rotation_axis_pointer_hour").gameObject;
@@ -57,11 +62,11 @@ public class Clock : MonoBehaviour, IPunObservable {
     msecs = 0.0f;
     seconds = 0;
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------------------------
-void Update() 
-{
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.RightArrow) && UhrzeitTuerController.clockHacked)
         {
             minutes++;
@@ -72,7 +77,12 @@ void Update()
                 if (hour >= 24)
                     hour = 0;
             }
+            timeChanged = true;
+            pv.RPC("RPC_SyncTime", RpcTarget.AllBuffered, minutes, hour);
+            
         }
+    
+        
 
     //-- calculate time
     msecs += Time.deltaTime * clockSpeed;
@@ -110,7 +120,15 @@ void Update()
             OpenerWithUhr.op_triggered = true;
         }
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------------------------
+
+    [PunRPC]
+    void RPC_SyncTime(int syncMin, int syncHour)
+    {
+        minutes = syncMin;
+        hour = syncHour;
+        Debug.Log("sync succesfull");
+    }
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------
 }

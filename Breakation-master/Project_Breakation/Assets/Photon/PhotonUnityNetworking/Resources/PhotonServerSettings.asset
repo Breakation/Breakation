@@ -35,5 +35,6 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - RPC_AddCharacter
+  - RPC_SyncTime
   DisableAutoOpenWizard: 1
   ShowSettings: 1

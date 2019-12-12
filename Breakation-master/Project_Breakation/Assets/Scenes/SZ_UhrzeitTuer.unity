@@ -918,6 +918,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 830783691}
+  - {fileID: 830783692}
   viewIdField: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -936,6 +937,18 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &830783692 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400000, guid: 595cf544943e29a4d9a7b813e4218a3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 830783688}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830783689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0db685f114bbf4e837ee81aae56661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &861806038
 GameObject:
   m_ObjectHideFlags: 0
