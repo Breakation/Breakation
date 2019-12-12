@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using Photon.Pun;
 
-public class Clock : MonoBehaviour {
+public class Clock : MonoBehaviour, IPunObservable {
 //-----------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -25,10 +26,29 @@ public class Clock : MonoBehaviour {
     GameObject pointerSeconds;
     GameObject pointerMinutes;
     GameObject pointerHours;
-//-----------------------------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------------------------
-void Start() 
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(pointerSeconds.transform.localEulerAngles);
+            stream.SendNext(pointerMinutes.transform.localEulerAngles);
+            stream.SendNext(pointerHours.transform.localEulerAngles);
+            Debug.Log("TestW");
+        }
+        else
+        {
+            this.pointerSeconds.transform.localEulerAngles = (Vector3)stream.ReceiveNext();
+            this.pointerMinutes.transform.localEulerAngles = (Vector3)stream.ReceiveNext();
+            this.pointerHours.transform.localEulerAngles = (Vector3)stream.ReceiveNext();
+            Debug.Log("TestR");
+        }
+    }
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    void Start() 
 {
     pointerSeconds = transform.Find("rotation_axis_pointer_seconds").gameObject;
     pointerMinutes = transform.Find("rotation_axis_pointer_minutes").gameObject;
