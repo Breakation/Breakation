@@ -13,6 +13,8 @@ public class sc_photonLobbyCustomMatch : MonoBehaviourPunCallbacks, ILobbyCallba
     public string roomName;
     public GameObject roomListingPrefab;
     public Transform roomsPanel;
+    public GameObject roomGo;
+    public GameObject lobbyGO;
    
 
     private void Awake()
@@ -31,8 +33,8 @@ public class sc_photonLobbyCustomMatch : MonoBehaviourPunCallbacks, ILobbyCallba
     public override void OnConnectedToMaster()
     {
         Debug.Log("Player has connected to the Photon master server");
-        // next line loads every player in the same scene
         PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.NickName = "Player" + Random.Range(0, 1000);
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -73,8 +75,12 @@ public class sc_photonLobbyCustomMatch : MonoBehaviourPunCallbacks, ILobbyCallba
     {
         Debug.Log("Trying to create a new room");
 
+        roomGo.SetActive(false);
+        lobbyGO.SetActive(true);
+
         RoomOptions roomOps = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = (byte)2 };
         PhotonNetwork.CreateRoom(roomName, roomOps);
+        sc_playerInfo.PI.mySelectedCharacter = 1;
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
@@ -92,6 +98,7 @@ public class sc_photonLobbyCustomMatch : MonoBehaviourPunCallbacks, ILobbyCallba
         if (!PhotonNetwork.InLobby)
         {
             PhotonNetwork.JoinLobby();
+            sc_playerInfo.PI.mySelectedCharacter = 2;
         }
     }
 

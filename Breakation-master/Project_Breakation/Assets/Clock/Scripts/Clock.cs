@@ -42,10 +42,10 @@ void Start()
 //-----------------------------------------------------------------------------------------------------------------------------------------
 void Update() 
 {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && UhrzeitTuerController.clockHacked)
         {
             minutes++;
-            if (minutes > 60)
+            if (minutes >= 60)
             {
                 minutes = 0;
                 hour++;

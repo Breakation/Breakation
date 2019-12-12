@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class sc_photonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
+public class sc_photonRoomCM : MonoBehaviourPunCallbacks, IInRoomCallbacks
 {
 
-    public static sc_photonRoom room;
+    public static sc_photonRoomCM room;
     private PhotonView PV;
 
     public bool isGameLoaded;
@@ -35,19 +36,22 @@ public class sc_photonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     public Transform playersPanel;
     public GameObject playerListingPrefab;
     public GameObject startButton;
+    
+    
+
 
     private void Awake()
     {
-        if (sc_photonRoom.room == null)
+        if (sc_photonRoomCM.room == null)
         {
-            sc_photonRoom.room = this;
+            sc_photonRoomCM.room = this;
         }
         else
         {
-            if (sc_photonRoom.room != this)
+            if (sc_photonRoomCM.room != this)
             {
-                Destroy(sc_photonRoom.room.gameObject);
-                sc_photonRoom.room = this;
+                Destroy(sc_photonRoomCM.room.gameObject);
+                sc_photonRoomCM.room = this;
             }
         }
         DontDestroyOnLoad(this.gameObject);
@@ -57,14 +61,14 @@ public class sc_photonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     {
         base.OnEnable();
         PhotonNetwork.AddCallbackTarget(this);
-        SceneManager.sceneLoaded += OnSceneFinishedLoading;
+        //SceneManager.sceneLoaded += OnSceneFinishedLoading;
     }
 
     public override void OnDisable()
     {
         base.OnDisable();
         PhotonNetwork.RemoveCallbackTarget(this);
-        SceneManager.sceneLoaded -= OnSceneFinishedLoading;
+        //SceneManager.sceneLoaded -= OnSceneFinishedLoading;
     }
 
 
@@ -80,22 +84,22 @@ public class sc_photonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     }
 
 
-    void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
-    {
-        currentScene = scene.buildIndex;
-        if(currentScene == multiplayerScene)
-        {
-            //isGameLoaded = true;
-            {
-                CreatePlayer();
-            }
-        }
-    }
+    //void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
+    //{
+    //    currentScene = scene.buildIndex;
+    //    if(currentScene == multiplayerScene)
+    //    {
+    //        //isGameLoaded = true;
+    //        {
+    //            CreatePlayer();
+    //        }
+    //    }
+    //}
 
-    private void CreatePlayer()
-    {
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonNetworkPlayer"), transform.position, Quaternion.identity, 0);
-    }
+    //private void CreatePlayer()
+    //{
+    //    PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonNetworkPlayer"), transform.position, Quaternion.identity, 0);
+    //}
 
     // Update is called once per frame
     void Update()
@@ -135,6 +139,8 @@ public class sc_photonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     {
         base.OnPlayerEnteredRoom(newPlayer);
         Debug.Log("A new player has joined the room");
+        CLearPlayerListings();
+        ListPlayers();
         photonPlayers = PhotonNetwork.PlayerList;
         playersInRoom++;
 
@@ -151,6 +157,11 @@ public class sc_photonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
         //{
         //    PhotonNetwork.CurrentRoom.IsOpen = false;
         //}
+        if(playersInRoom < 2)
+        {
+            Debug.Log("There has to be 1 Jailbreaker and 1 Supporter");
+            return;
+        }
         PhotonNetwork.LoadLevel(multiplayerScene);
     }
 
@@ -161,14 +172,28 @@ public class sc_photonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
 
         base.OnJoinedRoom();
         Debug.Log("We are now in a room");
+        Debug.Log("My Character : " + sc_playerInfo.PI.mySelectedCharacter);
+        lobbyGO.SetActive(false);
+        roomGO.SetActive(true);
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            startButton.SetActive(true);
+        }
+
+        CLearPlayerListings();
+
+        ListPlayers();
 
 
+        if (!PhotonNetwork.IsMasterClient) return;
+        //StartGame();
 
 
         photonPlayers = PhotonNetwork.PlayerList;
         playersInRoom = photonPlayers.Length;
         myNumberInRoom = playersInRoom;
-        PhotonNetwork.NickName = myNumberInRoom.ToString();
+        
 
         //if (Multiplayersetting.multiplayerSetting.delayStart)
         //{
@@ -180,4 +205,42 @@ public class sc_photonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
         //    if (playersInRoom == MUl)
         //}
     }
+
+
+    void CLearPlayerListings()
+    {
+        for (int i = playersPanel.childCount -1; i >= 0; i--)
+        {
+            Destroy(playersPanel.GetChild(i).gameObject);
+        }
+    }
+
+    void ListPlayers()
+    {
+        if (PhotonNetwork.InRoom)
+        {
+            foreach (Player player in PhotonNetwork.PlayerList)
+            {
+                GameObject tempListing = Instantiate(playerListingPrefab, playersPanel);
+                
+                Text tempText = tempListing.transform.GetChild(0).GetComponent<Text>();
+                tempText.text = player.NickName;
+              
+            }
+        }
+    }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        base.OnPlayerLeftRoom(otherPlayer);
+        Debug.Log(otherPlayer.NickName + "has left the game");
+        playersInRoom--;
+
+        CLearPlayerListings();
+        ListPlayers();
+    }
+
+
+    
+
 }

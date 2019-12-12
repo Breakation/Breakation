@@ -8,7 +8,6 @@ public class sc_RoomButton : MonoBehaviour
 {
 
     public Text nameText;
-    public Text sizeText;
 
     public string roomName;
 
