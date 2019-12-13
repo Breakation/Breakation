@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97bb72b99249e8748b7a9362cab61648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 0a83f8e45e784434190b008ff9473ae7, type: 2}
   valueOfItem: 1
   pickUpEffekt: {fileID: 77932528645092509, guid: 2983d3113922f3143b96914c4feeca6c,
     type: 3}
