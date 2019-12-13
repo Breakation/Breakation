@@ -12,7 +12,7 @@ public class sc_playerController : MonoBehaviour
     public float gravityScale;
 
     //für den Animator : ist implementiert. brauche nur Samira's Modell einzuintegrieren
-    //public Animator anim;
+    public Animator anim;
 
     //Diese Referenzen sind für die Kontrolle der Spielerrotation in correspondance with the camera
     public Transform pivot; //der Spieler orientiert sich nicht an die Camera selbst sondern einer Art Pivotpunkt 
@@ -23,6 +23,7 @@ public class sc_playerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        anim = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -53,7 +54,7 @@ public class sc_playerController : MonoBehaviour
         //changes animation if player is not on the ground (for jumping but we don't need that )
         //anim.SetBool("isOnGround", controller.isGrounded);
         //changes animation if player is moving (if there is any vertical or horizontal input the value of GetAxis is 1 and so its greater than 0.1
-        //anim.SetFloat("speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
+        anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
     }
 
     public void Menu()//this function enables/disables the InventoryPanel using setActive()
