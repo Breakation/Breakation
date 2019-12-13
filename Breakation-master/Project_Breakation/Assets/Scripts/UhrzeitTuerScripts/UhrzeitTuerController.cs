@@ -7,6 +7,8 @@ public class UhrzeitTuerController : MonoBehaviour
 {
     public static bool clockHacked = false;
 
+    public GameObject hackGUI;
+
     public GameObject HackButton;
     public GameObject CancelButton;
     public GameObject StartHackButton;
@@ -23,7 +25,10 @@ public class UhrzeitTuerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(sc_playerInfo.PI.mySelectedCharacter != 2)
+        {
+            hackGUI.SetActive(false);
+        }
     }
 
     // Update is called once per frame

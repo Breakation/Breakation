@@ -541,6 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5714da77e9d6b9e40a5dea5ad41e7e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hackGUI: {fileID: 19345164}
   HackButton: {fileID: 991003440}
   CancelButton: {fileID: 117338882}
   StartHackButton: {fileID: 1695149610}
@@ -636,6 +637,7 @@ GameObject:
   - component: {fileID: 382879533}
   - component: {fileID: 382879532}
   - component: {fileID: 382879531}
+  - component: {fileID: 382879534}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -708,6 +710,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!114 &382879534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382879530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87342a803b38d49498097e23d7d76c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619281549
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 595cf544943e29a4d9a7b813e4218a3c, type: 3}
       propertyPath: minutes
-      value: 58
+      value: 49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595cf544943e29a4d9a7b813e4218a3c, type: 3}
