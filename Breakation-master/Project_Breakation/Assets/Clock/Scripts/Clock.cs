@@ -3,17 +3,34 @@ using System.Collections;
 using Photon.Pun;
 
 public class Clock : MonoBehaviourPun, IPunObservable {
-//-----------------------------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------------------------
-//
-//  Simple Clock Script / Andre "AEG" Bürger / VIS-Games 2012
-//
-//-----------------------------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    //
+    //  Simple Clock Script / Andre "AEG" Bürger / VIS-Games 2012
+    //
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------
 
     //-- set start time 00:00
+
+    private bool copyCreated = false;
+    public bool isCopy = false;
+
+
+    GameObject tempClock;
+    GameObject creator;
+    Clock creatorScript;
+
+    public GameObject maincamera;
+    public Vector3 distToCam = new Vector3(0,-2,2);
+
+    public GameObject clockPrefab;
+
+    Ray ray;
+    RaycastHit raycasthit;
+
     public int minutes = 0;
     public int hour = 0;
     private bool timeChanged = false;
@@ -60,7 +77,11 @@ public class Clock : MonoBehaviourPun, IPunObservable {
     pointerHours   = transform.Find("rotation_axis_pointer_hour").gameObject;
 
     msecs = 0.0f;
-    seconds = 0;
+        if (!isCopy)
+        {
+            seconds = 0;
+        }
+    
 }
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -127,6 +148,53 @@ public class Clock : MonoBehaviourPun, IPunObservable {
         minutes = syncMin;
         hour = syncHour;
         Debug.Log("sync succesfull");
+    }
+    
+    public void changeSeconds(int pSeconds)
+    {
+        seconds = pSeconds;
+    }
+
+    private void OnMouseDown()
+    {
+        if (!isCopy)
+        {
+            Debug.Log(tempClock);
+            if (!copyCreated)
+            {
+                Vector3 tempPos = maincamera.transform.position;
+                Vector3 newPos = tempPos + distToCam;
+                Vector3 RotationAdd = new Vector3(-45, 180, 0);
+                Debug.Log("Click");
+                Debug.Log(tempPos);
+                Debug.Log(newPos);
+                tempClock = Instantiate(clockPrefab, newPos, Quaternion.identity);
+                Clock tempScript = tempClock.GetComponent<Clock>();
+                tempScript.changeSeconds(seconds);
+                tempScript.minutes = minutes;
+                tempScript.hour = hour;
+                tempScript.isCopy = true;
+                tempScript.creator = this.gameObject;
+                tempScript.creatorScript = tempScript.creator.GetComponent<Clock>();
+
+
+                tempClock.transform.Rotate(RotationAdd);
+                copyCreated = true;
+            }
+            
+            
+        }
+        else {
+            
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out raycasthit))
+            {
+                creatorScript.copyCreated = false;
+                Object.Destroy(this.gameObject);
+            }
+           
+        }
+
     }
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------
