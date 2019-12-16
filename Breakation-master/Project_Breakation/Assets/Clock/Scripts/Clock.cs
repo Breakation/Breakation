@@ -89,8 +89,17 @@ public class Clock : MonoBehaviourPun, IPunObservable {
     //-----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-        
-        if (SampleUserPolling_ReadWrite.encoderright == true && UhrzeitTuerController.clockHacked)
+        //if (isCopy)
+        //{
+        //    if(minutes != creatorScript.minutes)
+        //    {
+        //        minutes = creatorScript.minutes;
+        //        hour = creatorScript.hour;
+        //    }
+        //}
+
+
+        if (((SampleUserPolling_ReadWrite.encoderright == true)|| (Input.GetKeyDown(KeyCode.RightArrow))) && UhrzeitTuerController.clockHacked)
         {   
             SampleUserPolling_ReadWrite.encoderright = false;
             minutes++;
@@ -187,7 +196,7 @@ public class Clock : MonoBehaviourPun, IPunObservable {
                 Debug.Log("Click");
                 Debug.Log(tempPos);
                 Debug.Log(newPos);
-                tempClock = Instantiate(clockPrefab, newPos, maincamera.transform.rotation);
+                tempClock = PhotonNetwork.Instantiate("clock", newPos, maincamera.transform.rotation);
                 Clock tempScript = tempClock.GetComponent<Clock>();
                 tempScript.changeSeconds(seconds);
                 tempScript.minutes = minutes;
