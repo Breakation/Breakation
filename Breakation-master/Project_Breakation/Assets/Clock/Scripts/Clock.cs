@@ -164,11 +164,12 @@ public class Clock : MonoBehaviourPun, IPunObservable {
             {
                 Vector3 tempPos = maincamera.transform.position;
                 Vector3 newPos = tempPos + distToCam;
-                Vector3 RotationAdd = new Vector3(-45, 180, 0);
+                Vector3 RotationAdd = new Vector3(0, 180, 0);
+                Vector3 nullRot = new Vector3(0, 0, 0);
                 Debug.Log("Click");
                 Debug.Log(tempPos);
                 Debug.Log(newPos);
-                tempClock = Instantiate(clockPrefab, newPos, Quaternion.identity);
+                tempClock = Instantiate(clockPrefab, newPos, maincamera.transform.rotation);
                 Clock tempScript = tempClock.GetComponent<Clock>();
                 tempScript.changeSeconds(seconds);
                 tempScript.minutes = minutes;
@@ -176,7 +177,6 @@ public class Clock : MonoBehaviourPun, IPunObservable {
                 tempScript.isCopy = true;
                 tempScript.creator = this.gameObject;
                 tempScript.creatorScript = tempScript.creator.GetComponent<Clock>();
-                tempScript.photonView.ViewID = 2;
 
 
                 tempClock.transform.Rotate(RotationAdd);
