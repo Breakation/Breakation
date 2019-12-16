@@ -176,16 +176,17 @@ public class Clock : MonoBehaviourPun, IPunObservable {
                 tempScript.isCopy = true;
                 tempScript.creator = this.gameObject;
                 tempScript.creatorScript = tempScript.creator.GetComponent<Clock>();
+                tempScript.photonView.ViewID = 2;
 
 
                 tempClock.transform.Rotate(RotationAdd);
                 copyCreated = true;
             }
-            
-            
+
+            return;
         }
         else {
-            
+            Debug.Log("Destroy");
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out raycasthit))
             {
