@@ -7,7 +7,7 @@ public class Clock : MonoBehaviourPun, IPunObservable {
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //
-    //  Simple Clock Script / Andre "AEG" Bürger / VIS-Games 2012
+    //  Simple Clock Script / Andre "AEG" Bï¿½rger / VIS-Games 2012
     //
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -83,13 +83,16 @@ public class Clock : MonoBehaviourPun, IPunObservable {
         }
     
 }
+
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) && UhrzeitTuerController.clockHacked)
-        {
+        
+        if (SampleUserPolling_ReadWrite.encoderright == true && UhrzeitTuerController.clockHacked)
+        {   
+            SampleUserPolling_ReadWrite.encoderright = false;
             minutes++;
             if (minutes >= 60)
             {
@@ -97,6 +100,21 @@ public class Clock : MonoBehaviourPun, IPunObservable {
                 hour++;
                 if (hour >= 24)
                     hour = 0;
+            }
+            timeChanged = true;
+            pv.RPC("RPC_SyncTime", RpcTarget.AllBuffered, minutes, hour);
+            
+        }
+        if (SampleUserPolling_ReadWrite.encoderleft == true && UhrzeitTuerController.clockHacked)
+        {   
+            SampleUserPolling_ReadWrite.encoderleft = false;
+            minutes--;
+            if (minutes <= 0)
+            {
+                minutes = 59;
+                hour--;
+                if (hour <= 0)
+                    hour = 23;
             }
             timeChanged = true;
             pv.RPC("RPC_SyncTime", RpcTarget.AllBuffered, minutes, hour);

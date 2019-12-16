@@ -14,6 +14,8 @@ using System.Collections;
  */
 public class SampleUserPolling_ReadWrite : MonoBehaviour
 {
+    public static bool encoderleft;
+    public static bool encoderright;
     public SerialController serialController;
 
     // Initialization
@@ -51,8 +53,14 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         //---------------------------------------------------------------------
 
         string message = serialController.ReadSerialMessage();
-
-        if (message == null)
+        
+        if (message == "encoderleft"){
+            encoderleft = true;
+            // wenn benutzt nach if abfrage wieder auf false setzen
+        }
+        if ( message == "encoderright"){
+            encoderright = true;
+        }
             return;
 
         // Check if the message is plain data or a connect/disconnect event.
