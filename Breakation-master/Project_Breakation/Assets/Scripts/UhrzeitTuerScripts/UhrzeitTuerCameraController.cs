@@ -9,10 +9,10 @@ public class UhrzeitTuerCameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(sc_playerInfo.PI.mySelectedCharacter == 2)
-        {
-            transform.position = p2CameraPos;
-        }
+        //if(sc_playerInfo.PI.mySelectedCharacter == 2)
+        //{
+        //    transform.position = p2CameraPos;
+        //}
     }
 
     // Update is called once per frame

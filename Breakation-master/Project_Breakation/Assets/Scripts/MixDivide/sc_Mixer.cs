@@ -8,16 +8,19 @@ public class sc_Mixer : MonoBehaviour
     // 0=hd 1=hq 2=hw 3=hy 4=hl
     private bool[] fluids = new bool[5];
 
-    // 0=of 1=oa 2=ol 3=oz 4=op
-    private bool[] gasses = new bool[5];
+    // 0=of 1=oa 2=ol 3=oz 4=op 5=ot
+    private bool[] gasses = new bool[6];
 
-    // 0=ft 1=ff 2=fq 3=fh 4=fs
-    private bool[] solids = new bool[5];
+    // 0=ft 1=ff 2=fq 3=fh 4=fs 5=fy
+    private bool[] solids = new bool[6];
 
     public GameObject firstSubField;
     public GameObject secondSubField;
     public GameObject firstTypeField;
     public GameObject secondTypeField;
+
+    public GameObject subField;
+    public GameObject typeField;
 
 
     // Start is called before the first frame update
@@ -45,7 +48,10 @@ public class sc_Mixer : MonoBehaviour
 
     public void startDivide()
     {
+        string tempType = typeField.GetComponent<InputField>().text;
+        int tempSub = int.Parse(subField.GetComponent<InputField>().text);
 
+        divProcess(tempSub, tempType);
     }
 
 
@@ -277,8 +283,140 @@ public class sc_Mixer : MonoBehaviour
         }
     }
 
-    private void divProcess()
+    private void divProcess(int sub, string stype)
     {
+        switch (stype)
+        {
+            case "fluid":
+                {
+                    switch (sub)
+                    {
+                        // 0=hd 1=hq 2=hw 3=hy 4=hl
+                        case 0:
+                            {
+                                Debug.Log("Got HQ & FT");
+                            }break;
+                        // 0=hd 1=hq 2=hw 3=hy 4=hl
+                        case 1:
+                            {
+                                Debug.Log("Got FS & OP");
+                            }
+                            break;
+                        // 0=hd 1=hq 2=hw 3=hy 4=hl
+                        case 2:
+                            {
+                                Debug.Log("Got None");
+                            }
+                            break;
+                        // 0=hd 1=hq 2=hw 3=hy 4=hl
+                        case 3:
+                            {
+                                Debug.Log("Got None");
+                            }break;
+                        // 0=hd 1=hq 2=hw 3=hy 4=hl
+                        case 4:
+                            {
+                                Debug.Log("Got HW & OL");
+                            }
+                            break;
+                        default:
+                            {
+                                Debug.Log("False Sub");
+                            }break;
 
+                    }
+                }
+                break;
+            case "gas":
+                {
+                    switch (sub)
+                    {
+                        // 0=of 1=oa 2=ol 3=oz 4=op 5=ot
+                        case 0:
+                            {
+                                Debug.Log("Got FF & OT");
+                            }
+                            break;
+                        case 1:
+                            {
+                                Debug.Log("Got HW & OT");
+                            }
+                            break;
+                        case 2:
+                            {
+                                Debug.Log("Got None");
+                            }
+                            break;
+                        case 3:
+                            {
+                                Debug.Log("Got None");
+                            }
+                            break;
+                        case 4:
+                            {
+                                Debug.Log("Got None");
+                            }
+                            break;
+                        case 5:
+                            {
+                                Debug.Log("Got None");
+                            }
+                            break;
+                        default:
+                            {
+                                Debug.Log("False Sub");
+                            }
+                            break;
+
+                    }
+                }
+                break;
+            case "solid":
+                {
+                    switch (sub)
+                    {
+                        // 0=ft 1=ff 2=fq 3=fh 4=fs 5=fy
+                        case 0:
+                            {
+                                Debug.Log("Got None");
+                            }
+                            break;
+                        case 1:
+                            {
+                                Debug.Log("Got OZ & HY");
+                            }
+                            break;
+                        case 2:
+                            {
+                                Debug.Log("Got FH & HQ");
+                            }
+                            break;
+                        case 3:
+                            {
+                                Debug.Log("Got None");
+                            }
+                            break;
+                        case 4:
+                            {
+                                Debug.Log("Got None");
+                            }
+                            break;
+                        case 5:
+                            {
+                                Debug.Log("Got FZ & OA");
+                            }
+                            break;
+                        default:
+                            {
+                                Debug.Log("False Sub");
+                            }
+                            break;
+                    }
+                }break;
+            default:
+                {
+                    Debug.Log("False Type");
+                }break;
+        }
     }
 }

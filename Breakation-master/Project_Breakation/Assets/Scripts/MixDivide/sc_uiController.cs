@@ -6,6 +6,20 @@ public class sc_uiController : MonoBehaviour
 {
     public GameObject mixUI;
     public GameObject divUI;
+    public static bool activateMixDivUI = false;
+    private bool uiActivated = false;
+
+    private void Update()
+    {
+        if (!uiActivated)
+        {
+            if (activateMixDivUI)
+            {
+                mixUI.SetActive(true);
+                uiActivated = true;
+            }
+        }
+    }
 
     public void toDivide()
     {

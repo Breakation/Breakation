@@ -3,40 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UhrzeitTuerController : MonoBehaviour
+public class sc_HackController : MonoBehaviour
 {
-    public static bool clockHacked = false;
-
     public GameObject hackGUI;
 
     public GameObject HackButton;
     public GameObject CancelButton;
     public GameObject StartHackButton;
 
-    private string clockIP = "1.2";
-    private string clockPW = "clock";
+    public GameObject IpField;
+    public GameObject PWField;
+
 
     private string eingegIP;
     private string eingegPW;
 
-    public GameObject IpField;
-    public GameObject PWField;
+
+
+    private string mdAutomatMixDivIP = "7.1";
+    private string mdAutomatMixDivPW = "mix";
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        //if(sc_playerInfo.PI.mySelectedCharacter != 2)
-        //{
-        //    hackGUI.SetActive(false);
-        //}
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
 
     public void Hack()
     {
@@ -56,18 +55,15 @@ public class UhrzeitTuerController : MonoBehaviour
         StartHackButton.SetActive(false);
     }
 
-    
-
-    public void StartHack()
+    public void startHack()
     {
         eingegIP = IpField.GetComponent<InputField>().text;
         eingegPW = PWField.GetComponent<InputField>().text;
 
-        if((eingegIP == clockIP) && (eingegPW == clockPW))
+        if(eingegIP == mdAutomatMixDivIP && eingegPW == mdAutomatMixDivPW)
         {
+            sc_uiController.activateMixDivUI = true;
             CancelHack();
-            clockHacked = true;
         }
-
     }
 }
