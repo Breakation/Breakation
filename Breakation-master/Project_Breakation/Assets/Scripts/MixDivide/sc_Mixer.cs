@@ -11,8 +11,8 @@ public class sc_Mixer : MonoBehaviour
     // 0=of 1=oa 2=ol 3=oz 4=op 5=ot
     private bool[] gasses = new bool[6];
 
-    // 0=ft 1=ff 2=fq 3=fh 4=fs 5=fy
-    private bool[] solids = new bool[6];
+    // 0=ft 1=ff 2=fq 3=fh 4=fs 5=fy 6=fz
+    private bool[] solids = new bool[7];
 
     public GameObject firstSubField;
     public GameObject secondSubField;
@@ -26,7 +26,26 @@ public class sc_Mixer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        fluids[0] = false;
+        fluids[1] = false;
+        fluids[2] = false;
+        fluids[3] = false;
+        fluids[4] = false;
+
+        gasses[0] = false;
+        gasses[1] = false;
+        gasses[2] = true;
+        gasses[3] = false;
+        gasses[4] = true;
+        gasses[5] = false;
+
+        solids[0] = true;
+        solids[1] = true;
+        solids[2] = false;
+        solids[3] = true;
+        solids[4] = true;
+        solids[5] = false;
+        solids[6] = false;
     }
 
     // Update is called once per frame
@@ -42,6 +61,8 @@ public class sc_Mixer : MonoBehaviour
         string tempSecT = secondTypeField.GetComponent<InputField>().text;
         int tempFirstS = int.Parse(firstSubField.GetComponent<InputField>().text);
         int tempSecondS = int.Parse(secondSubField.GetComponent<InputField>().text);
+
+        
 
         mixProcess(tempFirstS, tempFirstT, tempSecondS, tempSecT);
     }
@@ -71,11 +92,13 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => HD
+                                    fluids[0] = true;
                                 }
                                 else if ((secondType == "solid") && (secondSubs == 3))
                                 {
                                     Debug.Log("Mix");
-                                    // => FG
+                                    // => FQ
+                                    solids[2] = true;
                                 }
                                 else
                                 {
@@ -91,11 +114,13 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => HL
+                                    fluids[4] = true;
                                 }
                                 else if ((secondType == "gas") && (secondSubs == 3))
                                 {
                                     Debug.Log("Mix");
                                     // ot?
+                                    gasses[5] = true;
                                 }
                                 else
                                 {
@@ -111,11 +136,13 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => FF
+                                    solids[1] = true;
                                 }
                                 else if ((secondType == "gas") && (secondSubs == 2))
                                 {
                                     Debug.Log("Mix");
                                     // => OA
+                                    gasses[1] = true;
                                 }
                                 else
                                 {
@@ -131,6 +158,7 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => FZ ?
+                                    solids[6] = true;
                                 }
                                 else
                                 {
@@ -161,6 +189,7 @@ public class sc_Mixer : MonoBehaviour
                                     // fz?
                                     Debug.Log("Mix");
                                     // => FY
+                                    solids[5] = true;
                                 }
 
 
@@ -174,11 +203,13 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => HL
+                                    fluids[4] = true;
                                 }
                                 if ((secondType == "fluid") && (secondSubs == 3))
                                 {
                                     Debug.Log("Mix");
                                     // => OA
+                                    gasses[1] = true;
                                 }
                             }
                             break;
@@ -190,6 +221,7 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => FF
+                                    solids[1] = true;
                                 }
                             }
                             break;
@@ -201,6 +233,7 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => HQ
+                                    fluids[1] = true;
                                 }
                             }
                             break;
@@ -225,6 +258,7 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => HD
+                                    fluids[0] = true;
                                 }
                             }
                             break;
@@ -237,6 +271,7 @@ public class sc_Mixer : MonoBehaviour
                                     // OT?
                                     Debug.Log("Mix");
                                     // => OF
+                                    gasses[0] = true;
                                 }
                             }
                             break;
@@ -248,6 +283,7 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => FZ
+                                    solids[6] = true;
                                 }
                             }
                             break;
@@ -259,6 +295,7 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => FQ
+                                    solids[2] = true;
                                 }
                             }
                             break;
@@ -270,9 +307,20 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => HQ
+                                    fluids[1] = true;
                                 }
                             }
                             break;
+                        case 6:
+                            {
+                                // FZ
+
+                                if((secondType == "gas")&& (secondSubs == 1))
+                                {
+                                    Debug.Log("Mix");
+                                    // => FY
+                                }
+                            }break;
                         default:
                             {
                                 Debug.Log("Fail");
@@ -295,17 +343,22 @@ public class sc_Mixer : MonoBehaviour
                         case 0:
                             {
                                 Debug.Log("Got HQ & FT");
+                                fluids[1] = true;
+                                solids[0] = true;
                             }break;
                         // 0=hd 1=hq 2=hw 3=hy 4=hl
                         case 1:
                             {
                                 Debug.Log("Got FS & OP");
+                                solids[4] = true;
+                                gasses[4] = true;
                             }
                             break;
                         // 0=hd 1=hq 2=hw 3=hy 4=hl
                         case 2:
                             {
                                 Debug.Log("Got None");
+
                             }
                             break;
                         // 0=hd 1=hq 2=hw 3=hy 4=hl
@@ -317,6 +370,8 @@ public class sc_Mixer : MonoBehaviour
                         case 4:
                             {
                                 Debug.Log("Got HW & OL");
+                                fluids[2] = true;
+                                gasses[2] = true;
                             }
                             break;
                         default:
@@ -335,11 +390,15 @@ public class sc_Mixer : MonoBehaviour
                         case 0:
                             {
                                 Debug.Log("Got FF & OT");
+                                solids[1] = true;
+                                gasses[5] = true;
                             }
                             break;
                         case 1:
                             {
                                 Debug.Log("Got HW & OT");
+                                fluids[2] = true;
+                                gasses[5] = true;
                             }
                             break;
                         case 2:
@@ -384,11 +443,15 @@ public class sc_Mixer : MonoBehaviour
                         case 1:
                             {
                                 Debug.Log("Got OZ & HY");
+                                gasses[3] = true;
+                                fluids[3] = true;
                             }
                             break;
                         case 2:
                             {
                                 Debug.Log("Got FH & HQ");
+                                solids[3] = true;
+                                fluids[1] = true;
                             }
                             break;
                         case 3:
@@ -404,8 +467,16 @@ public class sc_Mixer : MonoBehaviour
                         case 5:
                             {
                                 Debug.Log("Got FZ & OA");
+                                solids[6] = true;
+                                gasses[1] = true;
                             }
                             break;
+                        case 6:
+                            {
+                                Debug.Log("Got HL & FQ");
+                                fluids[4] = true;
+                                solids[2] = true;
+                            }break;
                         default:
                             {
                                 Debug.Log("False Sub");
