@@ -1226,7 +1226,7 @@ MonoBehaviour:
   controller: {fileID: 378204230}
   gravityScale: 0.5
   anim: {fileID: 0}
-  pivot: {fileID: 0}
+  pivot: {fileID: 32259158}
   rotateSpeed: 10
 --- !u!95 &378204232
 Animator:
@@ -6594,7 +6594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: 
-  currentPassword: 123
+  currentPassword: 394
   onTrigger: 0
   doorOpen: 0
   keypadScreen: 0
