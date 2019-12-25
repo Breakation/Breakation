@@ -62,6 +62,7 @@ public class Keypad : MonoBehaviour
                 generateScreenOutput(110, 245, "8");
                 generateScreenOutput(215, 245, "9");
                 generateScreenOutput(110, 350, "0");
+                generateScreenOutput(215, 350, "C");
             }
         }
 
@@ -69,9 +70,19 @@ public class Keypad : MonoBehaviour
 
     void generateScreenOutput(int x, int y, string i)
     {
-        if (GUI.Button(new Rect(x, y, 100, 100), i))
+        if(i == "C")
         {
-            input += i;
+            if (GUI.Button(new Rect(x, y, 100, 100), i))
+            {
+                input = input.Substring(0, input.Length - 1);
+            }
+        }
+        else
+        {
+            if (GUI.Button(new Rect(x, y, 100, 100), i))
+            {
+                input += i;
+            }
         }
     }
 
