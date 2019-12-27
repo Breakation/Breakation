@@ -10,7 +10,13 @@ public class Cell : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cell[] arrayOfObjects = GameObject.FindObjectsOfType<Cell>();
+        Debug.Log(arrayOfObjects.Length);
+    }
+    private void OnEnable()
+    {
+        Cell[] arrayOfObjects = GameObject.FindObjectsOfType<Cell>();
+        Debug.Log(arrayOfObjects.Length);
     }
 
     // Update is called once per frame

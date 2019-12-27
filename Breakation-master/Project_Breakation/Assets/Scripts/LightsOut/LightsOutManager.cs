@@ -5,23 +5,28 @@ using System.Collections.Generic;
 
 public class LightsOutManager : MonoBehaviour {
 
-	[Header("Game Elements")] //adds a header above some fields in the Inspector.
+    [Header("Game Elements")] //adds a header above some fields in the Inspector.
     public AutoGridLayout grid;
-	public GameObject cell; // die cells werden zur demonstrationszweck erst hier generiert, brauchen wir aber nicht da unsere eigentlichen cells ja schon von anfang an da sind
-	public UIGame uiGame; // Infos die wir vielleicht anzeigen würden (Zeit, ob gelöst oder nicht etc...)
+    public GameObject cell;
+    public UIGame uiGame; // Infos die wir vielleicht anzeigen würden (Zeit, ob gelöst oder nicht etc...)
+    //public GameObject cell; // die cells werden zur demonstrationszweck erst hier generiert, brauchen wir aber nicht da unsere eigentlichen cells ja schon von anfang an da sind
 
-	[Header("Game Stats")]
-	public int numberOfClicks = 0, elapsedTime = 0;
+    [Header("Game Stats")]
+    public int numberOfClicks = 0, elapsedTime = 0;
 
     // variablen für den Gridgenerierung und -Verwaltung
-	public GameObject[,] ArrayOfCells;
-	public List<GameObject> ListOfCells;
+    public Cell[,] ArrayOfCells;
+    //public GameObject[,] ArrayOfCells;
+    public List<Cell> ListOfCells;
+    //public List<GameObject> ListOfCells;
     CellController cellController;
 
     //konstante Werte
     private int GridSize = 8;
+    // wir brauchen die Farben nicht; bei uns auf oder zu
     public Color32 onColour = new Color32(135, 204, 196, 255);
     public Color32 offColour = new Color32(128, 128, 128, 128);
+
     public int[,] arrayPattern =
     {
         {0,1,1,1,1,1,1,1 },//0
@@ -36,6 +41,7 @@ public class LightsOutManager : MonoBehaviour {
 
     public static LightsOutManager Instance;
     //_________________________________________________ Methoden ______________________________________________________________
+
     void Awake() // damit wird die Instanz aufgerufen
     {
         Instance = this;
@@ -43,12 +49,18 @@ public class LightsOutManager : MonoBehaviour {
 
     void OnEnable()
     {
-		uiGame.endingText.gameObject.SetActive (false);
+        uiGame.endingText.gameObject.SetActive(false);
         // Coroutine fängt ab ier an; der Grid wird generiert. Diese Funktion läuft die ganze Zeit bis das Spiel beendet wird. Brauchen wir später auch nicht!
-		StartCoroutine (GenerateStaticGrid(GridSize));
-		CountElapsedTime ();
+        //StartCoroutine (GenerateStaticGrid(GridSize));
+        Configure(GridSize);
+        CountElapsedTime();
     }
 
+    public void Configure(int size)
+    {
+        ArrayOfCells = new Cell[size * size, size * size];
+
+    }
     IEnumerator GenerateStaticGrid(int size)
     {
         ArrayOfCells = new GameObject[size * size, size * size];
