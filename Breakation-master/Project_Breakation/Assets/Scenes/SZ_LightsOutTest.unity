@@ -540,6 +540,61 @@ MonoBehaviour:
   special: 0
   closable: 0
   cellController: {fileID: 0}
+--- !u!1 &213900231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 213900233}
+  - component: {fileID: 213900232}
+  m_Layer: 0
+  m_Name: LightsOutManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &213900232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213900231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338ba1211db4a5b48bdf51e3e36a85cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  uiGame: {fileID: 0}
+  cell: {fileID: 0}
+  numberOfClicks: 0
+  elapsedTime: 0
+  ListOfCells: []
+  onColour:
+    serializedVersion: 2
+    rgba: 4291087495
+  offColour:
+    serializedVersion: 2
+    rgba: 2155905152
+--- !u!4 &213900233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213900231}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.049915, y: -8.437028, z: 6.45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 67
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &276327275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4527,9 +4582,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d6efe5bf77e884892a437e390d94b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  special: 0
+  special: 1
   closable: 0
-  cellController: {fileID: 0}
+  cellController: {fileID: 1522320686}
 --- !u!1001 &1378867066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4845,6 +4900,51 @@ MonoBehaviour:
   special: 0
   closable: 0
   cellController: {fileID: 0}
+--- !u!1 &1522320685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1522320687}
+  - component: {fileID: 1522320686}
+  m_Layer: 0
+  m_Name: CellController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1522320686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522320685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037643c09e859034f9246e4468fe65cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjacentCells: []
+  cellStatus: 0
+--- !u!4 &1522320687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522320685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.049915, y: -8.437028, z: 6.45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 68
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1540662934
 GameObject:
   m_ObjectHideFlags: 0
@@ -5854,7 +5954,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777123042}
   m_LocalRotation: {x: 0.39466423, y: -0, z: -0, w: 0.91882545}
-  m_LocalPosition: {x: -24.72, y: -3.02, z: 3.11}
+  m_LocalPosition: {x: -24.88, y: -1.65, z: 3.12}
   m_LocalScale: {x: 1, y: 1, z: -0.080178}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7068,5 +7168,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8708010139303256773, guid: 124a9a534ff73784fbf1cd464691041f,
+        type: 3}
+      propertyPath: cellController
+      value: 
+      objectReference: {fileID: 1522320686}
+    - target: {fileID: 8708010139303256773, guid: 124a9a534ff73784fbf1cd464691041f,
+        type: 3}
+      propertyPath: closable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 648289736987520484, guid: 124a9a534ff73784fbf1cd464691041f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7068599
+      objectReference: {fileID: 0}
+    - target: {fileID: 648289736987520484, guid: 124a9a534ff73784fbf1cd464691041f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00025294378
+      objectReference: {fileID: 0}
+    - target: {fileID: 648289736987520484, guid: 124a9a534ff73784fbf1cd464691041f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0002531204
+      objectReference: {fileID: 0}
+    - target: {fileID: 648289736987520484, guid: 124a9a534ff73784fbf1cd464691041f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70735353
+      objectReference: {fileID: 0}
+    - target: {fileID: 648289736987520484, guid: 124a9a534ff73784fbf1cd464691041f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 648289736987520484, guid: 124a9a534ff73784fbf1cd464691041f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.96001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 124a9a534ff73784fbf1cd464691041f, type: 3}
+--- !u!1 &8296172667635976673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3792904066587902624, guid: 124a9a534ff73784fbf1cd464691041f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5152952714390670145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8296172667635976674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172667635976673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037643c09e859034f9246e4468fe65cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjacentCells: []
+  cellStatus: 0

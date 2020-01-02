@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class CellController : MonoBehaviour {
 
 
-	public GameObject cell; // soll durch "public Cell cell;" ersetzt werden nach dem die echten Zellen fertig implementiert wurden (mit Tür öffnen und modell)
     private LightsOutManager GMInstance = LightsOutManager.Instance; // verwaltet den Rätsel
+    public List<Cell> adjacentCells;
+    Transform cap;
 
     // status der Zelle 
     public enum Status {
@@ -20,9 +22,7 @@ public class CellController : MonoBehaviour {
 	public int xCoord {	get; set; }
 	public int yCoord {	get; set; }
 
-	public List<GameObject> adjacentCells;
-
-	public void OnClick() { // diese werden beim Clicken immer aufgerufen
+	public void OnMouseDown() { // diese werden beim Clicken immer aufgerufen
 		SwitchCellColor (); // Zustand der Zelle selbst wird geändert
 		SwitchAdjacentCellColor (); //Zustände der umliegenden Zellen
         GMInstance.numberOfClicks++; // Anzahl clicks wird erhöht
@@ -32,10 +32,12 @@ public class CellController : MonoBehaviour {
 	public void SwitchCellColor () {
 		if (cellStatus == CellController.Status.Lit) {
 			cellStatus = CellController.Status.Out;
-			this.gameObject.GetComponent<CanvasRenderer>().SetColor(GMInstance.offColour);
+			//this.gameObject.GetComponent<CanvasRenderer>().SetColor(GMInstance.offColour);
+            this.closeCap();
 		} else {
 			cellStatus = CellController.Status.Lit;
-			this.gameObject.GetComponent<CanvasRenderer>().SetColor(GMInstance.onColour);
+			//this.gameObject.GetComponent<CanvasRenderer>().SetColor(GMInstance.onColour);
+            this.openCap();
 		}
 	}
 
@@ -54,17 +56,19 @@ public class CellController : MonoBehaviour {
 			if (selectedCell.cellStatus == Status.Lit) {
 				selectedCell.cellStatus = Status.Out;
 				item.gameObject.GetComponent<CanvasRenderer> ().SetColor (GMInstance.offColour);
-			} else {
+                item.GetComponent<CellController>().closeCap();
+            } else {
 				selectedCell.cellStatus = CellController.Status.Lit;
-				item.gameObject.GetComponent<CanvasRenderer> ().SetColor (GMInstance.onColour);
-			}
+				//item.gameObject.GetComponent<CanvasRenderer> ().SetColor (GMInstance.onColour);
+                item.GetComponent<CellController>().openCap();
+            }
 		}
 	}
 
 	void GetAdjacentCells(){
-		adjacentCells = new List<GameObject> ();
+		adjacentCells = new List<Cell> ();
 
-		GameObject northCell = null, westCell = null, eastCell = null, southCell = null;
+		Cell northCell = null, westCell = null, eastCell = null, southCell = null;
 
 		if (xCoord - 1 >= 0) {
 			northCell = GMInstance.ArrayOfCells [xCoord - 1, yCoord];
@@ -87,4 +91,14 @@ public class CellController : MonoBehaviour {
 		
 		}
 	}
+
+    internal void openCap()
+    {
+        cap.rotation = Quaternion.RotateTowards(cap.rotation, Quaternion.Euler(0.0f, 0.0f, 0.0f), Time.deltaTime * 250);
+    }
+
+    internal void closeCap()
+    {
+        cap.rotation = Quaternion.RotateTowards(cap.rotation, Quaternion.Euler(-90.0f, 0.0f, 0.0f), Time.deltaTime * 250);
+    }
 }
