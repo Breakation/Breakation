@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -91,6 +91,7 @@ public class CellController : MonoBehaviour {
 		
 		}
 	}
+<<<<<<< HEAD
 
     internal void openCap()
     {
@@ -102,3 +103,7 @@ public class CellController : MonoBehaviour {
         cap.rotation = Quaternion.RotateTowards(cap.rotation, Quaternion.Euler(-90.0f, 0.0f, 0.0f), Time.deltaTime * 250);
     }
 }
+=======
+}
+LÖSCHEN*/ 
+>>>>>>> 7a173fd07bfdeaee8b07711bfd39a513106cb9e2

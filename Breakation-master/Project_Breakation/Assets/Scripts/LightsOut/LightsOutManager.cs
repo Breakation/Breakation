@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿/* LÖSCHEN
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -76,7 +77,17 @@ public class LightsOutManager : MonoBehaviour {
                 cellController = ArrayOfCells[i, j].GetComponent<CellController>();
                 cellController.xCoord = i;
                 cellController.yCoord = j;
+<<<<<<< HEAD
                 k++;
+=======
+
+                // alle sind initial : Lit
+                /*cellController.cellStatus = CellController.Status.Lit;
+                ArrayOfCells[i, j].GetComponent<CanvasRenderer>().SetColor(onColour);*/ 
+                
+
+                /* LÖSCHEN
+>>>>>>> 7a173fd07bfdeaee8b07711bfd39a513106cb9e2
             }
         }
     }
@@ -172,3 +183,4 @@ public class LightsOutManager : MonoBehaviour {
    
 
 }
+LÖSCHEN */
