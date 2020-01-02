@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿/* LÖSCHEN
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -89,7 +90,7 @@ public class LightsOutManager : MonoBehaviour {
                 ArrayOfCells[i, j].GetComponent<CanvasRenderer>().SetColor(onColour);*/ 
                 
 
-                
+                /* LÖSCHEN
             }
         }
 
@@ -165,3 +166,4 @@ public class LightsOutManager : MonoBehaviour {
     }
 
 }
+LÖSCHEN */
