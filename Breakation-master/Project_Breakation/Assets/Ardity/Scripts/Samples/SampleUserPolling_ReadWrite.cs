@@ -31,6 +31,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
     public static bool keypad10;
     public static bool keypad11;
     public static bool keypad12;
+    public static bool keypad13;
 
     public SerialController serialController;
 
@@ -131,6 +132,10 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         if (message == "keypad#"){
             Debug.Log(message);
             keypad12 = true;
+        } 
+        if (message == "keypadbackspace"){
+            Debug.Log(message);
+            keypad13 = true;
         } 
             return;
 

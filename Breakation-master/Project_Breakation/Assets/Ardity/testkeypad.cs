@@ -74,5 +74,10 @@ public class testkeypad : MonoBehaviour
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.keypad12 =false;
         }
+        if (SampleUserPolling_ReadWrite.keypad13==true){
+            teststring = teststring.Remove(teststring.Length-1);
+            Debug.Log(teststring);
+            SampleUserPolling_ReadWrite.keypad13 =false;
+        }
     }
 }
