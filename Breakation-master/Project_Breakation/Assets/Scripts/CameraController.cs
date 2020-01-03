@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
         pivot.transform.parent = null;
 
         //locks the cursor of the mouse to the center of the window (Cursur verschwindet)
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame

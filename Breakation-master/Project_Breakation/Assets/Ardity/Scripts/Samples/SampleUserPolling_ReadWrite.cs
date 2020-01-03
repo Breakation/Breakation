@@ -16,6 +16,23 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
 {
     public static bool encoderleft;
     public static bool encoderright;
+
+    //keypad
+
+    public static bool keypad1;
+    public static bool keypad2;
+    public static bool keypad3;
+    public static bool keypad4;
+    public static bool keypad5;
+    public static bool keypad6;
+    public static bool keypad7;
+    public static bool keypad8;
+    public static bool keypad9;
+    public static bool keypad10;
+    public static bool keypad11;
+    public static bool keypad12;
+    public static bool keypad13;
+
     public SerialController serialController;
 
     // Initialization
@@ -53,14 +70,73 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         //---------------------------------------------------------------------
 
         string message = serialController.ReadSerialMessage();
-        
+        //encoder
         if (message == "encoderleft"){
             encoderleft = true;
+            Debug.Log(message);
+            
             // wenn benutzt nach if abfrage wieder auf false setzen
         }
         if ( message == "encoderright"){
             encoderright = true;
+            Debug.Log(message);
+            
         }
+
+        // keypad
+
+        if (message == "keypad1"){
+            Debug.Log(message);
+            keypad1 = true;
+        } 
+        if (message == "keypad2"){
+            Debug.Log(message);
+            keypad2 = true;
+        } 
+        if (message == "keypad3"){
+            Debug.Log(message);
+            keypad3 = true;
+        } 
+        if (message == "keypad4"){
+            Debug.Log(message);
+            keypad4 = true;
+        } 
+        if (message == "keypad5"){
+            Debug.Log(message);
+            keypad5 = true;
+        } 
+        if (message == "keypad6"){
+            Debug.Log(message);
+            keypad6 = true;
+        } 
+        if (message == "keypad7"){
+            Debug.Log(message);
+            keypad7 = true;
+        } 
+        if (message == "keypad8"){
+            Debug.Log(message);
+            keypad8 = true;
+        } 
+        if (message == "keypad9"){
+            Debug.Log(message);
+            keypad9 = true;
+        } 
+        if (message == "keypad*"){
+            Debug.Log(message);
+            keypad10 = true;
+        } 
+        if (message == "keypad0"){
+            Debug.Log(message);
+            keypad11 = true;
+        } 
+        if (message == "keypad#"){
+            Debug.Log(message);
+            keypad12 = true;
+        } 
+        if (message == "keypadbackspace"){
+            Debug.Log(message);
+            keypad13 = true;
+        } 
             return;
 
         // Check if the message is plain data or a connect/disconnect event.
