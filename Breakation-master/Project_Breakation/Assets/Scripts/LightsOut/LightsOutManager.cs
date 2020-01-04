@@ -148,7 +148,7 @@ public class LightsOutManager : MonoBehaviour {
      }
      */
 
-
+     /*
     public void CountElapsedTime()
 	{
 		InvokeRepeating("IncrementElapsedTime", 1f, 1f);

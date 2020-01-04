@@ -106,4 +106,4 @@ public class CellController : MonoBehaviour {
 =======
 }
 LÖSCHEN*/ 
->>>>>>> 7a173fd07bfdeaee8b07711bfd39a513106cb9e2
+
