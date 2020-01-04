@@ -22,6 +22,8 @@ public class sc_Mixer : MonoBehaviour
     public GameObject subField;
     public GameObject typeField;
 
+    public GameObject flaskPrefab;
+
 
     // Start is called before the first frame update
     void Start()
@@ -93,12 +95,14 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => HD
                                     fluids[0] = true;
+                                    Instantiate(flaskPrefab, new Vector3(-4.74f, 1.684f, -7.09f),Quaternion.Euler(0,90,0));
                                 }
                                 else if ((secondType == "solid") && (secondSubs == 3))
                                 {
                                     Debug.Log("Mix");
                                     // => FQ
                                     solids[2] = true;
+                                    Instantiate(flaskPrefab, new Vector3(3.67f, 1.684f, -7.09f), Quaternion.Euler(0, 90, 0));
                                 }
                                 else
                                 {
@@ -115,12 +119,14 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => HL
                                     fluids[4] = true;
+                                    Instantiate(flaskPrefab, new Vector3(-3.78f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
                                 }
                                 else if ((secondType == "gas") && (secondSubs == 3))
                                 {
                                     Debug.Log("Mix");
                                     // ot?
                                     gasses[5] = true;
+                                    Instantiate(flaskPrefab, new Vector3(0.12f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
                                 }
                                 else
                                 {
@@ -137,16 +143,19 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => FF
                                     solids[1] = true;
+                                    Instantiate(flaskPrefab, new Vector3(0.12f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
                                 }
                                 else if ((secondType == "gas") && (secondSubs == 2))
                                 {
                                     Debug.Log("Mix");
                                     // => OA
                                     gasses[1] = true;
+                                    Instantiate(flaskPrefab, new Vector3(0.12f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
                                 }
                                 else
                                 {
                                     Debug.Log("Fail");
+                                    Instantiate(flaskPrefab, new Vector3(0.12f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
                                 }
                             }
                             break;
@@ -159,6 +168,7 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => FZ ?
                                     solids[6] = true;
+                                    Instantiate(flaskPrefab, new Vector3(0.12f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
                                 }
                                 else
                                 {
@@ -190,6 +200,7 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => FY
                                     solids[5] = true;
+
                                 }
 
 
