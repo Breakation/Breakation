@@ -8,12 +8,19 @@ public class sc_Lock : MonoBehaviour
     public int target;
     public int targetInput;
     public int[] input;
+    public Material right, wrong;
+    MeshRenderer ren;
     
-    
+
+
     void Start()
     {
+        ren = this.gameObject.GetComponent<MeshRenderer>();
+        ren.material = wrong;
         input = new int[4];
         target = Random.Range(0, 64);
+       
+        
 
     }
 
@@ -36,10 +43,12 @@ public class sc_Lock : MonoBehaviour
                 if (input[0] == target)
                 {
                     open = true;
+                    ren.material = right;
                 }
                 else
                 {
                     open = false;
+                    ren.material = wrong;
                 } break;
 
             case 1:
@@ -50,10 +59,12 @@ public class sc_Lock : MonoBehaviour
                 if (input[1] == target)
                 {
                     open = true;
+                    ren.material = right;
                 }
                 else
                 {
                     open = false;
+                    ren.material = wrong;
                 }
                 break;
 
@@ -65,10 +76,12 @@ public class sc_Lock : MonoBehaviour
                 if (input[2] == target)
                 {
                     open = true;
+                    ren.material = right;
                 }
                 else
                 {
                     open = false;
+                    ren.material = wrong;
                 }
                 break;
 
@@ -80,10 +93,12 @@ public class sc_Lock : MonoBehaviour
                 if (input[3] == target)
                 {
                     open = true;
+                    ren.material = right;
                 }
                 else
                 {
                     open = false;
+                    ren.material = wrong;
                 }
                 break;
         }
