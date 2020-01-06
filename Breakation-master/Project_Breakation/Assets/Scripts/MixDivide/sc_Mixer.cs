@@ -14,6 +14,11 @@ public class sc_Mixer : MonoBehaviour
     // 0=ft 1=ff 2=fq 3=fh 4=fs 5=fy 6=fz
     private bool[] solids = new bool[7];
 
+
+    private string[] possibleCombs = { "34*24", "23*13", "12*22","33*11","12*25","11*30","31*25","14*32","36*21", "13*22" };
+    private string[] possibleDivs = { "10#" ,"20#", "35#", "11#", "30#", "31#","25#", "36#", "21#", "14#", "32#"};
+
+
     public GameObject firstSubField;
     public GameObject secondSubField;
     public GameObject firstTypeField;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class testkeypad : MonoBehaviour
 {
     // Start is called before the first frame update
-    string teststring ="";
+    public static string teststring ="";
     void Start()
     {
         
@@ -79,5 +79,6 @@ public class testkeypad : MonoBehaviour
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.keypad13 =false;
         }
-    }
+
+        
 }
