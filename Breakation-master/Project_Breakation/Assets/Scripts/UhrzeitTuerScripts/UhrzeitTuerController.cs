@@ -25,10 +25,10 @@ public class UhrzeitTuerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(sc_playerInfo.PI.mySelectedCharacter != 2)
-        {
-            hackGUI.SetActive(false);
-        }
+        //if(sc_playerInfo.PI.mySelectedCharacter != 2)
+        //{
+        //    hackGUI.SetActive(false);
+        //}
     }
 
     // Update is called once per frame
