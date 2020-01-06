@@ -18,7 +18,7 @@ public class sc_Lock : MonoBehaviour
         ren = this.gameObject.GetComponent<MeshRenderer>();
         ren.material = wrong;
         input = new int[4];
-        target = Random.Range(0, 64);
+        target = Random.Range(10, 64);
        
         
 
@@ -36,9 +36,9 @@ public class sc_Lock : MonoBehaviour
         switch (targetInput)
         {
             case 0:
-                if (open && input[0] != target)
+                if (open && (input[0] < target-1 || input[0] > target+1))
                 {
-                    target = Random.Range(0, 64);
+                    target = Random.Range(10, 64);
                 }
                 if (input[0] == target)
                 {
@@ -47,14 +47,17 @@ public class sc_Lock : MonoBehaviour
                 }
                 else
                 {
-                    open = false;
-                    ren.material = wrong;
+                    if ((input[0] < target - 1 || input[0] > target + 1))
+                    {
+                        open = false;
+                        ren.material = wrong;
+                    }
                 } break;
 
             case 1:
-                if (open && input[1] != target)
+                if (open && (input[1] < target - 1 || input[1] > target + 1))
                 {
-                    target = Random.Range(0, 64);
+                    target = Random.Range(10, 64);
                 }
                 if (input[1] == target)
                 {
@@ -63,15 +66,18 @@ public class sc_Lock : MonoBehaviour
                 }
                 else
                 {
-                    open = false;
-                    ren.material = wrong;
+                    if ((input[1] < target - 1 || input[1] > target + 1))
+                    {
+                        open = false;
+                        ren.material = wrong;
+                    }
                 }
                 break;
 
             case 2:
-                if (open && input[2] != target)
+                if (open && (input[2] < target - 1 || input[2] > target + 1))
                 {
-                    target = Random.Range(0, 64);
+                    target = Random.Range(10, 64);
                 }
                 if (input[2] == target)
                 {
@@ -80,15 +86,18 @@ public class sc_Lock : MonoBehaviour
                 }
                 else
                 {
-                    open = false;
-                    ren.material = wrong;
+                    if ((input[2] < target - 1 || input[2] > target + 1))
+                    {
+                        open = false;
+                        ren.material = wrong;
+                    }
                 }
                 break;
 
             case 3:
-                if (open && input[3] != target)
+                if (open && (input[3] < target - 1 || input[3] > target + 1))
                 {
-                    target = Random.Range(0, 64);
+                    target = Random.Range(10, 64);
                 }
                 if (input[3] == target)
                 {
@@ -97,8 +106,11 @@ public class sc_Lock : MonoBehaviour
                 }
                 else
                 {
-                    open = false;
-                    ren.material = wrong;
+                    if ((input[3] < target - 1 || input[3] > target + 1))
+                    {
+                        open = false;
+                        ren.material = wrong;
+                    }
                 }
                 break;
         }
