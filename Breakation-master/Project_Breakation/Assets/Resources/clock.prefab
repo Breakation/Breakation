@@ -184,6 +184,7 @@ MonoBehaviour:
   clockPrefab: {fileID: 100002}
   minutes: 49
   hour: 11
+  timeChanged: 0
   clockSpeed: 1
 --- !u!65 &1181239201
 BoxCollider:

@@ -34,7 +34,14 @@ public class UhrzeitTuerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            SampleUserPolling_ReadWrite.encoderright = true;
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            SampleUserPolling_ReadWrite.encoderleft = true;
+        }
     }
 
 
