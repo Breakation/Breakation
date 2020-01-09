@@ -556,6 +556,7 @@ public class sc_Mixer : MonoBehaviour
                                 }
                             }
                             break;
+                        
                         case '6':
                             {
                                 // FZ
