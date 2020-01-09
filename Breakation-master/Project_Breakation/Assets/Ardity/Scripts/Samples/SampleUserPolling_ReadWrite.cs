@@ -38,6 +38,8 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
     public static int pot4value;
     public static int JoyXvalue;
     public static int JoyYvalue;
+    public static bool erdbebenMode;
+    public static bool  timercd = false;
 
     public SerialController serialController;
 
@@ -52,6 +54,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
     // Executed each frame
     void Update()
     {
+        
         //---------------------------------------------------------------------
         // Send data
         //---------------------------------------------------------------------
@@ -61,13 +64,31 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             Debug.Log("Sending A");
-            serialController.SendSerialMessage("A");
+        serialController.SendSerialMessage("A-moin servus moin&moin servus moin&moin servus moin&moin servus moin");
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             Debug.Log("Sending Z");
-            serialController.SendSerialMessage("Z");
+            serialController.SendSerialMessage("B-T-0-0");
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Debug.Log("Sending Z");
+            serialController.SendSerialMessage("B-F-0-0");
+        }
+        
+        /*if(timercd == true){
+            //serialController.SendSerialMessage(TimerLCD.temptime);
+            timercd = false;
+        }*/
+
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Debug.Log("Sending T");
+            serialController.SendSerialMessage("T-0100");
         }
 
 
@@ -76,6 +97,9 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         //---------------------------------------------------------------------
 
         string message = serialController.ReadSerialMessage();
+
+        
+        
         //encoder
         if (message == "encoderleft"){
             encoderleft = true;
@@ -127,7 +151,9 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
             Debug.Log(JoyYvalue);
         }
 
-
+        if(message == "beben"){
+            erdbebenMode = true;
+        }
 
         // keypad
 
@@ -183,6 +209,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
             Debug.Log(message);
             keypad13 = true;
         } 
+
             return;
 
         // Check if the message is plain data or a connect/disconnect event.
