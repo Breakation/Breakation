@@ -32,6 +32,12 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
     public static bool keypad11;
     public static bool keypad12;
     public static bool keypad13;
+    public static int pot1value;
+    public static int pot2value;
+    public static int pot3value;
+    public static int pot4value;
+    public static int JoyXvalue;
+    public static int JoyYvalue;
 
     public SerialController serialController;
 
@@ -82,6 +88,46 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
             Debug.Log(message);
             
         }
+
+        if((message != null) && (message.Contains("pot1"))){
+            string[] numbers = message.Split(',');
+            pot1value = int.Parse(numbers[1]);
+            Debug.Log(pot1value);
+        }
+
+        if((message != null) && (message.Contains("pot2"))){
+            string[] numbers = message.Split(',');
+            pot2value = int.Parse(numbers[1]);
+            Debug.Log(pot2value);
+        }
+
+        if((message != null) && (message.Contains("pot3"))){
+            string[] numbers = message.Split(',');
+            pot3value = int.Parse(numbers[1]);
+            Debug.Log(pot3value);
+        }
+
+        if((message != null) && (message.Contains("pot4"))){
+            string[] numbers = message.Split(',');
+            pot4value = int.Parse(numbers[1]);
+            Debug.Log(pot4value);
+        }
+
+        //Joystick
+
+        if((message != null) && (message.Contains("JoyX"))){
+            string[] numbers = message.Split(',');
+            JoyXvalue = int.Parse(numbers[1]);
+            Debug.Log(JoyXvalue);
+        }
+
+        if((message != null) && (message.Contains("JoyY"))){
+            string[] numbers = message.Split(',');
+            JoyYvalue = int.Parse(numbers[1]);
+            Debug.Log(JoyYvalue);
+        }
+
+
 
         // keypad
 
