@@ -33,7 +33,7 @@ public class Clock : MonoBehaviourPun, IPunObservable {
 
     public int minutes = 0;
     public int hour = 0;
-    private bool timeChanged = false;
+    public bool timeChanged = false;
     private PhotonView pv;
     
     //-- time speed factor
@@ -98,8 +98,18 @@ public class Clock : MonoBehaviourPun, IPunObservable {
         //    }
         //}
 
+        if (isCopy)
+        {
+            if (creatorScript.timeChanged)
+            {
+                minutes = creatorScript.minutes;
+                hour = creatorScript.hour;
+                creatorScript.timeChanged = false;
+            }
+        }
 
-        if (((SampleUserPolling_ReadWrite.encoderright == true)|| (Input.GetKeyDown(KeyCode.RightArrow))) && UhrzeitTuerController.clockHacked)
+
+        if (((SampleUserPolling_ReadWrite.encoderright == true)|| (Input.GetKeyDown(KeyCode.RightArrow))) && UhrzeitTuerController.clockHacked &&!isCopy)
         {   
             SampleUserPolling_ReadWrite.encoderright = false;
             minutes++;
@@ -114,7 +124,7 @@ public class Clock : MonoBehaviourPun, IPunObservable {
             pv.RPC("RPC_SyncTime", RpcTarget.AllBuffered, minutes, hour);
             
         }
-        if (SampleUserPolling_ReadWrite.encoderleft == true && UhrzeitTuerController.clockHacked)
+        if (SampleUserPolling_ReadWrite.encoderleft == true && UhrzeitTuerController.clockHacked && !isCopy)
         {   
             SampleUserPolling_ReadWrite.encoderleft = false;
             minutes--;

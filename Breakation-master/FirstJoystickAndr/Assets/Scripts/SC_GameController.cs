@@ -38,6 +38,10 @@ public class SC_GameController : MonoBehaviour
                 popUpTimer = 0;
             }
         }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            startPressed();
+        }
     }
 
 
@@ -56,7 +60,7 @@ public class SC_GameController : MonoBehaviour
         }
         errorMess.SetActive(true);
         errorShown = true;
-
+        Debug.Log("start");
     }
 
     private void startGame()
