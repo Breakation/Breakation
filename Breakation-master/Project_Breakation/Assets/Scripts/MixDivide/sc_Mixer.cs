@@ -35,6 +35,28 @@ public class sc_Mixer : MonoBehaviour
 
     public GameObject flaskPrefab;
 
+    public GameObject FTflask;
+    public GameObject FFflask;
+    public GameObject FQflask;
+    public GameObject FHflask;
+    public GameObject FSflask;
+    public GameObject FYflask;
+    public GameObject FZflask;
+
+
+    public GameObject HDflask;
+    public GameObject HQflask;
+    public GameObject HWflask;
+    public GameObject HYflask;
+    public GameObject HLflask;
+
+    public GameObject OFflask;
+    public GameObject OAflask;
+    public GameObject OLflask;
+    public GameObject OZflask;
+    public GameObject OPflask;
+    public GameObject OTflask;
+
 
     // Start is called before the first frame update
     void Start()
@@ -298,14 +320,14 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => HD
                                     fluids[0] = true;
-                                    Instantiate(flaskPrefab, new Vector3(-4.74f, 1.684f, -7.09f),Quaternion.Euler(0,90,0));
+                                    HDflask.SetActive(true);
                                 }
                                 else if ((secondType == '3') && (secondSubs == '3'))
                                 {
                                     Debug.Log("Mix");
                                     // => FQ
                                     solids[2] = true;
-                                    Instantiate(flaskPrefab, new Vector3(3.67f, 1.684f, -7.09f), Quaternion.Euler(0, 90, 0));
+                                    FQflask.SetActive(true);
                                 }
                                 else
                                 {
@@ -322,14 +344,14 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => HL
                                     fluids[4] = true;
-                                    Instantiate(flaskPrefab, new Vector3(-3.78f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
+                                    HLflask.SetActive(true);
                                 }
                                 else if ((secondType == '2') && (secondSubs == '3'))
                                 {
                                     Debug.Log("Mix");
                                     // ot?
                                     gasses[5] = true;
-                                    Instantiate(flaskPrefab, new Vector3(0.12f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
+                                    OTflask.SetActive(true);
                                 }
                                 else
                                 {
@@ -346,19 +368,19 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => FF
                                     solids[1] = true;
-                                    Instantiate(flaskPrefab, new Vector3(0.12f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
+                                    FFflask.SetActive(true);
                                 }
                                 else if ((secondType == '2') && (secondSubs == '2'))
                                 {
                                     Debug.Log("Mix");
                                     // => OA
                                     gasses[1] = true;
-                                    Instantiate(flaskPrefab, new Vector3(0.12f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
+                                    OAflask.SetActive(true);
                                 }
                                 else
                                 {
                                     Debug.Log("Fail");
-                                    Instantiate(flaskPrefab, new Vector3(0.12f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
+                                    
                                 }
                             }
                             break;
@@ -371,7 +393,7 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => FZ ?
                                     solids[6] = true;
-                                    Instantiate(flaskPrefab, new Vector3(0.12f, 0.65f, -7.09f), Quaternion.Euler(0, 90, 0));
+                                    FZflask.SetActive(true);
                                 }
                                 else
                                 {
@@ -403,7 +425,7 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => FY
                                     solids[5] = true;
-
+                                    FYflask.SetActive(true);
                                 }
 
 
@@ -418,12 +440,14 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => HL
                                     fluids[4] = true;
+                                    HLflask.SetActive(true);
                                 }
                                 if ((secondType == '1') && (secondSubs == '3'))
                                 {
                                     Debug.Log("Mix");
                                     // => OA
                                     gasses[1] = true;
+                                    OAflask.SetActive(true);
                                 }
                             }
                             break;
@@ -436,6 +460,7 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => FF
                                     solids[1] = true;
+                                    FFflask.SetActive(true);
                                 }
                             }
                             break;
@@ -448,6 +473,7 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => HQ
                                     fluids[1] = true;
+                                    HQflask.SetActive(true);
                                 }
                             }
                             break;
@@ -473,6 +499,7 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => HD
                                     fluids[0] = true;
+                                    HDflask.SetActive(true);
                                 }
                             }
                             break;
@@ -486,6 +513,7 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => OF
                                     gasses[0] = true;
+                                    OFflask.SetActive(true);
                                 }
                             }
                             break;
@@ -498,6 +526,7 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => FZ
                                     solids[6] = true;
+                                    FZflask.SetActive(true);
                                 }
                             }
                             break;
@@ -510,6 +539,7 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => FQ
                                     solids[2] = true;
+                                    FQflask.SetActive(true);
                                 }
                             }
                             break;
@@ -522,6 +552,7 @@ public class sc_Mixer : MonoBehaviour
                                     Debug.Log("Mix");
                                     // => HQ
                                     fluids[1] = true;
+                                    HQflask.SetActive(true);
                                 }
                             }
                             break;
@@ -533,6 +564,7 @@ public class sc_Mixer : MonoBehaviour
                                 {
                                     Debug.Log("Mix");
                                     // => FY
+                                    FYflask.SetActive(true);
                                 }
                             }break;
                         default:
@@ -559,6 +591,9 @@ public class sc_Mixer : MonoBehaviour
                                 Debug.Log("Got HQ & FT");
                                 fluids[1] = true;
                                 solids[0] = true;
+                                HQflask.SetActive(true);
+                                FTflask.SetActive(true);
+
                             }break;
                         // 0=hd 1=hq 2=hw 3=hy 4=hl
                         case '1':
@@ -566,6 +601,8 @@ public class sc_Mixer : MonoBehaviour
                                 Debug.Log("Got FS & OP");
                                 solids[4] = true;
                                 gasses[4] = true;
+                                FSflask.SetActive(true);
+                                OPflask.SetActive(true);
                             }
                             break;
                         // 0=hd 1=hq 2=hw 3=hy 4=hl
@@ -586,6 +623,8 @@ public class sc_Mixer : MonoBehaviour
                                 Debug.Log("Got HW & OL");
                                 fluids[2] = true;
                                 gasses[2] = true;
+                                HWflask.SetActive(true);
+                                OLflask.SetActive(true);
                             }
                             break;
                         default:
@@ -605,7 +644,9 @@ public class sc_Mixer : MonoBehaviour
                             {
                                 Debug.Log("Got FF & OT");
                                 solids[1] = true;
+                                FFflask.SetActive(true);
                                 gasses[5] = true;
+                                OTflask.SetActive(true);
                             }
                             break;
                         case '1':
@@ -613,6 +654,8 @@ public class sc_Mixer : MonoBehaviour
                                 Debug.Log("Got HW & OT");
                                 fluids[2] = true;
                                 gasses[5] = true;
+                                HWflask.SetActive(true);
+                                OTflask.SetActive(true);
                             }
                             break;
                         case '2':
@@ -659,6 +702,8 @@ public class sc_Mixer : MonoBehaviour
                                 Debug.Log("Got OZ & HY");
                                 gasses[3] = true;
                                 fluids[3] = true;
+                                OZflask.SetActive(true);
+                                HYflask.SetActive(true);
                             }
                             break;
                         case '2':
@@ -666,6 +711,8 @@ public class sc_Mixer : MonoBehaviour
                                 Debug.Log("Got FH & HQ");
                                 solids[3] = true;
                                 fluids[1] = true;
+                                FHflask.SetActive(true);
+                                HQflask.SetActive(true);
                             }
                             break;
                         case '3':
@@ -683,6 +730,8 @@ public class sc_Mixer : MonoBehaviour
                                 Debug.Log("Got FZ & OA");
                                 solids[6] = true;
                                 gasses[1] = true;
+                                FZflask.SetActive(true);
+                                OAflask.SetActive(true);
                             }
                             break;
                         case '6':
@@ -690,6 +739,8 @@ public class sc_Mixer : MonoBehaviour
                                 Debug.Log("Got HL & FQ");
                                 fluids[4] = true;
                                 solids[2] = true;
+                                HLflask.SetActive(true);
+                                FQflask.SetActive(true);
                             }break;
                         default:
                             {
