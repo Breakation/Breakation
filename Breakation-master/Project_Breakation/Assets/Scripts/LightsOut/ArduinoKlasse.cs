@@ -20,14 +20,14 @@ public class ArduinoKlasse : MonoBehaviour
     {
         // arduio 
         /*
-        if (cellStatus == CellController.CellStatus.Lit)
+        if (cellStatus == CellController.CellStatus.open)
         {// wenn Zelle an ist, schalte es aus
-            cellStatus = CellController.CellStatus.Out;
+            cellStatus = CellController.CellStatus.closed;
             this.gameObject.GetComponent<CanvasRenderer>().SetColor(Color.grey);
         }
         else
         {//sonst mach es an
-            cellStatus = CellController.CellStatus.Lit;
+            cellStatus = CellController.CellStatus.open;
             this.gameObject.GetComponent<CanvasRenderer>().SetColor(new Color32(135, 204, 196, 255));
         }*/
     }
