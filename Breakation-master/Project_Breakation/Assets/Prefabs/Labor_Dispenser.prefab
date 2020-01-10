@@ -622,6 +622,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1581727380906371247}
   - component: {fileID: 4885112872352156203}
+  - component: {fileID: 2582342907985202443}
+  - component: {fileID: 5374071685523150835}
   m_Layer: 0
   m_Name: Labor_Dispenser
   m_TagString: Untagged
@@ -669,6 +671,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2582342907985202443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5237225734806335448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca262b25b84189a45a35b4298663823a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj:
+  - {fileID: 6862699715556191133}
+  - {fileID: 2022073907175977877}
+  - {fileID: 595439893870538835}
+  - {fileID: 5124102754561997104}
+  setMaterial: {fileID: 2100000, guid: de43b9f1061c29c42990a13cb528ebf7, type: 2}
+--- !u!65 &5374071685523150835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5237225734806335448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6000419, y: 0.49401093, z: 1.6861179}
+  m_Center: {x: -0.07642579, y: 0.20663142, z: 0.0385336}
 --- !u!1 &8867890555211449429
 GameObject:
   m_ObjectHideFlags: 0
