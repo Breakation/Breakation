@@ -10,7 +10,7 @@ public class Opener : MonoBehaviour
   
    // public GameObject OpenPanel = null;
     private Animator _animator;
-    public Renderer obj;
+    public Renderer[] obj = new Renderer[4];
     private Material inactivMaterial;
     public Material setMaterial;
 
@@ -20,7 +20,7 @@ public class Opener : MonoBehaviour
     private void Start()
     {
         _animator = transform.GetComponentInParent<Animator>();
-        inactivMaterial = obj.material;
+        inactivMaterial = obj[0].material;
 
     }
     private void OnTriggerEnter(Collider other)
@@ -40,9 +40,12 @@ public class Opener : MonoBehaviour
         if (other.tag == "Player")
         {
             PlayerInRange = false;
-            
-           // OpenPanel.SetActive(false);
-            obj.material = inactivMaterial;
+
+            // OpenPanel.SetActive(false);
+            obj[0].material = inactivMaterial;
+            obj[1].material = inactivMaterial;
+            obj[2].material = inactivMaterial;
+            obj[3].material = inactivMaterial;
         }
         
     }
@@ -71,7 +74,10 @@ public class Opener : MonoBehaviour
         if (PlayerInRange)
         {
 
-            obj.material = setMaterial;
+            obj[0].material = setMaterial;
+            obj[1].material = setMaterial;
+            obj[2].material = setMaterial;
+            obj[3].material = setMaterial;
         }
     }
 
@@ -80,7 +86,10 @@ public class Opener : MonoBehaviour
         if (PlayerInRange)
         {
 
-            obj.material = inactivMaterial;
+            obj[0].material = inactivMaterial;
+            obj[1].material = inactivMaterial;
+            obj[2].material = inactivMaterial;
+            obj[3].material = inactivMaterial;
         }
     }
 
