@@ -9,6 +9,9 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
 {
     private PhotonView pv;
 
+    public GameObject dispObj;
+    private DispOpener dispOpen;
+
     // 0=hd 1=hq 2=hw 3=hy 4=hl
     public bool[] fluids = new bool[5];
 
@@ -70,7 +73,7 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
     void Start()
     {
         pv = GetComponent<PhotonView>();
-
+        dispOpen = dispObj.GetComponent<DispOpener>();
 
 
         fluids[0] = false;
@@ -370,6 +373,8 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
             {
                 Debug.Log("final MIX");
 
+                dispOpen.trigger = true;
+
                 // benutze dispenser um bombe auszugeben
 
             }
@@ -380,10 +385,11 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
         if (Input.GetKey(KeyCode.Space))
         {
             bombStone();
+           
         }
 
 
-        
+        pv.RPC("RPC_syncShelf", RpcTarget.AllBuffered, fluids, gasses, solids, dispOpen.trigger);
     }
 
 
@@ -874,7 +880,7 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
     }
 
     [PunRPC]
-    void RPC_syncShelf(bool[] pFluids, bool[] pGasses, bool[] pSolids)
+    void RPC_syncShelf(bool[] pFluids, bool[] pGasses, bool[] pSolids, bool openerTrigger)
     {
         for (int i = 0; i < pFluids.Length; i++)
         {
@@ -888,5 +894,7 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
         {
             solids[i] = pSolids[i];
         }
+
+        dispOpen.trigger = openerTrigger;
     }
 }
