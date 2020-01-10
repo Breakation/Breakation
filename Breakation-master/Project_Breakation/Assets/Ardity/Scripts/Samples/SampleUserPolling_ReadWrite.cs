@@ -40,6 +40,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
     public static int JoyYvalue;
     public static bool erdbebenMode;
     public static bool  timercd = false;
+    public static string sendtext = "lul";
 
     public SerialController serialController;
 
@@ -64,7 +65,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             Debug.Log("Sending A");
-        serialController.SendSerialMessage("A-moin servus moin&moin servus moin&moin servus moin&moin servus moin");
+        serialController.SendSerialMessage("A-moin servus moin&moin servvus moin&moin servus moin");
         }
 
         if (Input.GetKeyDown(KeyCode.B))
@@ -75,20 +76,23 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.N))
         {
-            Debug.Log("Sending Z");
-            serialController.SendSerialMessage("B-F-0-0");
+            Debug.Log(sendtext);
+            //Debug.Log("Sending Z");
+           // serialController.SendSerialMessage("B-F-0-0");
         }
         
-        /*if(timercd == true){
-            //serialController.SendSerialMessage(TimerLCD.temptime);
-            timercd = false;
-        }*/
+        if (sendtext != "lul")
+        {
+            Debug.Log("sendingmessageClock");
+            serialController.SendSerialMessage(sendtext);
+            sendtext = "lul";
+        }
 
 
         if (Input.GetKeyDown(KeyCode.T))
         {
             Debug.Log("Sending T");
-            serialController.SendSerialMessage("T-0100");
+            serialController.SendSerialMessage("T-1033");
         }
 
 
@@ -220,4 +224,6 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         else
             Debug.Log("Message arrived: " + message);
     }
+    
 }
+
