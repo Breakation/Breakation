@@ -10,6 +10,10 @@ public class SC_Zoomable : MonoBehaviour
      SC_ZoomController zoomScr;
     public string prefabName;
 
+    public int rotationNmbr;
+
+    public string objType;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +30,7 @@ public class SC_Zoomable : MonoBehaviour
     {
         if (!isCopy)
         {
-            zoomScr.zoomIn(prefabName);
+            zoomScr.zoomIn(prefabName,objType);
         }
         
     }

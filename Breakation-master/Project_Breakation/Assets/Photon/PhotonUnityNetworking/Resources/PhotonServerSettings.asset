@@ -36,5 +36,6 @@ MonoBehaviour:
   - RespawnSpaceship
   - RPC_AddCharacter
   - RPC_SyncTime
+  - RPC_syncShelf
   DisableAutoOpenWizard: 1
   ShowSettings: 1

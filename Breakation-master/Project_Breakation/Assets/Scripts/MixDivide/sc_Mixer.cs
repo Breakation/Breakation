@@ -1,28 +1,36 @@
-﻿using System;
+﻿using Photon.Pun;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class sc_Mixer : MonoBehaviour
+public class sc_Mixer : MonoBehaviourPun, IPunObservable
 {
+    private PhotonView pv;
+
     // 0=hd 1=hq 2=hw 3=hy 4=hl
-    private bool[] fluids = new bool[5];
+    public bool[] fluids = new bool[5];
 
     // 0=of 1=oa 2=ol 3=oz 4=op 5=ot
-    private bool[] gasses = new bool[6];
+    public bool[] gasses = new bool[6];
 
     // 0=ft 1=ff 2=fq 3=fh 4=fs 5=fy 6=fz
-    private bool[] solids = new bool[7];
+    public bool[] solids = new bool[7];
 
 
     private string[] possibleCombs = { "34*24", "23*13", "12*22","33*11","12*25","11*30","31*25","14*32","36*21", "13*22", "24*34", "13*23" , "22*12", "11*33", "25*12", "30*11" , "25*31" , "32*14", "21*36" , "22*13" };
     private string[] possibleDivs = { "10#" ,"20#", "35#", "11#", "30#", "31#","25#", "36#", "21#", "14#", "32#"};
 
+    private string[] finalComb = { "HD*OF*FY", "HD*FY*OF", "OF*HD*FY", "OF*FY*HD", "FY*HD*OF", "FY*OF*HD"};
+
+
     private char firstType;
     private char firstSub;
     private char secType;
     private char secSub;
+
+    public GameObject steinObj;
 
 
     public GameObject firstSubField;
@@ -61,6 +69,10 @@ public class sc_Mixer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pv = GetComponent<PhotonView>();
+
+
+
         fluids[0] = false;
         fluids[1] = false;
         fluids[2] = false;
@@ -86,7 +98,79 @@ public class sc_Mixer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(testkeypad.teststring.Length == 3)
+        if (fluids[0])
+        {
+            HDflask.SetActive(true);
+        }
+        if (fluids[1])
+        {
+            HQflask.SetActive(true);
+        }
+        if (fluids[2])
+        {
+            HWflask.SetActive(true);
+        }
+        if (fluids[3])
+        {
+            HYflask.SetActive(true);
+        }
+        if (fluids[4])
+        {
+            HLflask.SetActive(true);
+        }
+        if (gasses[0])
+        {
+            OFflask.SetActive(true);
+        }
+        if (gasses[1])
+        {
+            OAflask.SetActive(true);
+        }
+        if (gasses[2])
+        {
+            OLflask.SetActive(true);
+        }
+        if (gasses[3])
+        {
+            OZflask.SetActive(true);
+        }
+        if (gasses[4])
+        {
+            OPflask.SetActive(true);
+        }
+        if (gasses[5])
+        {
+            OTflask.SetActive(true);
+        }
+        if (solids[0])
+        {
+            FTflask.SetActive(true);
+        }
+        if (solids[1])
+        {
+            FFflask.SetActive(true);
+        }
+        if (solids[2])
+        {
+            FQflask.SetActive(true);
+        }
+        if (solids[3])
+        {
+            FHflask.SetActive(true);
+        }
+        if (solids[4])
+        {
+            FSflask.SetActive(true);
+        }
+        if (solids[5])
+        {
+            FYflask.SetActive(true);
+        }
+        if (solids[6])
+        {
+            FZflask.SetActive(true);
+        }
+        if (testkeypad.teststring.Length == 3)
         {
             for (int i = 0; i < possibleDivs.Length; i++)
             {
@@ -279,6 +363,27 @@ public class sc_Mixer : MonoBehaviour
                 }
             }
         }
+
+        if(testkeypad.teststring.Length == 8)
+        {
+            if(fluids[0] && gasses[0] && solids[5])
+            {
+                Debug.Log("final MIX");
+
+                // benutze dispenser um bombe auszugeben
+
+            }
+           
+
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            bombStone();
+        }
+
+
+        
     }
 
 
@@ -754,6 +859,34 @@ public class sc_Mixer : MonoBehaviour
                 {
                     Debug.Log("False Type");
                 }break;
+        }
+    }
+
+
+    public void bombStone()
+    {
+        steinObj.SetActive(false);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+
+    }
+
+    [PunRPC]
+    void RPC_syncShelf(bool[] pFluids, bool[] pGasses, bool[] pSolids)
+    {
+        for (int i = 0; i < pFluids.Length; i++)
+        {
+            fluids[i] = pFluids[i];
+        }
+        for (int i = 0; i < pGasses.Length; i++)
+        {
+            gasses[i] = pGasses[i];
+        }
+        for (int i = 0; i < pSolids.Length; i++)
+        {
+            solids[i] = pSolids[i];
         }
     }
 }
