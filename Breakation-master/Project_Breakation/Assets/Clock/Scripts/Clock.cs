@@ -27,7 +27,7 @@ public class Clock : MonoBehaviourPun, IPunObservable {
     public Vector3 distToCam = new Vector3(0,-2,2);
 
     public GameObject clockPrefab;
-
+    bool busymisy = false;
     Ray ray;
     RaycastHit raycasthit;
 
@@ -176,6 +176,12 @@ public class Clock : MonoBehaviourPun, IPunObservable {
         if(hour >= 12)
         {
             OpenerWithUhr.op_triggered = true;
+            if(isCopy ==false){
+            if (busymisy == false){
+                busymisy = true;
+            SampleUserPolling_ReadWrite.sendtext = "T-1103";
+            }
+            }
         }
 }
 

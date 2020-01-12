@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Opener : MonoBehaviour
+public class DispOpener : MonoBehaviour
 {
+    public bool trigger = false;
+
     private bool isOpen = false;
     private bool PlayerInRange = false;
   
@@ -50,24 +52,35 @@ public class Opener : MonoBehaviour
         
     }
 
-  /*  private bool isOpenPanelActive
+    private void Update()
     {
-        get
+        if (trigger)
         {
-            return OpenPanel.activeInHierarchy;
+            isOpen = !isOpen;
+            // UpdatePanelText();
+            _animator.SetBool("open", true) ;
+            trigger = false;
         }
     }
 
-     private void UpdatePanelText()
-     {
-         Text panelText = OpenPanel.transform.Find("Text").GetComponent<Text>();
-         if(panelText != null)
-         {
-             panelText.text = isOpen ? CloseText : OpenText;
-         }
-     }
-    */
-    
+    /*  private bool isOpenPanelActive
+      {
+          get
+          {
+              return OpenPanel.activeInHierarchy;
+          }
+      }
+
+       private void UpdatePanelText()
+       {
+           Text panelText = OpenPanel.transform.Find("Text").GetComponent<Text>();
+           if(panelText != null)
+           {
+               panelText.text = isOpen ? CloseText : OpenText;
+           }
+       }
+      */
+
 
     private void OnMouseOver()
     {

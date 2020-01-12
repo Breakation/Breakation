@@ -8,6 +8,7 @@ public class TimerLCD : MonoBehaviour
     float elapsed = 0f;
     public bool countdownzero = false;
     public static string temptime;
+    public static bool busytime = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +27,10 @@ public class TimerLCD : MonoBehaviour
                 timeStart += -100 + 59;
             } else { timeStart--;
             }
-            //Debug.Log(timeStart);
+            Debug.Log(timeStart);
             if(timeStart > 999) {
                 temptime = "T-" + timeStart.ToString();
+                
                 SampleUserPolling_ReadWrite.timercd = true;
             }
             if(timeStart == 0){

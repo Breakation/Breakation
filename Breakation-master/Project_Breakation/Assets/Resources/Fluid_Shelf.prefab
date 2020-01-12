@@ -1114,6 +1114,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9209352472528186305}
   - component: {fileID: 6550912269627855412}
+  - component: {fileID: 2595644284626194736}
+  - component: {fileID: 2595644284626194737}
   m_Layer: 0
   m_Name: Fluid_Shelf
   m_TagString: Untagged
@@ -1166,7 +1168,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCopy: 0
   zoomContr: {fileID: 0}
-  prefabName: 
+  prefabName: Fluid_Shelf
+  rotationNmbr: 90
+  objType: automatFluid
+--- !u!65 &2595644284626194736
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3353928736488550696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 2, z: 1.5}
+  m_Center: {x: 0.3, y: 0, z: 0}
+--- !u!114 &2595644284626194737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3353928736488550696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &760572682466213542
 PrefabInstance:
   m_ObjectHideFlags: 0
