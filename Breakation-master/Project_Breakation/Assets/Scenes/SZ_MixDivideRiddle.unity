@@ -779,6 +779,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7508079214715494380}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &278670501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3994801794046540555, guid: e83420f222570344193d805271aeaa79,
+    type: 3}
+  m_PrefabInstance: {fileID: 3994801793522285286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &278670504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278670501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8819fe6a0c9ea8c43b58d4902767b941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &278924348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,6 +2862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SerialController
       objectReference: {fileID: 0}
+    - target: {fileID: 11442534, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
+      propertyPath: portName
+      value: COM5
+      objectReference: {fileID: 0}
     - target: {fileID: 405068, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4087,6 +4109,11 @@ PrefabInstance:
     - target: {fileID: 3994801794046540552, guid: e83420f222570344193d805271aeaa79,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519469920190349834, guid: e83420f222570344193d805271aeaa79,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
