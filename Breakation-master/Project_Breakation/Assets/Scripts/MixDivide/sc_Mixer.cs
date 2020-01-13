@@ -173,11 +173,11 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
         {
             FZflask.SetActive(true);
         }
-        if (testkeypad.teststring.Length == 3)
+        if (testkeypad.sendkeypad.Length == 3)
         {
             for (int i = 0; i < possibleDivs.Length; i++)
             {
-                if(testkeypad.teststring == possibleDivs[i])
+                if(testkeypad.sendkeypad == possibleDivs[i])
                 {
                     firstType = possibleDivs[i][0];
                     firstSub = possibleDivs[i][1];
@@ -215,16 +215,16 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
 
                     
 
-                    testkeypad.teststring = "";
+                    testkeypad.sendkeypad = "";
                 }
             }
         }
 
-        if(testkeypad.teststring.Length == 5)
+        if(testkeypad.sendkeypad.Length == 5)
         {
             for (int i = 0; i < possibleCombs.Length; i++)
             {
-                if(testkeypad.teststring == possibleCombs[i])
+                if(testkeypad.sendkeypad == possibleCombs[i])
                 {
                     firstType = possibleCombs[i][0];
                     firstSub = possibleCombs[i][1];
@@ -362,12 +362,12 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
 
 
 
-                    testkeypad.teststring = "";
+                    testkeypad.sendkeypad = "";
                 }
             }
         }
 
-        if(testkeypad.teststring.Length == 8)
+        if(testkeypad.sendkeypad.Length == 8)
         {
             if(fluids[0] && gasses[0] && solids[5])
             {

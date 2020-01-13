@@ -73,14 +73,20 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             Debug.Log("Sending Z");
-            serialController.SendSerialMessage("B-T-0-0");
+            serialController.SendSerialMessage("B-C-T-07");
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log("Sending Z");
+            serialController.SendSerialMessage("B-O-34");
         }
 
         if (Input.GetKeyDown(KeyCode.N))
         {
-            Debug.Log(sendtext);
-            //Debug.Log("Sending Z");
-           // serialController.SendSerialMessage("B-F-0-0");
+           
+            Debug.Log("Sending Z");
+            serialController.SendSerialMessage("B-F-0-0");
         }
         
         if (sendtext != "lul")
@@ -94,7 +100,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             Debug.Log("Sending T");
-            serialController.SendSerialMessage("T-1033");
+            serialController.SendSerialMessage("T-1140");
         }
 
 
