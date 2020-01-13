@@ -8,7 +8,7 @@ public class LightsOutManager : MonoBehaviour {
     [Header("Game Elements")] //adds a header above some fields in the Inspector.
     public AutoGridLayout grid;
     public UIGame uiGame; // Infos die wir vielleicht anzeigen würden (Zeit, ob gelöst oder nicht etc...)
-    public GameObject cell; // die cells werden zur demonstrationszweck erst hier generiert, brauchen wir aber nicht da unsere eigentlichen cells ja schon von anfang an da sind
+    //public GameObject cell; // die cells werden zur demonstrationszweck erst hier generiert, brauchen wir aber nicht da unsere eigentlichen cells ja schon von anfang an da sind
 
     [Header("Game Stats")]
     public int numberOfClicks = 0, elapsedTime = 0;
@@ -22,15 +22,19 @@ public class LightsOutManager : MonoBehaviour {
     private int GridSize = 8;
     public int[,] arrayPattern =
     {
-        {0,1,1,1,1,1,1,1 },//0
-        {1,0,1,1,1,1,1,1 },//1
-        {1,1,0,1,1,1,1,1 },//2
-        {1,1,1,0,1,1,1,1 },//3
-        {1,1,1,1,0,1,1,1 },//4
-        {1,1,1,1,1,0,1,1 },//5
-        {1,1,1,1,1,1,0,1 },//6
-        {1,1,1,1,1,1,1,0 },//7
+        {-1,1,1,1,1,1,1,1 },//0
+        {1,-1,1,1,1,1,1,1 },//1
+        {1,1,-1,1,1,1,1,1 },//2
+        {1,1,1,-1,1,1,1,1 },//3
+        {1,1,1,1,-1,1,1,1 },//4
+        {1,1,1,1,1,-1,1,1 },//5
+        {1,1,1,1,1,1,-1,1 },//6
+        {1,1,1,1,1,1,1,-1},//7
     };
+    private int x=0, y=0;
+
+    private bool right, left, up, down, select;
+
 
     public static LightsOutManager Instance;
     //_________________________________________________ Methoden ______________________________________________________________
@@ -42,16 +46,74 @@ public class LightsOutManager : MonoBehaviour {
 
     void OnEnable()
     {
-        uiGame.endingText.gameObject.SetActive(false);
+        //uiGame.endingText.gameObject.SetActive(false);
         // Coroutine fängt ab ier an; der Grid wird generiert. Diese Funktion läuft die ganze Zeit bis das Spiel beendet wird. Brauchen wir später auch nicht!
         //StartCoroutine (GenerateStaticGrid(GridSize));
         Configure(GridSize);
         CountElapsedTime();
     }
 
+    public void navigation()
+    {
+        if ((Input.GetKeyDown(KeyCode.RightArrow))){
+            right = true;
+        }
+
+        if ((Input.GetKeyDown(KeyCode.LeftArrow)))
+        {
+            left = true;
+        }
+        if ((Input.GetKeyDown(KeyCode.UpArrow)))
+        {
+            up = true;
+        }
+        if ((Input.GetKeyDown(KeyCode.DownArrow)))
+        {
+            down = true;
+        }
+
+        if (right)
+        {
+            if (x < 7)
+            {
+                x++;
+            }
+            right = false;
+        }
+        if (left)
+        {
+            if (x > 0)
+            {
+                x--;
+            }
+            left = false;
+        }
+        if (up)
+        {
+            if (y > 0)
+            {
+                y--;
+            }
+            up = false;
+        }
+        if (down)
+        {
+            if (y < 7)
+            {
+                y++;
+            }
+            down = false;
+        }
+    }
+
+    private void increaseX()
+    {
+        x++;
+    }
     public void Configure(int size)
     {
-        ArrayOfCells = new Cell[size * size, size * size];
+        ArrayOfCells = new Cell[ size, size];
+        Debug.Log("array of Cells size = " + ArrayOfCells.Length);
         FillArray();
         applyPattern();
     }
@@ -83,7 +145,7 @@ public class LightsOutManager : MonoBehaviour {
         {
             for (int col = 0; col < GridSize; col++)
             {
-                if (arrayPattern[row, col] == 0)
+                if (arrayPattern[row, col] == -1)
                 {
                     ArrayOfCells[row, col].GetComponent<CellController>().cellStatus = CellController.Status.closed;
                     ArrayOfCells[row, col].GetComponent<CellController>().closeCap();

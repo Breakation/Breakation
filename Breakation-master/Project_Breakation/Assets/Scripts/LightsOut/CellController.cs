@@ -9,7 +9,13 @@ public class CellController : MonoBehaviour {
 
     private LightsOutManager GMInstance = LightsOutManager.Instance; // verwaltet den Rätsel
     public List<Cell> adjacentCells;
-    Transform cap;
+    public Animator animator;
+
+    private void Start()
+    {        
+        animator = GetComponent<Animator>();
+        Debug.Log("component of child: " + animator.name);
+    }
 
     // status der Zelle 
     public enum Status {
@@ -93,12 +99,15 @@ public class CellController : MonoBehaviour {
 
     internal void openCap()
     {
-        cap.rotation = Quaternion.RotateTowards(cap.rotation, Quaternion.Euler(0.0f, 0.0f, 0.0f), Time.deltaTime * 250);
+        
+        Debug.Log("cap is open from controller!");
+        animator.SetInteger("state", 1);
     }
 
     internal void closeCap()
     {
-        cap.rotation = Quaternion.RotateTowards(cap.rotation, Quaternion.Euler(-90.0f, 0.0f, 0.0f), Time.deltaTime * 250);
+        Debug.Log("cap is closed from controller!");
+        animator.SetInteger("state", -1);
     }
 }
 

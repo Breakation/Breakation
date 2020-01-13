@@ -2,33 +2,95 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArduinoKlasse : MonoBehaviour
+public class ArduinoKlasse : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    private int x = 0, y = 0;
+    private LightsOutManager GMInstance = LightsOutManager.Instance; // verwaltet den Rätsel
+    private bool right, left, up, down, select;
+    private string position = "B-O-xy";
+   
     // Update is called once per frame
     void Update()
     {
-        
+        this.navigation();
     }
 
-    public void changeCellColour()
+    public void navigation()
     {
-        // arduio 
-        /*
-        if (cellStatus == CellController.CellStatus.open)
-        {// wenn Zelle an ist, schalte es aus
-            cellStatus = CellController.CellStatus.closed;
-            this.gameObject.GetComponent<CanvasRenderer>().SetColor(Color.grey);
+        if ((Input.GetKeyDown(KeyCode.RightArrow)))
+        {
+            right = true;
         }
-        else
-        {//sonst mach es an
-            cellStatus = CellController.CellStatus.open;
-            this.gameObject.GetComponent<CanvasRenderer>().SetColor(new Color32(135, 204, 196, 255));
-        }*/
+
+        if ((Input.GetKeyDown(KeyCode.LeftArrow)))
+        {
+            left = true;
+        }
+        if ((Input.GetKeyDown(KeyCode.UpArrow)))
+        {
+            up = true;
+        }
+        if ((Input.GetKeyDown(KeyCode.DownArrow)))
+        {
+            down = true;
+        }
+
+        if (right)
+        {
+            if (y < 7)
+            {
+                y++;
+                position.Remove(5);
+                position += y;
+                SampleUserPolling_ReadWrite.sendtext = position;
+            }
+            right = false;
+        }
+        if (left)
+        {
+            if (y > 0)
+            {
+                y--;
+                position.Remove(5);
+                position += y;
+                SampleUserPolling_ReadWrite.sendtext = position;
+            }
+            left = false;
+        }
+        if (up)
+        {
+            if (x < 7)
+            {
+                x++;
+                position.Remove(4);
+                position += x;
+                position += y;
+                SampleUserPolling_ReadWrite.sendtext = position;
+            }
+            up = false;
+        }
+        if (down)
+        {
+            if (x > 0)
+            {
+                x--;
+                position.Remove(4);
+                position += x;
+                position += y;
+                SampleUserPolling_ReadWrite.sendtext = position;
+            }
+            down = false;
+        }
+
+        if ((Input.GetKeyDown(KeyCode.KeypadEnter)))
+        {
+            select = true;
+        }
+        if (select)
+        {
+            GMInstance.ArrayOfCells[7-x, 7-y].cellController.AffectCells();
+            select = false;
+        }
     }
+    
 }

@@ -5,12 +5,16 @@ using UnityEngine;
 public class Cell : MonoBehaviour
 {
     // diese Klasse ist für unseren Behälter. Mit der interagiert Spieler im spiel
-    private bool closable;
+    public bool closable;
     public bool special, onTrigger, capOpen, allowedToOpen;
     public Transform capHinge;
     public CellController cellController;
+    //Animator animator;
 
-
+    private void Start()
+    {
+        //animator = GetComponent<Animator>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("I am in!");
@@ -19,7 +23,7 @@ public class Cell : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("I am closed!");
+        Debug.Log("I am out!");
         onTrigger = false;
         allowedToOpen = false;
     }
@@ -43,7 +47,18 @@ public class Cell : MonoBehaviour
         {
             Debug.Log("cap is open!");
             //rotation annimation
-            capHinge.rotation = Quaternion.RotateTowards(capHinge.rotation, Quaternion.Euler(0.0f, 0.0f, 0.0f), Time.deltaTime * 250);
+            capHinge.rotation = Quaternion.RotateTowards(capHinge.rotation, Quaternion.Euler(-0.0f, -0.0f, 0.0f), Time.deltaTime * 250);
+            //animator.SetInteger("anim_state",1);{
+
+            if (cellController.cellStatus ==  CellController.Status.open)
+            {
+                cellController.closeCap();
+            }
+            else
+            {
+                cellController.openCap();
+            }
+            
             cellController.AffectCells();
         }
     }
@@ -67,6 +82,11 @@ public class Cell : MonoBehaviour
                     allowedToOpen = true;
                     onTrigger = false;
                 }
+            }
+
+            if (allowedToOpen)
+            {
+                GUI.Box(new Rect(0, 0, 200, 25), "you are now allowed to open!");
             }
         }
     }
