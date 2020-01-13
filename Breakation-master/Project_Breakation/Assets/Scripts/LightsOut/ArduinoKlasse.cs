@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArduinoKlasse : ScriptableObject
+public class ArduinoKlasse : MonoBehaviour
 {
     private int x = 0, y = 0;
     private LightsOutManager GMInstance = LightsOutManager.Instance; // verwaltet den Rätsel
-    private bool right, left, up, down, select;
+    private bool ArrowRight, ArrowLeft, ArrowUp, ArrowDown, select;
     private string position = "B-O-xy";
    
     // Update is called once per frame
@@ -19,23 +19,23 @@ public class ArduinoKlasse : ScriptableObject
     {
         if ((Input.GetKeyDown(KeyCode.RightArrow)))
         {
-            right = true;
+            ArrowRight = true;
         }
 
         if ((Input.GetKeyDown(KeyCode.LeftArrow)))
         {
-            left = true;
+            ArrowLeft = true;
         }
         if ((Input.GetKeyDown(KeyCode.UpArrow)))
         {
-            up = true;
+            ArrowUp = true;
         }
         if ((Input.GetKeyDown(KeyCode.DownArrow)))
         {
-            down = true;
+            ArrowDown = true;
         }
 
-        if (right)
+        if (ArrowRight)
         {
             if (y < 7)
             {
@@ -44,9 +44,9 @@ public class ArduinoKlasse : ScriptableObject
                 position += y;
                 SampleUserPolling_ReadWrite.sendtext = position;
             }
-            right = false;
+            ArrowRight = false;
         }
-        if (left)
+        if (ArrowLeft)
         {
             if (y > 0)
             {
@@ -55,9 +55,9 @@ public class ArduinoKlasse : ScriptableObject
                 position += y;
                 SampleUserPolling_ReadWrite.sendtext = position;
             }
-            left = false;
+            ArrowLeft = false;
         }
-        if (up)
+        if (ArrowUp)
         {
             if (x < 7)
             {
@@ -67,9 +67,9 @@ public class ArduinoKlasse : ScriptableObject
                 position += y;
                 SampleUserPolling_ReadWrite.sendtext = position;
             }
-            up = false;
+            ArrowUp = false;
         }
-        if (down)
+        if (ArrowDown)
         {
             if (x > 0)
             {
@@ -79,7 +79,7 @@ public class ArduinoKlasse : ScriptableObject
                 position += y;
                 SampleUserPolling_ReadWrite.sendtext = position;
             }
-            down = false;
+            ArrowDown = false;
         }
 
         if ((Input.GetKeyDown(KeyCode.KeypadEnter)))

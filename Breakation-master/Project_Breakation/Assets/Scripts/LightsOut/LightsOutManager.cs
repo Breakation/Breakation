@@ -31,18 +31,16 @@ public class LightsOutManager : MonoBehaviour {
         {1,1,1,1,1,1,-1,1 },//6
         {1,1,1,1,1,1,1,-1},//7
     };
-    private int x=7, y=7;
-
-    private bool right, left, up, down, select;
 
 
     public static LightsOutManager Instance;
-    private ArduinoKlasse arduinoKlasse = new ArduinoKlasse(); 
+    private static ArduinoKlasse arduinoKlasse; 
     //_________________________________________________ Methoden ______________________________________________________________
 
     void Awake() // damit wird die Instanz aufgerufen
     {
         Instance = this;
+        arduinoKlasse = gameObject.AddComponent(typeof(ArduinoKlasse)) as ArduinoKlasse;
     }
 
     private void Update()

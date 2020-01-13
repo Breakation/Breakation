@@ -20,7 +20,7 @@ using System.Threading;
  *
  * The serial device must send its messages separated by a newline character.
  * Neither the SerialController nor the SerialThread perform any validation
- * on the integrity of the message. It's up to the one that makes sense of the
+ * on the integrity of the message. It's ArrowUp to the one that makes sense of the
  * data.
  */
 public class SerialController : MonoBehaviour
@@ -77,7 +77,7 @@ public class SerialController : MonoBehaviour
     // ------------------------------------------------------------------------
     void OnDisable()
     {
-        // If there is a user-defined tear-down function, execute it before
+        // If there is a user-defined tear-ArrowDown function, execute it before
         // closing the underlying COM port.
         if (userDefinedTearDownFunction != null)
             userDefinedTearDownFunction();
@@ -147,7 +147,7 @@ public class SerialController : MonoBehaviour
 
     // ------------------------------------------------------------------------
     // Executes a user-defined function before Unity closes the COM port, so
-    // the user can send some tear-down message to the hardware reliably.
+    // the user can send some tear-ArrowDown message to the hardware reliably.
     // ------------------------------------------------------------------------
     public delegate void TearDownFunction();
     private TearDownFunction userDefinedTearDownFunction;

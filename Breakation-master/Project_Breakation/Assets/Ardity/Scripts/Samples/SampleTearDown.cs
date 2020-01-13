@@ -66,7 +66,7 @@ public class SampleTearDown : MonoBehaviour
             Debug.Log("Message arrived: " + message);
     }
 
-    // Tear-down function for the hardware at the other side of the COM port
+    // Tear-ArrowDown function for the hardware at the other side of the COM port
     public void lightsShutdown()
     {
         Debug.Log("Executing teardown");
