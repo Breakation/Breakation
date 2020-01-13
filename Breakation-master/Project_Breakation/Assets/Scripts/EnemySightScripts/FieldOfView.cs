@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class FieldOfView : MonoBehaviour
 {
+    public GameObject player;
+    public Text gameOverScreen;
+    public GameObject gameOverButton;
+    private bool gameOverTrigger = false;
+
 
     public float viewRadius;
     [Range(0, 360)]
@@ -34,6 +40,21 @@ public class FieldOfView : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(gameOverTrigger && gameOverScreen.color.a < 1)
+        {
+            Color tempClr = gameOverScreen.color;
+            tempClr.a += 0.02f;
+            gameOverScreen.color = tempClr;
+        }
+
+        if(gameOverScreen.color.a >= 1)
+        {
+            gameOverButton.SetActive(true);
+        }
+    }
+
     void FindVisibleTargets()
     {
         visibleTargets.Clear();
@@ -50,6 +71,15 @@ public class FieldOfView : MonoBehaviour
                 if (!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
                 {
                     visibleTargets.Add(target);
+
+                    CharacterController tempCntr = player.GetComponent<CharacterController>();
+                    tempCntr.enabled = false;
+
+                    gameOverTrigger = true;
+                    sc_staticPatrol tempScr = GetComponent<sc_staticPatrol>();
+
+                    tempScr.enabled = false;
+
                 }
             }
         }
