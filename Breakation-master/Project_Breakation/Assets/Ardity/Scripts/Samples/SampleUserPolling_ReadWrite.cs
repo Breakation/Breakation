@@ -33,6 +33,12 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
     public static bool keypad12;
     public static bool keypad13;
     public static bool keypad14;
+    public static bool arrowleft;
+    public static bool arrowright;
+    public static bool arrowup;
+    public static bool arrowdown;
+    public static bool buttonX;
+
     public static int pot1value;
     public static int pot2value;
     public static int pot3value;
@@ -172,6 +178,35 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         }
 
         // keypad
+
+        if (message == "arrowup"){
+            Debug.Log(message);
+            arrowup = true;
+            
+        } 
+
+        if (message == "arrowdown"){
+            Debug.Log(message);
+            arrowdown = true;
+            
+        } 
+
+        if (message == "arrowleft"){
+            Debug.Log(message);
+            arrowleft = true;
+            
+        } 
+
+        if (message == "arrowright"){
+            Debug.Log(message);
+            arrowright = true;
+            
+        }
+        if (message == "ButtonX"){
+            Debug.Log(message);
+            buttonX = true;
+            
+        }  
 
         if (message == "keypad1"){
             Debug.Log(message);
