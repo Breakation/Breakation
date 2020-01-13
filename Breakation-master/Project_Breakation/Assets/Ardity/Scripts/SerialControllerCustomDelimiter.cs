@@ -66,7 +66,7 @@ public class SerialControllerCustomDelimiter : MonoBehaviour
     // ------------------------------------------------------------------------
     void OnDisable()
     {
-        // If there is a user-defined tear-down function, execute it before
+        // If there is a user-defined tear-ArrowDown function, execute it before
         // closing the underlying COM port.
         if (userDefinedTearDownFunction != null)
             userDefinedTearDownFunction();
@@ -131,7 +131,7 @@ public class SerialControllerCustomDelimiter : MonoBehaviour
 
     // ------------------------------------------------------------------------
     // Executes a user-defined function before Unity closes the COM port, so
-    // the user can send some tear-down message to the hardware reliably.
+    // the user can send some tear-ArrowDown message to the hardware reliably.
     // ------------------------------------------------------------------------
     public delegate void TearDownFunction();
     private TearDownFunction userDefinedTearDownFunction;

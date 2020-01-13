@@ -50,10 +50,10 @@ public class GUI_Demo : MonoBehaviour {
 
 		GUI.Label (new Rect (180, 215, 100, 20), "ScrollView");
 		scrollPosition = GUI.BeginScrollView (new Rect (180,235,160,100), scrollPosition, new Rect (0, 0, 220, 200));
-		GUI.Button (new Rect (0,10,100,20), "Top-left");
-		GUI.Button (new Rect (120,10,100,20), "Top-right");
-		GUI.Button (new Rect (0,170,100,20), "Bottom-left");
-		GUI.Button (new Rect (120,170,100,20), "Bottom-right");
+		GUI.Button (new Rect (0,10,100,20), "Top-ArrowLeft");
+		GUI.Button (new Rect (120,10,100,20), "Top-ArrowRight");
+		GUI.Button (new Rect (0,170,100,20), "Bottom-ArrowLeft");
+		GUI.Button (new Rect (120,170,100,20), "Bottom-ArrowRight");
 		GUI.EndScrollView ();
 
 

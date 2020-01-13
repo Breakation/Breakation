@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    public int currentItem; // keep track of the number of picked up items
+    public int currentItem; // keep track of the number of picked ArrowUp items
     public Text ItemText;
 
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void addItem(int itemToAdd)//to add picked up item to the list
+    public void addItem(int itemToAdd)//to add picked ArrowUp item to the list
     {
         currentItem += itemToAdd;
         ItemText.text = "Points: " + currentItem;

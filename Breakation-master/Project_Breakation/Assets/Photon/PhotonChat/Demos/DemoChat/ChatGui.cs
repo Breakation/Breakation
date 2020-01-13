@@ -125,7 +125,7 @@ public class ChatGui : MonoBehaviour, IChatClientListener
 
 		if (string.IsNullOrEmpty(this.UserName))
 		{
-		    this.UserName = "user" + Environment.TickCount%99; //made-up username
+		    this.UserName = "user" + Environment.TickCount%99; //made-ArrowUp username
 		}
 
         #if PHOTON_UNITY_NETWORKING

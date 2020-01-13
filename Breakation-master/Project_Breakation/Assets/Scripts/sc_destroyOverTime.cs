@@ -8,7 +8,7 @@ using UnityEngine;
 public class sc_destroyOverTime : MonoBehaviour
 {
 
-    public float lifetime; // we give it a life time a little bit longer than our pick up effect would last!
+    public float lifetime; // we give it a life time a little bit longer than our pick ArrowUp effect would last!
 
     // Start is called before the first frame update
     void Start()

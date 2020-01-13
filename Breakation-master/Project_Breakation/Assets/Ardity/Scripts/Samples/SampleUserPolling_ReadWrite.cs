@@ -33,6 +33,12 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
     public static bool keypad12;
     public static bool keypad13;
     public static bool keypad14;
+    public static bool arrowleft;
+    public static bool arrowright;
+    public static bool arrowup;
+    public static bool arrowdown;
+    public static bool buttonX;
+
     public static int pot1value;
     public static int pot2value;
     public static int pot3value;
@@ -73,14 +79,20 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             Debug.Log("Sending Z");
-            serialController.SendSerialMessage("B-T-0-0");
+            serialController.SendSerialMessage("B-C-T-07");
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log("Sending Z");
+            serialController.SendSerialMessage("B-O-34");
         }
 
         if (Input.GetKeyDown(KeyCode.N))
         {
-            Debug.Log(sendtext);
-            //Debug.Log("Sending Z");
-           // serialController.SendSerialMessage("B-F-0-0");
+           
+            Debug.Log("Sending Z");
+            serialController.SendSerialMessage("B-F-0-0");
         }
         
         if (sendtext != "lul")
@@ -94,7 +106,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             Debug.Log("Sending T");
-            serialController.SendSerialMessage("T-1033");
+            serialController.SendSerialMessage("T-1140");
         }
 
 
@@ -166,6 +178,35 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         }
 
         // keypad
+
+        if (message == "arrowup"){
+            Debug.Log(message);
+            arrowup = true;
+            
+        } 
+
+        if (message == "arrowdown"){
+            Debug.Log(message);
+            arrowdown = true;
+            
+        } 
+
+        if (message == "arrowleft"){
+            Debug.Log(message);
+            arrowleft = true;
+            
+        } 
+
+        if (message == "arrowright"){
+            Debug.Log(message);
+            arrowright = true;
+            
+        }
+        if (message == "ButtonX"){
+            Debug.Log(message);
+            buttonX = true;
+            
+        }  
 
         if (message == "keypad1"){
             Debug.Log(message);

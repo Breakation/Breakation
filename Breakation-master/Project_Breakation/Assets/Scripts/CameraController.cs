@@ -60,7 +60,7 @@ public class CameraController : MonoBehaviour
         }
 
 
-        //limit up/down camera rotation
+        //limit ArrowUp/ArrowDown camera rotation
         if (pivot.rotation.eulerAngles.x > maxViewAngle && pivot.rotation.eulerAngles.x < 180f)
         {
             pivot.rotation = Quaternion.Euler(maxViewAngle, 0, 0);
