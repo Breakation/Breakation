@@ -1,5 +1,4 @@
-﻿/* LÖSCHEN
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,17 +15,11 @@ public class LightsOutManager : MonoBehaviour {
 
     // variablen für den Gridgenerierung und -Verwaltung
     public Cell[,] ArrayOfCells;
-    //public GameObject[,] ArrayOfCells;
     public List<Cell> ListOfCells;
-    //public List<GameObject> ListOfCells;
     CellController cellController;
 
     //konstante Werte
     private int GridSize = 8;
-    // wir brauchen die Farben nicht; bei uns auf oder zu
-    public Color32 onColour = new Color32(135, 204, 196, 255);
-    public Color32 offColour = new Color32(128, 128, 128, 128);
-
     public int[,] arrayPattern =
     {
         {0,1,1,1,1,1,1,1 },//0
@@ -63,10 +56,11 @@ public class LightsOutManager : MonoBehaviour {
         applyPattern();
     }
 
-    public void FillArray()
+    public void FillArray() //das wird für die Methode GetAdjacentCells in der Cellcontrollerklasse verwendet
     {
         Cell[] arrayOfObjects = GameObject.FindObjectsOfType<Cell>();
         Debug.Log(arrayOfObjects.Length);
+
         int k = 0;
         for (var i = 0; i < GridSize; i++)
         {
@@ -77,17 +71,8 @@ public class LightsOutManager : MonoBehaviour {
                 cellController = ArrayOfCells[i, j].GetComponent<CellController>();
                 cellController.xCoord = i;
                 cellController.yCoord = j;
-<<<<<<< HEAD
                 k++;
-=======
-
-                // alle sind initial : Lit
-                /*cellController.cellStatus = CellController.Status.Lit;
-                ArrayOfCells[i, j].GetComponent<CanvasRenderer>().SetColor(onColour);*/ 
-                
-
-                /* LÖSCHEN
->>>>>>> 7a173fd07bfdeaee8b07711bfd39a513106cb9e2
+              
             }
         }
     }
@@ -100,64 +85,25 @@ public class LightsOutManager : MonoBehaviour {
             {
                 if (arrayPattern[row, col] == 0)
                 {
-                    ArrayOfCells[row, col].GetComponent<CellController>().cellStatus = CellController.Status.Out;
+                    ArrayOfCells[row, col].GetComponent<CellController>().cellStatus = CellController.Status.closed;
                     ArrayOfCells[row, col].GetComponent<CellController>().closeCap();
                 }
                 else
                 {
-                    ArrayOfCells[row, col].GetComponent<CellController>().cellStatus = CellController.Status.Lit;
+                    ArrayOfCells[row, col].GetComponent<CellController>().cellStatus = CellController.Status.open;
                     ArrayOfCells[row, col].GetComponent<CellController>().openCap();
                 }
             }
         }
     }
-
-    /* IEnumerator GenerateStaticGrid(int size)
-     {
-         ArrayOfCells = new GameObject[size * size, size * size];
-         grid.m_Column = size; // m_column Attribut der AutoGridLayout von Unity
-
-         yield return new WaitForEndOfFrame(); // Ab hier läuft die Funktion über den jetzigen Frame, in dem die sie gerufen wurde, hinaus
-
-         for (var i = 0; i < size; i++)
-         {
-             for (var j = 0; j < size; j++)
-             {
-                 // Erstellung der Cells: der name am Ende taucht in der Hierarchie auf!
-                 ArrayOfCells[i, j] = (GameObject)Instantiate(cell, new Vector3(1, 1, 1), Quaternion.identity); 
-                 ArrayOfCells[i, j].transform.SetParent(grid.transform);
-                 ArrayOfCells[i, j].transform.localScale = new Vector3(1, 1, 1);
-                 ArrayOfCells[i, j].name = "Cell[" + i + "][" + j + "]";
-
-                 ListOfCells.Add(ArrayOfCells[i, j]);
-
-                 cellController = ArrayOfCells[i, j].GetComponent<CellController>();
-                 cellController.xCoord = i;
-                 cellController.yCoord = j;
-
-                 // alle sind initial : Lit
-                 /*cellController.cellStatus = CellController.Status.Lit;
-                 ArrayOfCells[i, j].GetComponent<CanvasRenderer>().SetColor(onColour);
-
-
-
-             }
-         }
-
-         applyPattern();
-     }
-     */
-
-     /*
     public void CountElapsedTime()
-	{
-		InvokeRepeating("IncrementElapsedTime", 1f, 1f);
-	}
-	void IncrementElapsedTime()
-	{
-		elapsedTime++;
-
-	}
+    {
+        InvokeRepeating("IncrementElapsedTime", 1f, 1f);
+    }
+    void IncrementElapsedTime()
+    {
+        elapsedTime++;
+    }
 
 
     public bool CheckForWin()// check ob mindestens eine Zelle noch an ist. wenn ja return win false und das Spiel geht weiter
@@ -168,7 +114,7 @@ public class LightsOutManager : MonoBehaviour {
         {
             for (int col = 0; col < GridSize; col++)
             {
-                if (this.ArrayOfCells[row, col].GetComponent<CellController>().cellStatus == CellController.Status.Lit)
+                if (this.ArrayOfCells[row, col].GetComponent<CellController>().cellStatus == CellController.Status.open)
                 {
                     Debug.Log(ArrayOfCells[row, col].name);
                     win = false;
@@ -180,7 +126,44 @@ public class LightsOutManager : MonoBehaviour {
         return win;  // true
     }
 
-   
+
+    /*IEnumerator GenerateStaticGrid(int size)
+    {
+        ArrayOfCells = new Cell[size * size, size * size];
+        grid.m_Column = size; // m_column Attribut der AutoGridLayout von Unity
+
+        yield return new WaitForEndOfFrame(); // Ab hier läuft die Funktion über den jetzigen Frame, in dem die sie gerufen wurde, hinaus
+
+        for (var i = 0; i < size; i++)
+        {
+            for (var j = 0; j < size; j++)
+            {
+               /*
+                // Erstellung der Cells: der name am Ende taucht in der Hierarchie auf!
+                ArrayOfCells[i, j] = Instantiate(cell, new Vector3(1, 1, 1), Quaternion.identity); 
+                ArrayOfCells[i, j].transform.SetParent(grid.transform);
+                ArrayOfCells[i, j].transform.localScale = new Vector3(1, 1, 1);
+                ArrayOfCells[i, j].name = "Cell[" + i + "][" + j + "]";
+
+                ListOfCells.Add(ArrayOfCells[i, j]);
+
+                cellController = ArrayOfCells[i, j].GetComponent<CellController>();
+                cellController.xCoord = i;
+                cellController.yCoord = j;
+
+                // alle sind initial : open
+                cellController.cellStatus = CellController.Status.open;
+                ArrayOfCells[i, j].GetComponent<CanvasRenderer>().SetColor(onColour);
+
+
+            }
+        }
+
+        applyPattern();
+    }
+*/
+
+
+
 
 }
-LÖSCHEN */

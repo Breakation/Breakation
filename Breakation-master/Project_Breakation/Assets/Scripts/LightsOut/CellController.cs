@@ -1,4 +1,4 @@
-﻿/*using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,53 +13,52 @@ public class CellController : MonoBehaviour {
 
     // status der Zelle 
     public enum Status {
-		Lit,
-		Out
+		open,
+		closed
 	}
+
 	public Status cellStatus;
 
     // x und y coordinate der Zelle in der 2-dimensionalen Array (samt getters und setters)
 	public int xCoord {	get; set; }
 	public int yCoord {	get; set; }
 
-	public void OnMouseDown() { // diese werden beim Clicken immer aufgerufen
-		SwitchCellColor (); // Zustand der Zelle selbst wird geändert
-		SwitchAdjacentCellColor (); //Zustände der umliegenden Zellen
+	public void AffectCells() { // diese werden beim Clicken immer aufgerufen
+		SwitchCellState (); // Zustand der Zelle selbst wird geändert
+		SwitchAdjacentCellState (); //Zustände der umliegenden Zellen
         GMInstance.numberOfClicks++; // Anzahl clicks wird erhöht
         GMInstance.CheckForWin(); // gecheckt ob alle cells off sind = Gewinn!
 	}
 
-	public void SwitchCellColor () {
-		if (cellStatus == CellController.Status.Lit) {
-			cellStatus = CellController.Status.Out;
-			//this.gameObject.GetComponent<CanvasRenderer>().SetColor(GMInstance.offColour);
+	public void SwitchCellState () {
+		if (cellStatus == CellController.Status.open) {
+			cellStatus = CellController.Status.closed;
             this.closeCap();
 		} else {
-			cellStatus = CellController.Status.Lit;
-			//this.gameObject.GetComponent<CanvasRenderer>().SetColor(GMInstance.onColour);
+			cellStatus = CellController.Status.open;
             this.openCap();
 		}
 	}
 
-	public void SwitchAdjacentCellColor() {
-		StartCoroutine("ISwitchAdjacentCellColor");
+	public void SwitchAdjacentCellState() {
+		StartCoroutine("ISwitchAdjacentCellState");
 	}
 
-	IEnumerator ISwitchAdjacentCellColor() {
+	IEnumerator ISwitchAdjacentCellState() {
 		
 		GetAdjacentCells ();
 
 		yield return new WaitForEndOfFrame ();
-		foreach (var item in adjacentCells) {
-			var selectedCell = item.GetComponent<CellController> ();
 
-			if (selectedCell.cellStatus == Status.Lit) {
-				selectedCell.cellStatus = Status.Out;
-				item.gameObject.GetComponent<CanvasRenderer> ().SetColor (GMInstance.offColour);
+		foreach (var item in adjacentCells) {
+
+            var selectedCell = item.GetComponent<CellController> ();
+
+			if (selectedCell.cellStatus == Status.open) {
+				selectedCell.cellStatus = Status.closed;
                 item.GetComponent<CellController>().closeCap();
             } else {
-				selectedCell.cellStatus = CellController.Status.Lit;
-				//item.gameObject.GetComponent<CanvasRenderer> ().SetColor (GMInstance.onColour);
+				selectedCell.cellStatus = CellController.Status.open;
                 item.GetComponent<CellController>().openCap();
             }
 		}
@@ -91,7 +90,6 @@ public class CellController : MonoBehaviour {
 		
 		}
 	}
-<<<<<<< HEAD
 
     internal void openCap()
     {
@@ -103,7 +101,6 @@ public class CellController : MonoBehaviour {
         cap.rotation = Quaternion.RotateTowards(cap.rotation, Quaternion.Euler(-90.0f, 0.0f, 0.0f), Time.deltaTime * 250);
     }
 }
-=======
-}
-LÖSCHEN*/ 
+
+ 
 

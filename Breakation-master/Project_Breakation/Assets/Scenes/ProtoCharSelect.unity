@@ -243,6 +243,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6897486589016713910, guid: cf3ef918794b2b749abe7e52c56c22cc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1594642506}
+    - target: {fileID: 6897486589016713910, guid: cf3ef918794b2b749abe7e52c56c22cc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartHack
+      objectReference: {fileID: 0}
     - target: {fileID: 6897486589652682664, guid: cf3ef918794b2b749abe7e52c56c22cc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -262,16 +272,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CancelHack
-      objectReference: {fileID: 0}
-    - target: {fileID: 6897486589016713910, guid: cf3ef918794b2b749abe7e52c56c22cc,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1594642506}
-    - target: {fileID: 6897486589016713910, guid: cf3ef918794b2b749abe7e52c56c22cc,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartHack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf3ef918794b2b749abe7e52c56c22cc, type: 3}
@@ -897,7 +897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1594642505
 Transform:
   m_ObjectHideFlags: 0
