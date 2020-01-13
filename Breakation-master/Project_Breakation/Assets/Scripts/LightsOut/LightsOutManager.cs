@@ -31,12 +31,13 @@ public class LightsOutManager : MonoBehaviour {
         {1,1,1,1,1,1,-1,1 },//6
         {1,1,1,1,1,1,1,-1},//7
     };
-    private int x=0, y=0;
+    private int x=7, y=7;
 
     private bool right, left, up, down, select;
 
 
     public static LightsOutManager Instance;
+    private ArduinoKlasse arduinoKlasse = new ArduinoKlasse(); 
     //_________________________________________________ Methoden ______________________________________________________________
 
     void Awake() // damit wird die Instanz aufgerufen
@@ -44,6 +45,10 @@ public class LightsOutManager : MonoBehaviour {
         Instance = this;
     }
 
+    private void Update()
+    {
+        arduinoKlasse.navigation();
+    }
     void OnEnable()
     {
         //uiGame.endingText.gameObject.SetActive(false);
@@ -53,63 +58,7 @@ public class LightsOutManager : MonoBehaviour {
         CountElapsedTime();
     }
 
-    public void navigation()
-    {
-        if ((Input.GetKeyDown(KeyCode.RightArrow))){
-            right = true;
-        }
 
-        if ((Input.GetKeyDown(KeyCode.LeftArrow)))
-        {
-            left = true;
-        }
-        if ((Input.GetKeyDown(KeyCode.UpArrow)))
-        {
-            up = true;
-        }
-        if ((Input.GetKeyDown(KeyCode.DownArrow)))
-        {
-            down = true;
-        }
-
-        if (right)
-        {
-            if (x < 7)
-            {
-                x++;
-            }
-            right = false;
-        }
-        if (left)
-        {
-            if (x > 0)
-            {
-                x--;
-            }
-            left = false;
-        }
-        if (up)
-        {
-            if (y > 0)
-            {
-                y--;
-            }
-            up = false;
-        }
-        if (down)
-        {
-            if (y < 7)
-            {
-                y++;
-            }
-            down = false;
-        }
-    }
-
-    private void increaseX()
-    {
-        x++;
-    }
     public void Configure(int size)
     {
         ArrayOfCells = new Cell[ size, size];
