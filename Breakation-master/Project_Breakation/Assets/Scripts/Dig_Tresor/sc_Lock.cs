@@ -28,10 +28,10 @@ public class sc_Lock : MonoBehaviour
     void Update()
     {
 
-        input[0] = input[0];
-        input[1] = input[1];
-        input[2] = input[2];
-        input[3] = input[3];
+        input[0] = SampleUserPolling_ReadWrite.pot1value;
+        input[1] = SampleUserPolling_ReadWrite.pot2value;
+        input[2] = SampleUserPolling_ReadWrite.pot3value;
+        input[3] = SampleUserPolling_ReadWrite.pot4value;
 
         switch (targetInput)
         {

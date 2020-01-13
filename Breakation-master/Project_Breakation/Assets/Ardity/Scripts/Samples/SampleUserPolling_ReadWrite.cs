@@ -32,6 +32,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
     public static bool keypad11;
     public static bool keypad12;
     public static bool keypad13;
+    public static bool keypad14;
     public static int pot1value;
     public static int pot2value;
     public static int pot3value;
@@ -62,10 +63,11 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
 
         // If you press one of these keys send it to the serial device. A
         // sample serial device that accepts this input is given in the README.
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("Sending A");
-        serialController.SendSerialMessage("A-moin servus moin&moin servvus moin&moin servus moin");
+            Debug.Log("Sending P");
+        serialController.SendSerialMessage("P1");
+        
         }
 
         if (Input.GetKeyDown(KeyCode.B))
@@ -121,24 +123,28 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
             string[] numbers = message.Split(',');
             pot1value = int.Parse(numbers[1]);
             Debug.Log(pot1value);
+            
         }
 
         if((message != null) && (message.Contains("pot2"))){
             string[] numbers = message.Split(',');
             pot2value = int.Parse(numbers[1]);
             Debug.Log(pot2value);
+            
         }
 
         if((message != null) && (message.Contains("pot3"))){
             string[] numbers = message.Split(',');
             pot3value = int.Parse(numbers[1]);
             Debug.Log(pot3value);
+            
         }
 
         if((message != null) && (message.Contains("pot4"))){
             string[] numbers = message.Split(',');
             pot4value = int.Parse(numbers[1]);
             Debug.Log(pot4value);
+            
         }
 
         //Joystick
@@ -164,54 +170,73 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         if (message == "keypad1"){
             Debug.Log(message);
             keypad1 = true;
+            
         } 
         if (message == "keypad2"){
             Debug.Log(message);
             keypad2 = true;
+            
         } 
         if (message == "keypad3"){
             Debug.Log(message);
             keypad3 = true;
+            
         } 
         if (message == "keypad4"){
             Debug.Log(message);
             keypad4 = true;
+            
         } 
         if (message == "keypad5"){
             Debug.Log(message);
             keypad5 = true;
+            
         } 
         if (message == "keypad6"){
             Debug.Log(message);
             keypad6 = true;
+            
         } 
         if (message == "keypad7"){
             Debug.Log(message);
             keypad7 = true;
+           
         } 
         if (message == "keypad8"){
             Debug.Log(message);
             keypad8 = true;
+            
         } 
         if (message == "keypad9"){
             Debug.Log(message);
             keypad9 = true;
+            
         } 
         if (message == "keypad*"){
             Debug.Log(message);
             keypad10 = true;
+           
         } 
         if (message == "keypad0"){
             Debug.Log(message);
             keypad11 = true;
+            
         } 
         if (message == "keypad#"){
             Debug.Log(message);
             keypad12 = true;
+            
         } 
         if (message == "keypadbackspace"){
             Debug.Log(message);
             keypad13 = true;
+           
+        } 
+        if (message == "keypadenter"){
+
+            Debug.Log(message);
+            keypad14 = true;
+            
         } 
 
             return;
