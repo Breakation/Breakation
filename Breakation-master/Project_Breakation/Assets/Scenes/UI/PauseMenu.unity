@@ -120,6 +120,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &57713233
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5186307718960966643, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_Name
+      value: MainTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 567
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 315.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e23f9cdde16519e47a315f501c8d9bdb, type: 3}
 --- !u!1 &305937213
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +677,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303494362304559486, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303494362304559486, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303494362304559486, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303494362304559486, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303494362304559486, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303494362304559486, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303494362304559486, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303494362304559486, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0d4cac0b10fdf341a1ae3566a84c9db, type: 3}
