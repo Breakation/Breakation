@@ -389,7 +389,7 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
         }
 
 
-        pv.RPC("RPC_syncShelf", RpcTarget.AllBuffered, fluids, gasses, solids, dispOpen.trigger);
+        //pv.RPC("RPC_syncShelf", RpcTarget.AllBuffered, fluids, gasses, solids, dispOpen.trigger);
     }
 
 

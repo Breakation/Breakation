@@ -17,7 +17,11 @@ public class SC_Zoomable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        zoomScr = zoomContr.GetComponent<SC_ZoomController>();
+        if (!isCopy)
+        {
+            zoomScr = zoomContr.GetComponent<SC_ZoomController>();
+
+        }
     }
 
     // Update is called once per frame
