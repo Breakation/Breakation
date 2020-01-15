@@ -7,7 +7,7 @@ public class ArduinoKlasse : MonoBehaviour
     private int x = 0, y = 0;
     private LightsOutManager GMInstance = LightsOutManager.Instance; // verwaltet den Rätsel
     private bool ArrowRight, ArrowLeft, ArrowUp, ArrowDown, select;
-    private string position = "B-O-xy";
+    private string position = "B-O-00";
    
     // Update is called once per frame
     void Update()
@@ -35,61 +35,66 @@ public class ArduinoKlasse : MonoBehaviour
             ArrowDown = true;
         }
 
-        if (ArrowRight)
+        if (SampleUserPolling_ReadWrite.arrowright)
         {
             if (y < 7)
             {
                 y++;
-                position.Remove(5);
+                position = position.Remove(5);
                 position += y;
                 SampleUserPolling_ReadWrite.sendtext = position;
             }
-            ArrowRight = false;
+            SampleUserPolling_ReadWrite.arrowright = false;
         }
-        if (ArrowLeft)
+        if (SampleUserPolling_ReadWrite.arrowleft)
         {
             if (y > 0)
             {
                 y--;
-                position.Remove(5);
+                position = position.Remove(5);
                 position += y;
                 SampleUserPolling_ReadWrite.sendtext = position;
             }
-            ArrowLeft = false;
+            SampleUserPolling_ReadWrite.arrowleft = false;
         }
-        if (ArrowUp)
+        if (SampleUserPolling_ReadWrite.arrowup)
         {
             if (x < 7)
             {
                 x++;
-                position.Remove(4);
+                position = position.Remove(4);
                 position += x;
                 position += y;
                 SampleUserPolling_ReadWrite.sendtext = position;
             }
-            ArrowUp = false;
+            SampleUserPolling_ReadWrite.arrowup = false;
         }
-        if (ArrowDown)
+        if (SampleUserPolling_ReadWrite.arrowdown)
         {
             if (x > 0)
             {
                 x--;
-                position.Remove(4);
+                position = position.Remove(4);
                 position += x;
                 position += y;
                 SampleUserPolling_ReadWrite.sendtext = position;
             }
-            ArrowDown = false;
+            SampleUserPolling_ReadWrite.arrowdown = false;
         }
 
         if ((Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             select = true;
         }
-        if (select)
+        if (SampleUserPolling_ReadWrite.buttonX)
         {
+<<<<<<< HEAD
             GMInstance.ArrayOfCells[7-x, 7-y].AffectCells();
             select = false;
+=======
+            GMInstance.ArrayOfCells[7-x, 7-y].cellController.AffectCells();
+            SampleUserPolling_ReadWrite.buttonX = false;
+>>>>>>> 9008863ba3ecd9a6ca9eb59532c6192490433ea9
         }
     }
     

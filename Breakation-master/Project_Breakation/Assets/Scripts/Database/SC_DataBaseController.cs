@@ -12,6 +12,7 @@ public class SC_DataBaseController : MonoBehaviour
     public GameObject backButton;
     public GameObject xButton;
 
+    public Sprite chemieCombs;
     public Sprite nicImage1;
     public Sprite nicImage2;
 
@@ -177,7 +178,7 @@ public class SC_DataBaseController : MonoBehaviour
     {
         placeholderImage.SetActive(true);
         blackScreen.SetActive(true);
-        dataImage.sprite = nicImage1;
+        dataImage.sprite = chemieCombs;
         xButton.SetActive(true);
     }
     public void openData2()

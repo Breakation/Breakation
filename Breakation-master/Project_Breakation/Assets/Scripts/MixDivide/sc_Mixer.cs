@@ -33,8 +33,7 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
     private char secType;
     private char secSub;
 
-    public GameObject steinObj;
-
+   
 
     public GameObject firstSubField;
     public GameObject secondSubField;
@@ -384,12 +383,12 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
 
         if (Input.GetKey(KeyCode.Space))
         {
-            bombStone();
+            dispOpen.trigger = true;
            
         }
 
 
-        pv.RPC("RPC_syncShelf", RpcTarget.AllBuffered, fluids, gasses, solids, dispOpen.trigger);
+        //pv.RPC("RPC_syncShelf", RpcTarget.AllBuffered, fluids, gasses, solids, dispOpen.trigger);
     }
 
 
@@ -869,10 +868,7 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
     }
 
 
-    public void bombStone()
-    {
-        steinObj.SetActive(false);
-    }
+    
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
