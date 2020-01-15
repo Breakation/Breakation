@@ -6,7 +6,7 @@ public class ArduinoKlasse : MonoBehaviour
 {
     private int x = 0, y = 0;
     private LightsOutManager GMInstance = LightsOutManager.Instance; // verwaltet den Rätsel
-    private bool ArrowRight, ArrowLeft, ArrowUp, ArrowDown, select;
+    //private bool ArrowRight=false, ArrowLeft = false, ArrowUp = false, ArrowDown = false, select = false;
     private string position = "B-O-00";
    
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class ArduinoKlasse : MonoBehaviour
 
     public void navigation()
     {
-        if ((Input.GetKeyDown(KeyCode.RightArrow)))
+        /*if ((Input.GetKeyDown(KeyCode.RightArrow)))
         {
             ArrowRight = true;
         }
@@ -33,7 +33,7 @@ public class ArduinoKlasse : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.DownArrow)))
         {
             ArrowDown = true;
-        }
+        }*/
 
         if (SampleUserPolling_ReadWrite.arrowright)
         {
@@ -82,19 +82,14 @@ public class ArduinoKlasse : MonoBehaviour
             SampleUserPolling_ReadWrite.arrowdown = false;
         }
 
-        if ((Input.GetKeyDown(KeyCode.KeypadEnter)))
+        /*if ((Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             select = true;
-        }
+        }*/
         if (SampleUserPolling_ReadWrite.buttonX)
         {
-<<<<<<< HEAD
             GMInstance.ArrayOfCells[7-x, 7-y].AffectCells();
-            select = false;
-=======
-            GMInstance.ArrayOfCells[7-x, 7-y].cellController.AffectCells();
             SampleUserPolling_ReadWrite.buttonX = false;
->>>>>>> 9008863ba3ecd9a6ca9eb59532c6192490433ea9
         }
     }
     

@@ -58,7 +58,7 @@ public class CellController : MonoBehaviour {
 
 		foreach (var item in adjacentCells) {
 
-            var selectedCell = item.GetComponent<CellController> ();
+           /* var selectedCell =  item.GetComponent<CellController> ();
 
 			if (selectedCell.cellStatus == Status.open) {
 				selectedCell.cellStatus = Status.closed;
@@ -66,8 +66,21 @@ public class CellController : MonoBehaviour {
             } else {
 				selectedCell.cellStatus = CellController.Status.open;
                 item.GetComponent<CellController>().openCap();
+            }*/
+
+            var selectedCell = item;
+
+            if (item.cellStatus == Status.open)
+            {
+                item.cellStatus = Status.closed;
+                item.closeCap();
             }
-		}
+            else
+            {
+                item.cellStatus = CellController.Status.open;
+                item.openCap();
+            }
+        }
 	}
 
 	void GetAdjacentCells(){
