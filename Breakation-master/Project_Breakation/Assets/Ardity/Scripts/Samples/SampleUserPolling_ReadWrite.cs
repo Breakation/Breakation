@@ -97,7 +97,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
         
         if (sendtext != "lul")
         {
-            Debug.Log("sendingmessageClock");
+           Debug.Log(sendtext);
             serialController.SendSerialMessage(sendtext);
             sendtext = "lul";
         }
