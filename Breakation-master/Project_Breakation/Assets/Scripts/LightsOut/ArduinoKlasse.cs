@@ -88,7 +88,7 @@ public class ArduinoKlasse : MonoBehaviour
         }
         if (select)
         {
-            GMInstance.ArrayOfCells[7-x, 7-y].cellController.AffectCells();
+            GMInstance.ArrayOfCells[7-x, 7-y].AffectCells();
             select = false;
         }
     }

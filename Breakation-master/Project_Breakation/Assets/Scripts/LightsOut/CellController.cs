@@ -8,8 +8,8 @@ public class CellController : MonoBehaviour {
 
 
     private LightsOutManager GMInstance = LightsOutManager.Instance; // verwaltet den Rätsel
-    public List<Cell> adjacentCells;
-    public Animator animator;
+    public List<CellController> adjacentCells;
+    private Animator animator;
 
     private void Start()
     {        
@@ -71,9 +71,9 @@ public class CellController : MonoBehaviour {
 	}
 
 	void GetAdjacentCells(){
-		adjacentCells = new List<Cell> ();
+		adjacentCells = new List<CellController> ();
 
-		Cell northCell = null, westCell = null, eastCell = null, southCell = null;
+        CellController northCell = null, westCell = null, eastCell = null, southCell = null;
 
 		if (xCoord - 1 >= 0) {
 			northCell = GMInstance.ArrayOfCells [xCoord - 1, yCoord];

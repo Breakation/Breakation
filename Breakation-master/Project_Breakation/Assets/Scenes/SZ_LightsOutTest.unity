@@ -337,13 +337,26 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1522320687}
+  - component: {fileID: 1522320686}
   m_Layer: 0
-  m_Name: CellController
+  m_Name: ArduinoObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1522320686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522320685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f22e2c28ded6a4495899cdfa29fb3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1522320687
 Transform:
   m_ObjectHideFlags: 0
