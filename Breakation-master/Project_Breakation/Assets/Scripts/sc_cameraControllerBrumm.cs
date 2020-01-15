@@ -10,7 +10,7 @@ public class sc_cameraControllerBrumm : MonoBehaviour
     public Vector3 distToCar = new Vector3(0, 5f, -10f);
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (brummSpiel)
         {
