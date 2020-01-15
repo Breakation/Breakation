@@ -88,8 +88,13 @@ public class ArduinoKlasse : MonoBehaviour
         }
         if (SampleUserPolling_ReadWrite.buttonX)
         {
+<<<<<<< HEAD
+            GMInstance.ArrayOfCells[7-x, 7-y].AffectCells();
+            select = false;
+=======
             GMInstance.ArrayOfCells[7-x, 7-y].cellController.AffectCells();
             SampleUserPolling_ReadWrite.buttonX = false;
+>>>>>>> 9008863ba3ecd9a6ca9eb59532c6192490433ea9
         }
     }
     
