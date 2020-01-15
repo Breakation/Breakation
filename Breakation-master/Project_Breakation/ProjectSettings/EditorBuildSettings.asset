@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/ProtoNetworkScene.unity
     guid: a7e9d9b5cff08ae498c13b58d68bbfcd
   - enabled: 0
-    path: Assets/Scenes/PrototypeStartMenu.unity
+    path: 
     guid: 6078fe07fe6f2c54ba4d8359b364833b
   - enabled: 1
     path: Assets/Scenes/SZ_UhrzeitTuer.unity
     guid: 42929030c538d364389f055b22a18719
+  - enabled: 1
+    path: Assets/Scenes/UI/PauseMenu.unity
+    guid: 21bbff64379fc534e92cabcca50ad862
+  - enabled: 1
+    path: Assets/Scenes/UI/OptionsMenu.unity
+    guid: 8213085eddcde594fa98e8ce8ad39eb6
+  - enabled: 1
+    path: Assets/Scenes/UI/MainMenuUI.unity
+    guid: 873abe5e04c3fb74c9077e990443307d
   m_configObjects: {}

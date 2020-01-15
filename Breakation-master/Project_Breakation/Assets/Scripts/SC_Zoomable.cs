@@ -10,6 +10,8 @@ public class SC_Zoomable : MonoBehaviour
      SC_ZoomController zoomScr;
     public string prefabName;
 
+    private GameObject mySelf;
+
     public int rotationNmbr;
 
     public string objType;
@@ -17,7 +19,14 @@ public class SC_Zoomable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        zoomScr = zoomContr.GetComponent<SC_ZoomController>();
+
+
+        if (!isCopy)
+        {
+            mySelf = gameObject;
+            zoomScr = zoomContr.GetComponent<SC_ZoomController>();
+
+        }
     }
 
     // Update is called once per frame
@@ -30,7 +39,7 @@ public class SC_Zoomable : MonoBehaviour
     {
         if (!isCopy)
         {
-            zoomScr.zoomIn(prefabName,objType);
+            zoomScr.zoomIn(prefabName,objType,mySelf);
         }
         
     }

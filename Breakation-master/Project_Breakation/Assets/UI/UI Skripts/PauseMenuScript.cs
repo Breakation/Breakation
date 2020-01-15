@@ -34,7 +34,7 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenuUI.SetActive(false);
 
         // Spiel nicht mehr freezen
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
     }
 
     public  void pause()
@@ -46,14 +46,14 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenuUI.SetActive(true);
 
         // Spiel freezen
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 
     public void options()
     {
         // code für option button soll neue option szene laden wo einstellungen vorgenommen werden können
         // BSP unten wenn scene options heißt
-        //SceneManager.LoadScene("Options");
+        SceneManager.LoadScene("OptionsMenu");
         Debug.Log("Options");
 
         // Achtung Game ist bei Options noch frozen durch TimeScale = 0 nachher auf jeden Fall Resume!! mit Timesclae = 1
@@ -63,17 +63,16 @@ public class PauseMenuScript : MonoBehaviour
     public void quitGame()
     {
         // hier kommt der Code für den Quit button rein muss aber noch geklärt werden mit Netzwerk wie das möglich ist zu quitten oder wenn ein spieler quittet
+
+          /////////////////////////////////////////////////////////////////////////
+         //mit Netzwerk abklären was hier hin muss um ins main menu zu wechseln///
+        /////////////////////////////////////////////////////////////////////////
+        
+        SceneManager.LoadScene("MainMenuUI");
         Debug.Log("Quit Game");
 
         // Achtung Game ist bei Quit noch frozen durch TimeScale = 0
 
     }
 
-    public void soundMenu()
-    {
-        //zum extra sound Menu
-        Debug.Log("SoundMenu");
-
-        // Achtung Game ist bei Options noch frozen durch TimeScale = 0 nachher auf jeden Fall Resume!! mit Timesclae = 1
-    }
 }

@@ -16,12 +16,32 @@ ModelImporter:
   - first:
       1001: 100100000
     second: DataTemplate __Singleton__
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_71
+    second: {fileID: 2100000, guid: 44b5834df0acfc2449d866762ad74434, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_73
+    second: {fileID: 2100000, guid: 44b5834df0acfc2449d866762ad74434, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_75
+    second: {fileID: 2100000, guid: 44b5834df0acfc2449d866762ad74434, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_77
+    second: {fileID: 2100000, guid: 44b5834df0acfc2449d866762ad74434, type: 2}
   materials:
     importMaterials: 1
     materialName: 3
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
