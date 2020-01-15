@@ -42,7 +42,11 @@ public class sc_staticPatrol : MonoBehaviour
                 {
                     counter = 0;
                 }
+                Vector3 direction = moveSpots[counter].position - transform.position;
 
+                Quaternion rotation = Quaternion.LookRotation(direction);
+
+                transform.rotation = rotation;
                 waitTime = startWaitTime;
             }
             else
@@ -54,10 +58,8 @@ public class sc_staticPatrol : MonoBehaviour
 
         }
 
-        Vector3 direction = moveSpots[counter].position - transform.position;
-
-        Quaternion rotation = Quaternion.LookRotation(direction);
-        transform.rotation = rotation;
+        
+        
 
 
     }
