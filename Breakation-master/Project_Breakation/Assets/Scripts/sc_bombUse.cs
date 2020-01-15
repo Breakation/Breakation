@@ -15,5 +15,6 @@ public class sc_bombUse : MonoBehaviour
     public void bombStone()
     {
         steinObj.SetActive(false);
+        Destroy(this.gameObject);
     }
 }
