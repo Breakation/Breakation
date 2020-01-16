@@ -6,9 +6,9 @@ using Photon.Pun;
 public class sc_carContr : MonoBehaviourPun, IPunObservable
 {
     [SerializeField]
-    private int xRotation = SampleUserPolling_ReadWrite.JoyXvalue; // sc_pseudoJoystick.xAxis;
+    private int xDirection = SampleUserPolling_ReadWrite.JoyXvalue; // sc_pseudoJoystick.xAxis;
     [SerializeField]
-    private int zDirection = SampleUserPolling_ReadWrite.JoyYvalue;  //sc_pseudoJoystick.zAxis;
+    private int zRotation = SampleUserPolling_ReadWrite.JoyYvalue;  //sc_pseudoJoystick.zAxis;
 
     private Vector3 moveDir = Vector3.zero;
 
@@ -30,45 +30,45 @@ public class sc_carContr : MonoBehaviourPun, IPunObservable
 
     void Update()
     {
-        xRotation = SampleUserPolling_ReadWrite.JoyXvalue;
-        zDirection = SampleUserPolling_ReadWrite.JoyYvalue;
+        xDirection = SampleUserPolling_ReadWrite.JoyXvalue;
+        zRotation = SampleUserPolling_ReadWrite.JoyYvalue;
 
-        xRotation = sc_pseudoJoystick.xAxis;
-        zDirection = sc_pseudoJoystick.zAxis;
+        xDirection = sc_pseudoJoystick.xAxis;
+        zRotation = sc_pseudoJoystick.zAxis;
 
 
-        if(xRotation > 500)
+        if(xDirection > 500)
         {
-            xRotation = (xRotation - 500)/50;
+            xDirection = (xDirection - 500)/50;
             
         }
-        else if(xRotation < 500)
+        else if(xDirection < 500)
         {
-            xRotation = (500 - xRotation) / -50;
+            xDirection = (500 - xDirection) / -50;
         }
         else
         {
-            xRotation = 0;
+            xDirection = 0;
         }
 
-        if (zDirection > 500)
+        if (zRotation > 500)
         {
-            zDirection = (zDirection - 500) / 50;
+            zRotation = (zRotation - 500) / -50;
 
         }
-        else if(zDirection < 500)
+        else if(zRotation < 500)
         {
-            zDirection = (500 - zDirection) / -50;
+            zRotation = (500 - zRotation) / 50;
         }
         else
         {
-            zDirection = 0;
+            zRotation = 0;
         }
 
-        moveDir = zDirection * transform.forward;
+        moveDir = xDirection * transform.forward;
 
 
-        transform.Rotate(0, xRotation, 0);
+        transform.Rotate(0, zRotation, 0);
 
         
         //if(CC.enabled) if (moveDir != Vector3.zero) transform.rotation = Quaternion.LookRotation(moveDir);
