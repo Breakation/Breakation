@@ -1,15 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class testkeypad : MonoBehaviour
+public class testkeypad : MonoBehaviourPun, IPunObservable
 {
     // Start is called before the first frame update
     public static string teststring ="";
     public static string sendkeypad= "";
+
+    private PhotonView pv;
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+
+    }
+
     void Start()
     {
-        
+        pv = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
@@ -118,6 +127,12 @@ public class testkeypad : MonoBehaviour
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.keypad14 = false;
         }
+        pv.RPC("RPC_syncPseudoKeypad", RpcTarget.AllBuffered, teststring);
+    }
 
+    [PunRPC]
+    void RPC_syncPseudoKeypad(string pteststring)
+    {
+        teststring = pteststring;
     }
 }

@@ -42,5 +42,6 @@ MonoBehaviour:
   - RPC_syncJoyStick
   - RPC_syncSerialController
   - RPC_syncDisp
+  - RPC_syncPseudoKeypad
   DisableAutoOpenWizard: 1
   ShowSettings: 1
