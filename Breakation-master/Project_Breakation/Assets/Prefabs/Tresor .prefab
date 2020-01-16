@@ -102,10 +102,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allLocksOpen: 0
   Locks:
-  - {fileID: 2839337270082528837}
-  - {fileID: 4945901684263690320}
-  - {fileID: 2469560771368232334}
-  - {fileID: 1691015744116611197}
+  - {fileID: 5382002779598260826}
+  - {fileID: 2987208543584537679}
+  - {fileID: 5733725920157616529}
+  - {fileID: 8836164634755773538}
   anim: {fileID: 0}
 --- !u!1001 &1599578092090030828
 PrefabInstance:
@@ -114,11 +114,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5168769569598704970}
     m_Modifications:
-    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (19)
-      objectReference: {fileID: 0}
     - target: {fileID: 7577072250572505123, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -189,6 +184,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 5062868288813570765, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -209,11 +209,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1828343403027555548}
     m_Modifications:
-    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (12)
-      objectReference: {fileID: 0}
     - target: {fileID: 7577072250572505123, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -284,6 +279,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.19999999
       objectReference: {fileID: 0}
+    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 5062868288813570765, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -298,11 +298,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1828343403027555548}
     m_Modifications:
-    - target: {fileID: 3510334526680273526, guid: b438b29f6df061441aaec06518b8be6e,
-        type: 3}
-      propertyPath: m_Name
-      value: Lock_Proto (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 498896252768346213, guid: b438b29f6df061441aaec06518b8be6e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -363,6 +358,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3510334526680273526, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: m_Name
+      value: Lock_Proto (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: locks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: openLock
+      value: 
+      objectReference: {fileID: 5382002779598260826}
+    - target: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: targetInput
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6849374862913507320, guid: b438b29f6df061441aaec06518b8be6e,
         type: 3}
       propertyPath: targetInput
@@ -370,13 +385,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b438b29f6df061441aaec06518b8be6e, type: 3}
---- !u!114 &4945901684263690320 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6849374862913507320, guid: b438b29f6df061441aaec06518b8be6e,
+--- !u!1 &1806507685451400434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 197173694817119066, guid: b438b29f6df061441aaec06518b8be6e,
     type: 3}
   m_PrefabInstance: {fileID: 1994673820169416616}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &2987208543584537679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1994673820169416616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806507685451400434}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27c12423620237b4ca6e2e55f21defc5, type: 3}
@@ -389,11 +410,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5168769569598704970}
     m_Modifications:
-    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (16)
-      objectReference: {fileID: 0}
     - target: {fileID: 7577072250572505123, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -464,6 +480,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 5062868288813570765, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -484,11 +505,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5168769569598704970}
     m_Modifications:
-    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (18)
-      objectReference: {fileID: 0}
     - target: {fileID: 7577072250572505123, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -559,6 +575,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (18)
+      objectReference: {fileID: 0}
     - target: {fileID: 5062868288813570765, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -579,11 +600,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1828343403027555548}
     m_Modifications:
-    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (14)
-      objectReference: {fileID: 0}
     - target: {fileID: 7577072250572505123, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -654,6 +670,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.20000005
       objectReference: {fileID: 0}
+    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 5062868288813570765, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -668,11 +689,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1828343403027555548}
     m_Modifications:
-    - target: {fileID: 3510334526680273526, guid: b438b29f6df061441aaec06518b8be6e,
-        type: 3}
-      propertyPath: m_Name
-      value: Lock_Proto (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 498896252768346213, guid: b438b29f6df061441aaec06518b8be6e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -733,6 +749,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3510334526680273526, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: m_Name
+      value: Lock_Proto (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: locks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: openLock
+      value: 
+      objectReference: {fileID: 5733725920157616529}
+    - target: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: targetInput
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6849374862913507320, guid: b438b29f6df061441aaec06518b8be6e,
         type: 3}
       propertyPath: targetInput
@@ -740,9 +776,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b438b29f6df061441aaec06518b8be6e, type: 3}
---- !u!114 &1691015744116611197 stripped
+--- !u!114 &8836164634755773538 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6849374862913507320, guid: b438b29f6df061441aaec06518b8be6e,
+  m_CorrespondingSourceObject: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
     type: 3}
   m_PrefabInstance: {fileID: 5222609836698163077}
   m_PrefabAsset: {fileID: 0}
@@ -759,11 +795,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5168769569598704970}
     m_Modifications:
-    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (15)
-      objectReference: {fileID: 0}
     - target: {fileID: 7577072250572505123, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -834,6 +865,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 5062868288813570765, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -854,11 +890,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5168769569598704970}
     m_Modifications:
-    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (17)
-      objectReference: {fileID: 0}
     - target: {fileID: 7577072250572505123, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -929,6 +960,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 5062868288813570765, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -949,11 +985,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2426633663562874000}
     m_Modifications:
-    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 7577072250572505123, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1024,6 +1055,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 5062868288813570765, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1044,11 +1080,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1828343403027555548}
     m_Modifications:
-    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (13)
-      objectReference: {fileID: 0}
     - target: {fileID: 7577072250572505123, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1119,6 +1150,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.20000005
       objectReference: {fileID: 0}
+    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 5062868288813570765, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1133,11 +1169,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1828343403027555548}
     m_Modifications:
-    - target: {fileID: 3510334526680273526, guid: b438b29f6df061441aaec06518b8be6e,
-        type: 3}
-      propertyPath: m_Name
-      value: Lock_Proto
-      objectReference: {fileID: 0}
     - target: {fileID: 498896252768346213, guid: b438b29f6df061441aaec06518b8be6e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1198,6 +1229,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3510334526680273526, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: m_Name
+      value: Lock_Proto
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: locks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: locks.Array.data[0]
+      value: 
+      objectReference: {fileID: 1806507685451400434}
     - target: {fileID: 6849374862913507320, guid: b438b29f6df061441aaec06518b8be6e,
         type: 3}
       propertyPath: input.Array.data[0]
@@ -1210,9 +1256,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b438b29f6df061441aaec06518b8be6e, type: 3}
---- !u!114 &2839337270082528837 stripped
+--- !u!114 &5382002779598260826 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6849374862913507320, guid: b438b29f6df061441aaec06518b8be6e,
+  m_CorrespondingSourceObject: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
     type: 3}
   m_PrefabInstance: {fileID: 8676892844150548925}
   m_PrefabAsset: {fileID: 0}
@@ -1229,11 +1275,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1828343403027555548}
     m_Modifications:
-    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (11)
-      objectReference: {fileID: 0}
     - target: {fileID: 7577072250572505123, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1304,6 +1345,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.19999999
       objectReference: {fileID: 0}
+    - target: {fileID: 2155569660476088377, guid: d561da40228385240b593c4b17a4c46e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 5062868288813570765, guid: d561da40228385240b593c4b17a4c46e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1318,11 +1364,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1828343403027555548}
     m_Modifications:
-    - target: {fileID: 3510334526680273526, guid: b438b29f6df061441aaec06518b8be6e,
-        type: 3}
-      propertyPath: m_Name
-      value: Lock_Proto (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 498896252768346213, guid: b438b29f6df061441aaec06518b8be6e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1383,6 +1424,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3510334526680273526, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: m_Name
+      value: Lock_Proto (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: locks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: openLock
+      value: 
+      objectReference: {fileID: 2987208543584537679}
+    - target: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
+        type: 3}
+      propertyPath: targetInput
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6849374862913507320, guid: b438b29f6df061441aaec06518b8be6e,
         type: 3}
       propertyPath: targetInput
@@ -1390,9 +1451,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b438b29f6df061441aaec06518b8be6e, type: 3}
---- !u!114 &2469560771368232334 stripped
+--- !u!114 &5733725920157616529 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6849374862913507320, guid: b438b29f6df061441aaec06518b8be6e,
+  m_CorrespondingSourceObject: {fileID: 3664297401430467559, guid: b438b29f6df061441aaec06518b8be6e,
     type: 3}
   m_PrefabInstance: {fileID: 9027599911408347766}
   m_PrefabAsset: {fileID: 0}
