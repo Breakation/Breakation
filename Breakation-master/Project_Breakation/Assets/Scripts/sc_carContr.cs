@@ -33,8 +33,8 @@ public class sc_carContr : MonoBehaviourPun, IPunObservable
         xRotation = SampleUserPolling_ReadWrite.JoyXvalue;
         zDirection = SampleUserPolling_ReadWrite.JoyYvalue;
 
-       // xRotation = sc_pseudoJoystick.xAxis;
-        //zDirection = sc_pseudoJoystick.zAxis;
+        xRotation = sc_pseudoJoystick.xAxis;
+        zDirection = sc_pseudoJoystick.zAxis;
 
 
         if(xRotation > 500)
@@ -51,18 +51,18 @@ public class sc_carContr : MonoBehaviourPun, IPunObservable
             xRotation = 0;
         }
 
-        if (zDirection > 500)
+        if (zRotation > 500)
         {
-            zDirection = (zDirection - 500) / -50;
+            zRotation = (zRotation - 500) / -50;
 
         }
-        else if(zDirection < 500)
+        else if(zRotation < 500)
         {
-            zDirection = (500 - zDirection) / 50;
+            zRotation = (500 - zRotation) / 50;
         }
         else
         {
-            zDirection = 0;
+            zRotation = 0;
         }
 
         moveDir = zDirection * transform.forward;
