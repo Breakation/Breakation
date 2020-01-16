@@ -8,10 +8,20 @@ public class sc_bombUse : MonoBehaviourPun, IPunObservable
 {
     public GameObject mixerObj;
     public GameObject steinObj;
+    public bool bomb = false;
 
     private void OnMouseDown()
     {
+        bomb = true;
         bombStone();
+    }
+
+    void Update()
+    {
+        if (bomb)
+        {
+            bombStone();
+        }
     }
 
     public void bombStone()
