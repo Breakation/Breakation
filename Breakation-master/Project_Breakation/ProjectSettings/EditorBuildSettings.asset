@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/UI/MainMenuUI.unity
     guid: 873abe5e04c3fb74c9077e990443307d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SZ_MixDivideRiddle.unity
     guid: 1f3b2272f7f70e44ab729875e7ac0935
   - enabled: 1
