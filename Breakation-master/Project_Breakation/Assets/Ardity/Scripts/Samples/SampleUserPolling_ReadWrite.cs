@@ -8,11 +8,12 @@
 
 using UnityEngine;
 using System.Collections;
+using Photon.Pun;
 
 /**
  * Sample for reading using polling by yourself, and writing too.
  */
-public class SampleUserPolling_ReadWrite : MonoBehaviour
+public class SampleUserPolling_ReadWrite : MonoBehaviourPun, IPunObservable
 {
     public static bool encoderleft;
     public static bool encoderright;
@@ -51,12 +52,23 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
 
     public SerialController serialController;
 
+
+
+    private PhotonView pv;
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+
+    }
+
     // Initialization
     void Start()
     {
         serialController = GameObject.Find("SerialController").GetComponent<SerialController>();
 
         Debug.Log("Press A or Z to execute some actions");
+
+        pv = GetComponent<PhotonView>();
     }
 
     // Executed each frame
@@ -289,6 +301,39 @@ public class SampleUserPolling_ReadWrite : MonoBehaviour
             Debug.Log("Connection attempt failed or disconnection detected");
         else
             Debug.Log("Message arrived: " + message);
+
+
+        pv.RPC("RPC_syncSerialController", RpcTarget.AllBuffered, keypad1, keypad10, keypad11, keypad12, keypad13, keypad14, keypad2, keypad3, keypad4, keypad5, keypad6, keypad7, keypad8, keypad9, encoderleft, encoderright, pot1value, pot2value, pot3value, pot4value, JoyXvalue, JoyYvalue, erdbebenMode, timercd, sendtext);
+    }
+
+    [PunRPC]
+    void RPC_syncSerialController(bool pkeypad1, bool pkeypad10, bool pkeypad11, bool pkeypad12, bool pkeypad13, bool pkeypad14, bool pkeypad2, bool pkeypad3, bool pkeypad4, bool pkeypad5, bool pkeypad6, bool pkeypad7, bool pkeypad8, bool pkeypad9, bool pencoderright, bool pencoderleft, int ppot1value, int ppot2value, int ppot3value, int ppot4value, int pjoyxvalue, int pjoyyvalue, bool perdbebenmode, bool ptimercd, string psendtext)
+    {
+        keypad1 = pkeypad1;
+        keypad10 = pkeypad10;
+        keypad11 = pkeypad11;
+        keypad12 = pkeypad12;
+        keypad13 = pkeypad13;
+        keypad14 = pkeypad14;
+        keypad2 = pkeypad2;
+        keypad3 = pkeypad3;
+        keypad4 = pkeypad4;
+        keypad5 = pkeypad5;
+        keypad6 = pkeypad6;
+        keypad7 = pkeypad7;
+        keypad8 = pkeypad8;
+        keypad9 = pkeypad9;
+        encoderleft = pencoderleft;
+        encoderright = pencoderright;
+        pot1value = ppot1value;
+        pot2value = ppot2value;
+        pot3value = ppot3value;
+        pot4value = ppot4value;
+        JoyXvalue = pjoyxvalue;
+        JoyYvalue = pjoyyvalue;
+        erdbebenMode = perdbebenmode;
+        timercd = ptimercd;
+        sendtext = psendtext;
     }
     
 }

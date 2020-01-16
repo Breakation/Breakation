@@ -40,5 +40,7 @@ MonoBehaviour:
   - RPC_syncDrehModul
   - RPC_syncJoySTick
   - RPC_syncJoyStick
+  - RPC_syncSerialController
+  - RPC_syncDisp
   DisableAutoOpenWizard: 1
   ShowSettings: 1
