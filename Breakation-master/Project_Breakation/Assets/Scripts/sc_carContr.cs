@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class sc_carContr : MonoBehaviour
+public class sc_carContr : MonoBehaviourPun, IPunObservable
 {
     [SerializeField]
     private int xRotation = SampleUserPolling_ReadWrite.JoyXvalue; // sc_pseudoJoystick.xAxis;
@@ -13,9 +14,18 @@ public class sc_carContr : MonoBehaviour
 
     CharacterController CC;
 
+    PhotonView pv;
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+
+    }
+
     private void Start()
     {
         CC = GetComponent<CharacterController>();
+        pv = GetComponent<PhotonView>();
+
     }
 
     void Update()
@@ -65,6 +75,8 @@ public class sc_carContr : MonoBehaviour
         
 
         CC.Move(moveDir * Time.deltaTime);
+
+        pv.RPC("RPC_syncCar", RpcTarget.AllBuffered);
     }
 }
 
