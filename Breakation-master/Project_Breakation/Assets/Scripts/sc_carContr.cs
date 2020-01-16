@@ -68,10 +68,6 @@ public class sc_carContr : MonoBehaviourPun, IPunObservable
         moveDir = zDirection * transform.forward;
 
 
-        //moveDir = new Vector3(xRotation, 0 , zDirection);
-
-
-
         transform.Rotate(0, xRotation, 0);
 
         
