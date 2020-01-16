@@ -37,42 +37,42 @@ public class sc_carContr : MonoBehaviourPun, IPunObservable
         //zDirection = sc_pseudoJoystick.zAxis;
 
 
-        if(xRotation > 690)
+        if(xRotation > 500)
         {
-            xRotation = (xRotation - 690)/-50;
+            xRotation = (xRotation - 500)/50;
             
         }
-        else if(xRotation < 400)
+        else if(xRotation < 500)
         {
-            xRotation = (400 - xRotation) / 50;
+            xRotation = (500 - xRotation) / -50;
         }
         else
         {
             xRotation = 0;
         }
 
-        if (zDirection > 690)
+        if (zDirection > 500)
         {
-            zDirection = (zDirection - 690) / 50;
+            zDirection = (zDirection - 500) / -50;
 
         }
-        else if(zDirection < 400)
+        else if(zDirection < 500)
         {
-            zDirection = (400 - zDirection) / -50;
+            zDirection = (500 - zDirection) / 50;
         }
         else
         {
             zDirection = 0;
         }
 
-        //moveDir = zDirection * transform.forward;
+        moveDir = zDirection * transform.forward;
 
 
-        moveDir = new Vector3(xRotation, 0 , zDirection);
+        //moveDir = new Vector3(xRotation, 0 , zDirection);
 
 
 
-        //transform.Rotate(0, xRotation, 0);
+        transform.Rotate(0, xRotation, 0);
 
         
         if(CC.enabled) if (moveDir != Vector3.zero) transform.rotation = Quaternion.LookRotation(moveDir);
