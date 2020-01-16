@@ -27,16 +27,16 @@ public class sc_psuedoDrehModul : MonoBehaviourPun, IPunObservable
             leftRotation = true;
         }
 
-        pv.RPC("RPC_syncDrehModul", RpcTarget.AllBuffered, rightRotation, leftRotation);
+        //pv.RPC("RPC_syncDrehModul", RpcTarget.AllBuffered, rightRotation, leftRotation);
     }
 
 
-    [PunRPC]
+    /*[PunRPC]
     void RPC_syncDrehModul(bool pRightRotation, bool pLeftRotation)
     {
         rightRotation = pRightRotation;
         leftRotation = pLeftRotation;
-    }
+    }*/
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {

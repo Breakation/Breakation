@@ -39,5 +39,6 @@ MonoBehaviour:
   - RPC_syncShelf
   - RPC_syncDrehModul
   - RPC_syncJoySTick
+  - RPC_syncJoyStick
   DisableAutoOpenWizard: 1
   ShowSettings: 1

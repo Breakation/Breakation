@@ -46,17 +46,17 @@ public class sc_pseudoJoystick : MonoBehaviourPun, IPunObservable
             zAxis = 500;
         }
 
-        pv.RPC("RPC_syncJoyStick", RpcTarget.AllBuffered, xAxis, zAxis);
+        //pv.RPC("RPC_syncJoyStick", RpcTarget.AllBuffered, xAxis, zAxis);
     }
 
 
 
-    [PunRPC]
+    /*[PunRPC]
     void RPC_syncJoyStick(int pXAxis, int pZAxis)
     {
         xAxis = pXAxis;
         zAxis = pZAxis;
-    }
+    }*/
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
