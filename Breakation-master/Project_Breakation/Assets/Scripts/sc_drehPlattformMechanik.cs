@@ -17,5 +17,15 @@ public class sc_drehPlattformMechanik : MonoBehaviour
             SampleUserPolling_ReadWrite.encoderleft = false;
             transform.Rotate(new Vector3(0f, -20f, 0f));
         }
+        if (sc_psuedoDrehModul.leftRotation)
+        {
+            transform.Rotate(new Vector3(0, -5, 0));
+            sc_psuedoDrehModul.leftRotation = false;
+        }
+        if (sc_psuedoDrehModul.rightRotation)
+        {
+            transform.Rotate(new Vector3(0, 5, 0));
+            sc_psuedoDrehModul.rightRotation = false;
+        }
     }
 }

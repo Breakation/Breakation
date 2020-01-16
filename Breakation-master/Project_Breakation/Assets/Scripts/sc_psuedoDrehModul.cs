@@ -18,11 +18,11 @@ public class sc_psuedoDrehModul : MonoBehaviourPun, IPunObservable
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha2))
+        if (Input.GetKey(KeyCode.P))
         {
             rightRotation = true;
         }
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.O))
         {
             leftRotation = true;
         }

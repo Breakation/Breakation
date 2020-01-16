@@ -9,6 +9,8 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
     public static string teststring ="";
     public static string sendkeypad= "";
 
+    private static bool textChanged = false;
+
     private PhotonView pv;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -31,6 +33,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad1 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad2 == true)
         {
@@ -38,6 +41,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad2 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad3 == true)
         {
@@ -45,6 +49,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad3 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad4 == true)
         {
@@ -52,6 +57,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad4 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad5 == true)
         {
@@ -59,6 +65,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad5 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad6 == true)
         {
@@ -66,6 +73,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad6 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad7 == true)
         {
@@ -73,6 +81,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad7 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad8 == true)
         {
@@ -80,6 +89,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad8 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad9 == true)
         {
@@ -87,6 +97,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad9 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad10 == true)
         {
@@ -94,6 +105,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad10 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad11 == true)
         {
@@ -101,6 +113,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad11 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad12 == true)
         {
@@ -108,6 +121,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad12 = false;
+            textChanged = true;
         }
         if (SampleUserPolling_ReadWrite.keypad13==true){
             if(teststring.Length > 0){
@@ -116,6 +130,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
                 Debug.Log(teststring);
                 SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
                 SampleUserPolling_ReadWrite.keypad13 =false;
+                textChanged = true;
             }
         }
         if (SampleUserPolling_ReadWrite.keypad14 == true)
@@ -126,8 +141,13 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             Debug.Log(teststring);
             SampleUserPolling_ReadWrite.keypad14 = false;
+            textChanged = true;
         }
-        pv.RPC("RPC_syncPseudoKeypad", RpcTarget.AllBuffered, teststring);
+        if (textChanged)
+        {
+            pv.RPC("RPC_syncPseudoKeypad", RpcTarget.AllBuffered, teststring);
+            textChanged = false;
+        }
     }
 
     [PunRPC]
