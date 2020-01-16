@@ -52,7 +52,7 @@ public class sc_pseudoJoystick : MonoBehaviourPun, IPunObservable
 
 
     [PunRPC]
-    void RPC_syncJoySTick(int pXAxis, int pZAxis)
+    void RPC_syncJoyStick(int pXAxis, int pZAxis)
     {
         xAxis = pXAxis;
         zAxis = pZAxis;
