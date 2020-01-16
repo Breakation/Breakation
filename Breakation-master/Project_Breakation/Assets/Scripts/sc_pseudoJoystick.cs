@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class sc_pseudoJoystick : MonoBehaviour
+public class sc_pseudoJoystick : MonoBehaviourPun, IPunObservable
 {
 
     public static int xAxis;
     public static int zAxis;
 
+    private PhotonView pv;
+
+    private void Start()
+    {
+        pv = GetComponent<PhotonView>();
+    }
 
 
     void Update()
@@ -39,6 +46,20 @@ public class sc_pseudoJoystick : MonoBehaviour
             zAxis = 500;
         }
 
-        
+        pv.RPC("RPC_syncJoyStick", RpcTarget.AllBuffered, xAxis, zAxis);
+    }
+
+
+
+    [PunRPC]
+    void RPC_syncJoySTick(int pXAxis, int pZAxis)
+    {
+        xAxis = pXAxis;
+        zAxis = pZAxis;
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+       
     }
 }

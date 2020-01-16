@@ -14,8 +14,8 @@ public class LightsOutManager : MonoBehaviour {
     public int numberOfClicks = 0, elapsedTime = 0;
 
     // variablen für den Gridgenerierung und -Verwaltung
-    public Cell[,] ArrayOfCells;
-    public List<Cell> ListOfCells;
+    public CellController[,] ArrayOfCells;
+    public List<CellController> ListOfCells; //ArrayOfCells flattened
     CellController cellController;
 
     //konstante Werte
@@ -47,6 +47,7 @@ public class LightsOutManager : MonoBehaviour {
     {
         arduinoKlasse.navigation();
     }
+
     void OnEnable()
     {
         //uiGame.endingText.gameObject.SetActive(false);
@@ -59,16 +60,18 @@ public class LightsOutManager : MonoBehaviour {
 
     public void Configure(int size)
     {
-        ArrayOfCells = new Cell[ size, size];
+        ArrayOfCells = new CellController[ size* size, size* size];
         Debug.Log("array of Cells size = " + ArrayOfCells.Length);
+
         FillArray();
         applyPattern();
     }
 
     public void FillArray() //das wird für die Methode GetAdjacentCells in der Cellcontrollerklasse verwendet
     {
-        Cell[] arrayOfObjects = GameObject.FindObjectsOfType<Cell>();
-        Debug.Log(arrayOfObjects.Length);
+        // lokales Hilfs-Array
+        CellController[] arrayOfObjects = GameObject.FindObjectsOfType<CellController>();
+        Debug.Log("Hilfsarray arrayOfObjects.Length: " + arrayOfObjects.Length);
 
         int k = 0;
         for (var i = 0; i < GridSize; i++)
@@ -77,7 +80,7 @@ public class LightsOutManager : MonoBehaviour {
             {
                 ArrayOfCells[i, j] = arrayOfObjects[k];
                 ListOfCells.Add(ArrayOfCells[i, j]);
-                cellController = ArrayOfCells[i, j].GetComponent<CellController>();
+                cellController = ArrayOfCells[i, j];//.GetComponent<CellController>();
                 cellController.xCoord = i;
                 cellController.yCoord = j;
                 k++;
@@ -94,13 +97,15 @@ public class LightsOutManager : MonoBehaviour {
             {
                 if (arrayPattern[row, col] == -1)
                 {
-                    ArrayOfCells[row, col].GetComponent<CellController>().cellStatus = CellController.Status.closed;
-                    ArrayOfCells[row, col].GetComponent<CellController>().closeCap();
+                    ArrayOfCells[row, col].cellStatus = CellController.Status.closed;
+                    ArrayOfCells[row, col].closeCap();
+                    //ArrayOfCells[row, col].GetComponent<CellController>().cellStatus = CellController.Status.closed;
+                    //ArrayOfCells[row, col].GetComponent<CellController>().closeCap();
                 }
                 else
                 {
-                    ArrayOfCells[row, col].GetComponent<CellController>().cellStatus = CellController.Status.open;
-                    ArrayOfCells[row, col].GetComponent<CellController>().openCap();
+                    ArrayOfCells[row, col].cellStatus = CellController.Status.open;
+                    ArrayOfCells[row, col].openCap();
                 }
             }
         }
@@ -123,7 +128,7 @@ public class LightsOutManager : MonoBehaviour {
         {
             for (int col = 0; col < GridSize; col++)
             {
-                if (this.ArrayOfCells[row, col].GetComponent<CellController>().cellStatus == CellController.Status.open)
+                if (this.ArrayOfCells[row, col].cellStatus == CellController.Status.open)
                 {
                     Debug.Log(ArrayOfCells[row, col].name);
                     win = false;

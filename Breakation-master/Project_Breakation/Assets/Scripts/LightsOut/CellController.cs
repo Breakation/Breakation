@@ -8,8 +8,8 @@ public class CellController : MonoBehaviour {
 
 
     private LightsOutManager GMInstance = LightsOutManager.Instance; // verwaltet den Rätsel
-    public List<Cell> adjacentCells;
-    public Animator animator;
+    public List<CellController> adjacentCells;
+    private Animator animator;
 
     private void Start()
     {        
@@ -58,7 +58,7 @@ public class CellController : MonoBehaviour {
 
 		foreach (var item in adjacentCells) {
 
-            var selectedCell = item.GetComponent<CellController> ();
+           /* var selectedCell =  item.GetComponent<CellController> ();
 
 			if (selectedCell.cellStatus == Status.open) {
 				selectedCell.cellStatus = Status.closed;
@@ -66,14 +66,27 @@ public class CellController : MonoBehaviour {
             } else {
 				selectedCell.cellStatus = CellController.Status.open;
                 item.GetComponent<CellController>().openCap();
+            }*/
+
+            var selectedCell = item;
+
+            if (item.cellStatus == Status.open)
+            {
+                item.cellStatus = Status.closed;
+                item.closeCap();
             }
-		}
+            else
+            {
+                item.cellStatus = CellController.Status.open;
+                item.openCap();
+            }
+        }
 	}
 
 	void GetAdjacentCells(){
-		adjacentCells = new List<Cell> ();
+		adjacentCells = new List<CellController> ();
 
-		Cell northCell = null, westCell = null, eastCell = null, southCell = null;
+        CellController northCell = null, westCell = null, eastCell = null, southCell = null;
 
 		if (xCoord - 1 >= 0) {
 			northCell = GMInstance.ArrayOfCells [xCoord - 1, yCoord];

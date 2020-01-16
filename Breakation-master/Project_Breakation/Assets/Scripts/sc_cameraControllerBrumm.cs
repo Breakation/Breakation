@@ -10,11 +10,11 @@ public class sc_cameraControllerBrumm : MonoBehaviour
     public Vector3 distToCar = new Vector3(0, 5f, -10f);
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (brummSpiel)
         {
-            transform.position = playerCar.transform.position + distToCar;
+            transform.position = Vector3.Lerp(transform.position,playerCar.transform.position + distToCar,1.0f) ;
         }
     }
 }

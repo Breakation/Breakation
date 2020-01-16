@@ -1,13 +1,13 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class sc_carContr : MonoBehaviour
 {
     [SerializeField]
-    private int xDirection = sc_pseudoJoystick.xAxis;
+    private int xRotation = SampleUserPolling_ReadWrite.JoyXvalue; // sc_pseudoJoystick.xAxis;
     [SerializeField]
-    private int zDirection = sc_pseudoJoystick.zAxis;
+    private int zDirection = SampleUserPolling_ReadWrite.JoyYvalue;  //sc_pseudoJoystick.zAxis;
 
     private Vector3 moveDir = Vector3.zero;
 
@@ -20,22 +20,25 @@ public class sc_carContr : MonoBehaviour
 
     void Update()
     {
-        xDirection = sc_pseudoJoystick.xAxis;
+        xRotation = SampleUserPolling_ReadWrite.JoyXvalue;
+        zDirection = SampleUserPolling_ReadWrite.JoyYvalue;
+
+        xRotation = sc_pseudoJoystick.xAxis;
         zDirection = sc_pseudoJoystick.zAxis;
 
 
-        if(xDirection > 500)
+        if(xRotation > 500)
         {
-            xDirection = (xDirection - 500)/50;
+            xRotation = (xRotation - 500)/50;
             
         }
-        else if(xDirection <500)
+        else if(xRotation < 500)
         {
-            xDirection = (500 - xDirection) / -50;
+            xRotation = (500 - xRotation) / -50;
         }
         else
         {
-            xDirection = 0;
+            xRotation = 0;
         }
 
         if (zDirection > 500)
@@ -52,10 +55,14 @@ public class sc_carContr : MonoBehaviour
             zDirection = 0;
         }
 
+        moveDir = zDirection * transform.forward;
 
-        moveDir = new Vector3(xDirection, 0.0f, zDirection);
-        if(CC.enabled) if (moveDir != Vector3.zero) transform.rotation = Quaternion.LookRotation(moveDir);
 
+        transform.Rotate(0, xRotation, 0);
+
+        
+        //if(CC.enabled) if (moveDir != Vector3.zero) transform.rotation = Quaternion.LookRotation(moveDir);
+        
 
         CC.Move(moveDir * Time.deltaTime);
     }

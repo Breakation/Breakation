@@ -37,5 +37,7 @@ MonoBehaviour:
   - RPC_AddCharacter
   - RPC_SyncTime
   - RPC_syncShelf
+  - RPC_syncDrehModul
+  - RPC_syncJoySTick
   DisableAutoOpenWizard: 1
   ShowSettings: 1
