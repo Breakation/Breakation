@@ -290,9 +290,9 @@ public class SampleUserPolling_ReadWrite : MonoBehaviourPun, IPunObservable
             Debug.Log(message);
             keypad14 = true;
             
-        } 
-
-            return;
+        }
+        pv.RPC("RPC_syncSerialController", RpcTarget.AllBuffered, keypad1, keypad10, keypad11, keypad12, keypad13, keypad14, keypad2, keypad3, keypad4, keypad5, keypad6, keypad7, keypad8, keypad9, encoderleft, encoderright, pot1value, pot2value, pot3value, pot4value, JoyXvalue, JoyYvalue, erdbebenMode, timercd, sendtext);
+        return;
 
         // Check if the message is plain data or a connect/disconnect event.
         if (ReferenceEquals(message, SerialController.SERIAL_DEVICE_CONNECTED))
@@ -303,7 +303,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviourPun, IPunObservable
             Debug.Log("Message arrived: " + message);
 
 
-        pv.RPC("RPC_syncSerialController", RpcTarget.AllBuffered, keypad1, keypad10, keypad11, keypad12, keypad13, keypad14, keypad2, keypad3, keypad4, keypad5, keypad6, keypad7, keypad8, keypad9, encoderleft, encoderright, pot1value, pot2value, pot3value, pot4value, JoyXvalue, JoyYvalue, erdbebenMode, timercd, sendtext);
+        
     }
 
     [PunRPC]
