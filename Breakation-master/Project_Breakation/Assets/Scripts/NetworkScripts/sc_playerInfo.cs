@@ -6,6 +6,9 @@ public class sc_playerInfo : MonoBehaviour
 {
 
     public static sc_playerInfo PI;
+    public static bool goOff;
+
+
     public int mySelectedCharacter;
 
 
@@ -42,4 +45,5 @@ public class sc_playerInfo : MonoBehaviour
     }
 
     
+
 }

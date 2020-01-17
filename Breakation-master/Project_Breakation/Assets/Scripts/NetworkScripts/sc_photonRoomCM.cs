@@ -11,6 +11,9 @@ public class sc_photonRoomCM : MonoBehaviourPunCallbacks, IInRoomCallbacks
 {
 
     public static sc_photonRoomCM room;
+
+    public static bool goOff;
+
     private PhotonView PV;
 
     public bool isGameLoaded;
@@ -104,7 +107,10 @@ public class sc_photonRoomCM : MonoBehaviourPunCallbacks, IInRoomCallbacks
     // Update is called once per frame
     void Update()
     {
-
+        if (goOff)
+        {
+            PV.RPC("RPC_kickPlayer", RpcTarget.AllBuffered);
+        }
         //if (MultiplayerSetting.multiplayerSetting.delayStart)
         //{
         //    if(playersInRoom == 1)
@@ -242,10 +248,18 @@ public class sc_photonRoomCM : MonoBehaviourPunCallbacks, IInRoomCallbacks
 
     public void LeavePhotonRoom()
     {
-       
+
+        
+
         PhotonNetwork.LeaveRoom();
 
         SceneManager.LoadScene("MainMenuUI");
+    }
+
+    [PunRPC]
+    void RPC_kickPlayer()
+    {
+        PhotonNetwork.LeaveRoom();
     }
 
 
