@@ -244,6 +244,8 @@ public class sc_photonRoomCM : MonoBehaviourPunCallbacks, IInRoomCallbacks
     {
        
         PhotonNetwork.LeaveRoom();
+
+        SceneManager.LoadScene("MainMenuUI");
     }
 
 
