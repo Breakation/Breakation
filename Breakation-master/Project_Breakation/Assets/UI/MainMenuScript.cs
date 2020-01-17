@@ -17,6 +17,6 @@ public class MainMenuScript : MonoBehaviour
 
     public void LoadLobby()
     {
-        //SceneManager.LoadScene("...");
+        SceneManager.LoadScene("ProtoNetworkScene");
     }
 }
