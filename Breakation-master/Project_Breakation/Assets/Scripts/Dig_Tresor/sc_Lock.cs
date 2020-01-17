@@ -11,6 +11,9 @@ public class sc_Lock : MonoBehaviour
     public int[] input;
     public Material right, wrong;
     MeshRenderer ren;
+    public sc_Lock openLock;
+   
+   
     
 
 
@@ -19,6 +22,7 @@ public class sc_Lock : MonoBehaviour
         ren = this.gameObject.GetComponent<MeshRenderer>();
         ren.material = wrong;
         input = new int[4];
+        
         target = Random.Range(10, 64);
        
         
@@ -29,10 +33,14 @@ public class sc_Lock : MonoBehaviour
     void Update()
     {
 
-        input[0] = SampleUserPolling_ReadWrite.pot1value;
-        input[1] = SampleUserPolling_ReadWrite.pot2value;
-        input[2] = SampleUserPolling_ReadWrite.pot3value;
-        input[3] = SampleUserPolling_ReadWrite.pot4value;
+        /*  input[0] = SampleUserPolling_ReadWrite.pot1value;
+          input[1] = SampleUserPolling_ReadWrite.pot2value;
+          input[2] = SampleUserPolling_ReadWrite.pot3value;
+          input[3] = SampleUserPolling_ReadWrite.pot4value;
+
+      */
+        
+
 
         switch (targetInput)
         {
@@ -65,90 +73,99 @@ public class sc_Lock : MonoBehaviour
                 break;
 
             case 1:
-                if (old > input[1])
+                if (openLock.open)
                 {
-                    transform.Rotate(7, 0, 0);
-                }
-                else if (old < input[1])
-                {
-                    transform.Rotate(-7, 0, 0);
-                }
-                if (open && (input[1] < target - 1 || input[1] > target + 1))
-                {
-                    target = Random.Range(10, 64);
-                }
-                if (input[1] == target)
-                {
-                    open = true;
-                    ren.material = right;
-                }
-                else
-                {
-                    if ((input[1] < target - 1 || input[1] > target + 1))
+                    if (old > input[1])
                     {
-                        open = false;
-                        ren.material = wrong;
+                        transform.Rotate(7, 0, 0);
                     }
+                    else if (old < input[1])
+                    {
+                        transform.Rotate(-7, 0, 0);
+                    }
+                    if (open && (input[1] < target - 1 || input[1] > target + 1))
+                    {
+                        target = Random.Range(10, 64);
+                    }
+                    if (input[1] == target)
+                    {
+                        open = true;
+                        ren.material = right;
+                    }
+                    else
+                    {
+                        if ((input[1] < target - 1 || input[1] > target + 1))
+                        {
+                            open = false;
+                            ren.material = wrong;
+                        }
+                    }
+                    old = input[1];
                 }
-                old = input[1];
                 break;
 
             case 2:
-                if (old > input[2])
+                if (openLock.open)
                 {
-                    transform.Rotate(7, 0, 0);
-                }
-                else if (old < input[2])
-                {
-                    transform.Rotate(-7, 0, 0);
-                }
-                if (open && (input[2] < target - 1 || input[2] > target + 1))
-                {
-                    target = Random.Range(10, 64);
-                }
-                if (input[2] == target)
-                {
-                    open = true;
-                    ren.material = right;
-                }
-                else
-                {
-                    if ((input[2] < target - 1 || input[2] > target + 1))
+                    if (old > input[2])
                     {
-                        open = false;
-                        ren.material = wrong;
+                        transform.Rotate(7, 0, 0);
                     }
+                    else if (old < input[2])
+                    {
+                        transform.Rotate(-7, 0, 0);
+                    }
+                    if (open && (input[2] < target - 1 || input[2] > target + 1))
+                    {
+                        target = Random.Range(10, 64);
+                    }
+                    if (input[2] == target)
+                    {
+                        open = true;
+                        ren.material = right;
+                    }
+                    else
+                    {
+                        if ((input[2] < target - 1 || input[2] > target + 1))
+                        {
+                            open = false;
+                            ren.material = wrong;
+                        }
+                    }
+                    old = input[2];
                 }
-                old = input[2];
                 break;
 
             case 3:
-                if (old > input[3])
+                if (openLock.open)
                 {
-                    transform.Rotate(7, 0, 0);
-                }
-                else if (old < input[3])
-                {
-                    transform.Rotate(-7, 0, 0);
-                }
-                if (open && (input[3] < target - 1 || input[3] > target + 1))
-                {
-                    target = Random.Range(10, 64);
-                }
-                if (input[3] == target)
-                {
-                    open = true;
-                    ren.material = right;
-                }
-                else
-                {
-                    if ((input[3] < target - 1 || input[3] > target + 1))
+                    if (old > input[3])
                     {
-                        open = false;
-                        ren.material = wrong;
+                        transform.Rotate(7, 0, 0);
                     }
+                    else if (old < input[3])
+                    {
+                        transform.Rotate(-7, 0, 0);
+                    }
+                    if (open && (input[3] < target - 1 || input[3] > target + 1))
+                    {
+                        target = Random.Range(10, 64);
+                    }
+                    if (input[3] == target)
+                    {
+                        open = true;
+                        ren.material = right;
+                    }
+                    else
+                    {
+                        if ((input[3] < target - 1 || input[3] > target + 1))
+                        {
+                            open = false;
+                            ren.material = wrong;
+                        }
+                    }
+                    old = input[3];
                 }
-                old = input[3];
                 break;
         }
 

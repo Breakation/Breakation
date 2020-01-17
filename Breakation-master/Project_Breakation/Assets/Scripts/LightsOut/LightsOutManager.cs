@@ -95,17 +95,17 @@ public class LightsOutManager : MonoBehaviour {
         {
             for (int col = 0; col < GridSize; col++)
             {
-                if (arrayPattern[row, col] == -1)
+                if (arrayPattern[row, col] == 1)
                 {
-                    ArrayOfCells[row, col].cellStatus = CellController.Status.closed;
-                    ArrayOfCells[row, col].closeCap();
+                    ArrayOfCells[row, col].cellStatus = CellController.Status.open;
+                    ArrayOfCells[row, col].GetComponent<CellController>().openCap();
                     //ArrayOfCells[row, col].GetComponent<CellController>().cellStatus = CellController.Status.closed;
                     //ArrayOfCells[row, col].GetComponent<CellController>().closeCap();
                 }
                 else
                 {
-                    ArrayOfCells[row, col].cellStatus = CellController.Status.open;
-                    ArrayOfCells[row, col].openCap();
+                    ArrayOfCells[row, col].cellStatus = CellController.Status.closed;
+                    ArrayOfCells[row, col].GetComponent<CellController>().closeCap();
                 }
             }
         }

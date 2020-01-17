@@ -83,6 +83,11 @@ public class SC_PseudoKeyPad : MonoBehaviour
                 SampleUserPolling_ReadWrite.keypad13 = true;
                 keyPressed = true;
             }
+            if (Input.GetKey(KeyCode.Return))
+            {
+                SampleUserPolling_ReadWrite.keypad14 = true;
+                keyPressed = true;
+            }
         }
 
         if (Input.GetKeyUp(KeyCode.Keypad0) || Input.GetKeyUp(KeyCode.Keypad1) || Input.GetKeyUp(KeyCode.Keypad2) || Input.GetKeyUp(KeyCode.Keypad3) || Input.GetKeyUp(KeyCode.Keypad4) || Input.GetKeyUp(KeyCode.Keypad5) || Input.GetKeyUp(KeyCode.Keypad6) || Input.GetKeyUp(KeyCode.Keypad7) || Input.GetKeyUp(KeyCode.Keypad8) || Input.GetKeyUp(KeyCode.Keypad9) || Input.GetKeyUp(KeyCode.KeypadDivide) || Input.GetKeyUp(KeyCode.KeypadMultiply) || Input.GetKeyUp(KeyCode.KeypadMinus))

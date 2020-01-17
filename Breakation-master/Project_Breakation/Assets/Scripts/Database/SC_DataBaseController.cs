@@ -15,6 +15,9 @@ public class SC_DataBaseController : MonoBehaviour
     public Sprite chemieCombs;
     public Sprite nicImage1;
     public Sprite nicImage2;
+    public Sprite fluidData;
+    public Sprite gasData;
+    public Sprite solidData;
 
     public GameObject folder1Button;
     public GameObject folder2Button;
@@ -23,6 +26,9 @@ public class SC_DataBaseController : MonoBehaviour
 
     public GameObject dataButton;
     public GameObject data2Button;
+    public GameObject data3Button;
+    public GameObject data4Button;
+    public GameObject data5Button;
 
     public GameObject placeholderImage;
     public GameObject blackScreen;
@@ -67,6 +73,9 @@ public class SC_DataBaseController : MonoBehaviour
         backButton.SetActive(false);
         dataButton.SetActive(false);
         data2Button.SetActive(false);
+        data3Button.SetActive(false);
+        data4Button.SetActive(false);
+        data5Button.SetActive(false);
         placeholderImage.SetActive(false);
         xButton.SetActive(false);
         blackScreen.SetActive(false);
@@ -82,7 +91,10 @@ public class SC_DataBaseController : MonoBehaviour
         folder4Button.SetActive(false);
         dataButton.SetActive(true);
         data2Button.SetActive(true);
-        
+        data3Button.SetActive(true);
+        data4Button.SetActive(true);
+        data5Button.SetActive(true);
+
 
         currentPage = "folder1";
     }
@@ -134,6 +146,9 @@ public class SC_DataBaseController : MonoBehaviour
                     backButton.SetActive(false);
                     dataButton.SetActive(false);
                     data2Button.SetActive(false);
+                    data3Button.SetActive(false);
+                    data4Button.SetActive(false);
+                    data5Button.SetActive(false);
                     blackScreen.SetActive(false);
                     xButton.SetActive(false);
                     placeholderImage.SetActive(false);
@@ -189,10 +204,36 @@ public class SC_DataBaseController : MonoBehaviour
         xButton.SetActive(true);
     }
 
+    public void openData3()
+    {
+        blackScreen.SetActive(true);
+        placeholderImage.SetActive(true);
+        dataImage.sprite = fluidData;
+        xButton.SetActive(true);
+    }
+
+    public void openData4()
+    {
+        blackScreen.SetActive(true);
+        placeholderImage.SetActive(true);
+        dataImage.sprite = gasData;
+        xButton.SetActive(true);
+    }
+
+    public void openData5()
+    {
+        blackScreen.SetActive(true);
+        placeholderImage.SetActive(true);
+        dataImage.sprite = solidData;
+        xButton.SetActive(true);
+    }
+
     public void closeData()
     {
         blackScreen.SetActive(false);
         placeholderImage.SetActive(false);
         xButton.SetActive(false);
     }
+
+    
 }

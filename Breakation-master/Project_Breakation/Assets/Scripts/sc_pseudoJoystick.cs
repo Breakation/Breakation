@@ -1,22 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class sc_pseudoJoystick : MonoBehaviour
+public class sc_pseudoJoystick : MonoBehaviourPun, IPunObservable
 {
 
     public static int xAxis;
     public static int zAxis;
 
+    private PhotonView pv;
+
+    private void Start()
+    {
+        pv = GetComponent<PhotonView>();
+    }
 
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.W))
         {
             xAxis = 1000 ;
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.S))
         {
             xAxis = 0;
         }
@@ -26,11 +33,11 @@ public class sc_pseudoJoystick : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.A))
         {
             zAxis = 1000;
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.D))
         {
             zAxis = 0;
         }
@@ -39,6 +46,20 @@ public class sc_pseudoJoystick : MonoBehaviour
             zAxis = 500;
         }
 
-        
+        //pv.RPC("RPC_syncJoyStick", RpcTarget.AllBuffered, xAxis, zAxis);
+    }
+
+
+
+    /*[PunRPC]
+    void RPC_syncJoyStick(int pXAxis, int pZAxis)
+    {
+        xAxis = pXAxis;
+        zAxis = pZAxis;
+    }*/
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+       
     }
 }

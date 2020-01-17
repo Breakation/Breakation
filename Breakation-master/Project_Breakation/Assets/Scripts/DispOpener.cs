@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DispOpener : MonoBehaviour
+using Photon.Pun;
+
+public class DispOpener : MonoBehaviourPun, IPunObservable
 {
     public bool trigger = false;
 
@@ -16,6 +18,8 @@ public class DispOpener : MonoBehaviour
     private Material inactivMaterial;
     public Material setMaterial;
 
+    private PhotonView pv;
+
    // public string OpenText = "Click to Open";
    // public string CloseText = "Click to Close";
 
@@ -23,7 +27,7 @@ public class DispOpener : MonoBehaviour
     {
         _animator = transform.GetComponentInParent<Animator>();
         inactivMaterial = obj[0].material;
-
+        pv = GetComponent<PhotonView>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -54,6 +58,7 @@ public class DispOpener : MonoBehaviour
 
     private void Update()
     {
+        //pv.RPC("RPC_syncDisp", RpcTarget.AllBuffered, trigger);
         if (trigger)
         {
             isOpen = !isOpen;
@@ -61,7 +66,10 @@ public class DispOpener : MonoBehaviour
             _animator.SetBool("open", true) ;
             trigger = false;
         }
+
     }
+
+    
 
     /*  private bool isOpenPanelActive
       {
@@ -118,5 +126,8 @@ public class DispOpener : MonoBehaviour
         }
     }
 
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
 
+    }
 }

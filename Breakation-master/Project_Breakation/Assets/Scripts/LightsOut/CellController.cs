@@ -14,7 +14,7 @@ public class CellController : MonoBehaviour {
     private void Start()
     {        
         animator = GetComponent<Animator>();
-        Debug.Log("component of child: " + animator.name);
+        Debug.Log("component of child: " + animator.avatar.name);
     }
 
     // status der Zelle 
@@ -30,6 +30,8 @@ public class CellController : MonoBehaviour {
 	public int yCoord {	get; set; }
 
 	public void AffectCells() { // diese werden beim Clicken immer aufgerufen
+
+        Debug.Log("hello ich bin AffectCells");
 		SwitchCellState (); // Zustand der Zelle selbst wird geändert
 		SwitchAdjacentCellState (); //Zustände der umliegenden Zellen
         GMInstance.numberOfClicks++; // Anzahl clicks wird erhöht
