@@ -317,8 +317,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -829,7 +829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.000045776367}
   m_SizeDelta: {x: 0, y: 65.8}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &698105932
@@ -938,6 +938,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efdf3667492b754b8531cd15809d0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  events: {fileID: 0}
+  answerPrefab: {fileID: 0}
+  uIElements:
+    answersContentArea: {fileID: 0}
+    questionInfoTextObject: {fileID: 0}
+    scoreText: {fileID: 0}
+    resolutionBG: {fileID: 0}
+    resolutionStateInfoText: {fileID: 0}
+    resolutionScoreText: {fileID: 0}
+    highScoreText: {fileID: 0}
+    mainCanvasGroup: {fileID: 0}
+    finishUIElements: {fileID: 0}
+  parameters:
+    margins: 0
 --- !u!114 &705655936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,8 +1166,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1332,7 +1346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -29.1}
+  m_AnchoredPosition: {x: 0, y: -29.099976}
   m_SizeDelta: {x: -60, y: -355.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1686948256
@@ -1400,7 +1414,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 25, y: -25}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 202.2, y: 58.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1786997447
 MonoBehaviour:
@@ -1450,8 +1464,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1467,7 +1481,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1762,7 +1776,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2146787866}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.8982887
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1888,8 +1902,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
