@@ -6,15 +6,24 @@ using UnityEngine.SceneManagement;
 public class PauseMenuScript : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public static bool OptionsMenuClosed = true;
 
     [SerializeField] GameObject pauseMenuUI;
+    [SerializeField] GameObject CanvasOptionMenu;
+    [SerializeField] GameObject CanvasPauseMenu;
+    [SerializeField] AudioSource MainTheme;
+
+    void Start()
+    {
+        CanvasOptionMenu.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
 
-            if (GameIsPaused)
+            if (GameIsPaused && OptionsMenuClosed)
             {
                 resume();
             }
@@ -29,9 +38,11 @@ public class PauseMenuScript : MonoBehaviour
 
     {   // public variable um anzuzeigen dass spiel nicht mehr pausiert
         GameIsPaused = false;
+        OptionsMenuClosed = true;
 
         // Pause Menu wieder schließen
         pauseMenuUI.SetActive(false);
+        CanvasOptionMenu.SetActive(false);
 
         // Spiel nicht mehr freezen
         //Time.timeScale = 1f;
@@ -53,9 +64,10 @@ public class PauseMenuScript : MonoBehaviour
     {
         // code für option button soll neue option szene laden wo einstellungen vorgenommen werden können
         // BSP unten wenn scene options heißt
-        SceneManager.LoadScene("OptionsMenu");
-        Debug.Log("Options");
 
+        CanvasOptionMenu.SetActive(true);
+        CanvasPauseMenu.SetActive(false);
+        OptionsMenuClosed = false;
         // Achtung Game ist bei Options noch frozen durch TimeScale = 0 nachher auf jeden Fall Resume!! mit Timesclae = 1
 
     }

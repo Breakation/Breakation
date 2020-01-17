@@ -12,6 +12,8 @@ public class sc_carContr : MonoBehaviourPun, IPunObservable
 
     private Vector3 moveDir = Vector3.zero;
 
+    public float gravityScale = 0.5f;
+
     CharacterController CC;
 
     PhotonView pv;
@@ -26,6 +28,8 @@ public class sc_carContr : MonoBehaviourPun, IPunObservable
         CC = GetComponent<CharacterController>();
         pv = GetComponent<PhotonView>();
 
+
+        PhotonNetwork.ConnectUsingSettings();
     }
 
     void Update()
@@ -33,8 +37,8 @@ public class sc_carContr : MonoBehaviourPun, IPunObservable
         xRotation = SampleUserPolling_ReadWrite.JoyXvalue;
         zDirection = SampleUserPolling_ReadWrite.JoyYvalue;
 
-       // xRotation = sc_pseudoJoystick.xAxis;
-        //zDirection = sc_pseudoJoystick.zAxis;
+        xRotation = sc_pseudoJoystick.xAxis;
+        zDirection = sc_pseudoJoystick.zAxis;
 
 
         if(xRotation > 690)
@@ -78,9 +82,14 @@ public class sc_carContr : MonoBehaviourPun, IPunObservable
         if(CC.enabled) if (moveDir != Vector3.zero) transform.rotation = Quaternion.LookRotation(moveDir);
         
 
-        CC.Move(moveDir * Time.deltaTime);
+        //CC.Move(moveDir * Time.deltaTime);
 
-        pv.RPC("RPC_syncCar", RpcTarget.AllBuffered);
+        //pv.RPC("RPC_syncCar", RpcTarget.AllBuffered);
+
+        //gravity
+        moveDir.y = moveDir.y + (Physics.gravity.y * gravityScale);
+        //apply movement on controller; Time.deltaTime calculates how long it was since last frame was rendered
+        CC.Move(moveDir * Time.deltaTime);
     }
 }
 

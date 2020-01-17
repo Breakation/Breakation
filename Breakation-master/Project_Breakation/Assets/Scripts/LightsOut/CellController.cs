@@ -9,12 +9,11 @@ public class CellController : MonoBehaviour {
 
     private LightsOutManager GMInstance = LightsOutManager.Instance; // verwaltet den Rätsel
     public List<CellController> adjacentCells;
-    private Animator animator;
+    public  Animator animator;
 
     private void Start()
     {        
         animator = GetComponent<Animator>();
-        Debug.Log("component of child: " + animator.avatar.name);
     }
 
     // status der Zelle 

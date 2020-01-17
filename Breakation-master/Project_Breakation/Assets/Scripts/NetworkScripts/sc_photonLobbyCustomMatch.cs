@@ -3,6 +3,7 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class sc_photonLobbyCustomMatch : MonoBehaviourPunCallbacks, ILobbyCallbacks
 {
@@ -100,6 +101,11 @@ public class sc_photonLobbyCustomMatch : MonoBehaviourPunCallbacks, ILobbyCallba
             PhotonNetwork.JoinLobby();
             sc_playerInfo.PI.mySelectedCharacter = 2;
         }
+    }
+
+    public void LoadMainMenuOnClick()
+    {
+        SceneManager.LoadScene("MainMenuUI");
     }
 
 }
