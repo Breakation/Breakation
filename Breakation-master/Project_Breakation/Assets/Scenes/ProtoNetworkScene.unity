@@ -913,7 +913,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 553634183}
+      - m_Target: {fileID: 60355379}
         m_MethodName: LeavePhotonRoom
         m_Mode: 1
         m_Arguments:

@@ -233,14 +233,18 @@ public class sc_photonRoomCM : MonoBehaviourPunCallbacks, IInRoomCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         base.OnPlayerLeftRoom(otherPlayer);
-        Debug.Log(otherPlayer.NickName + "has ArrowLeft the game");
+        Debug.Log(otherPlayer.NickName + "has Left the game");
         playersInRoom--;
 
         CLearPlayerListings();
         ListPlayers();
     }
 
+    public void LeavePhotonRoom()
+    {
+       
+        PhotonNetwork.LeaveRoom();
+    }
 
-    
 
 }
