@@ -4,29 +4,32 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
-public class OptionsMenu : MonoBehaviour
+public class OptionsMenuInGame : MonoBehaviour
 
 {
+
+    [SerializeField] GameObject CanvasOptionMenu;
+    [SerializeField] GameObject CanvasPauseMenu;
 
     public AudioMixer audiomixer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // volume ändern per music mixer einmal gruppe music und einmal sound
 
     public void SetVolumeMusic(float volumeMusic)
     {
-        audiomixer.SetFloat("Volume_music",volumeMusic);
+        audiomixer.SetFloat("Volume_music", volumeMusic);
     }
 
 
@@ -49,10 +52,10 @@ public class OptionsMenu : MonoBehaviour
                 break;
 
             case true:
-                    audiomixer.GetFloat("Volume_Master", out speicher);
-                    float f = -80;
-                    audiomixer.SetFloat("Volume_Master", f);
-                    mute = false;
+                audiomixer.GetFloat("Volume_Master", out speicher);
+                float f = -80;
+                audiomixer.SetFloat("Volume_Master", f);
+                mute = false;
                 break;
 
         }
@@ -60,16 +63,16 @@ public class OptionsMenu : MonoBehaviour
 
     private void DeMuteAll()
     {
-            audiomixer.SetFloat("Volume_Master", 0);
-            mute = true;
-        
+        audiomixer.SetFloat("Volume_Master", 0);
+        mute = true;
+
     }
 
     //Pitch zugriff auf music mixer
 
     public void pitchMusic(float pitch)
     {
-        audiomixer.SetFloat("Pitch_Music",pitch);
+        audiomixer.SetFloat("Pitch_Music", pitch);
     }
 
 
@@ -79,8 +82,11 @@ public class OptionsMenu : MonoBehaviour
     /// /Scenene von Main Menu und Pause menu laden Buttons
     /// </summary>
     /// 
-    public void backToMainMenu()
+    
+
+    public void backToPauseMenu()
     {
-        SceneManager.LoadScene("MainMenuUI");
+        CanvasOptionMenu.SetActive(false);
+        CanvasPauseMenu.SetActive(true);
     }
 }

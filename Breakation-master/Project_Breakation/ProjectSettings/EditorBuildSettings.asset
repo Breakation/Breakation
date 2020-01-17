@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/ProtoNetworkScene.unity
-    guid: a7e9d9b5cff08ae498c13b58d68bbfcd
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -15,18 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/SZ_UhrzeitTuer.unity
     guid: 42929030c538d364389f055b22a18719
   - enabled: 0
-    path: Assets/Scenes/UI/PauseMenu.unity
-    guid: 21bbff64379fc534e92cabcca50ad862
-  - enabled: 0
-    path: Assets/Scenes/UI/OptionsMenu.unity
-    guid: 8213085eddcde594fa98e8ce8ad39eb6
-  - enabled: 0
-    path: Assets/Scenes/UI/MainMenuUI.unity
-    guid: 873abe5e04c3fb74c9077e990443307d
-  - enabled: 0
-    path: Assets/Scenes/SZ_MixDivideRiddle.unity
-    guid: 1f3b2272f7f70e44ab729875e7ac0935
-  - enabled: 1
     path: Assets/Scenes/SZ_brummBrumm.unity
     guid: 4302eb31774e45c499bbc46f3cfa43eb
+  - enabled: 1
+    path: Assets/Scenes/UI/OptionsMenuMain.unity
+    guid: 8213085eddcde594fa98e8ce8ad39eb6
+  - enabled: 1
+    path: Assets/Scenes/UI/PauseMenu.unity
+    guid: 21bbff64379fc534e92cabcca50ad862
+  - enabled: 1
+    path: Assets/Scenes/UI/MainMenuUI.unity
+    guid: 873abe5e04c3fb74c9077e990443307d
+  - enabled: 1
+    path: Assets/Scenes/ProtoNetworkScene.unity
+    guid: a7e9d9b5cff08ae498c13b58d68bbfcd
+  - enabled: 1
+    path: Assets/Scenes/SZ_MixDivideRiddle.unity
+    guid: 1f3b2272f7f70e44ab729875e7ac0935
   m_configObjects: {}
