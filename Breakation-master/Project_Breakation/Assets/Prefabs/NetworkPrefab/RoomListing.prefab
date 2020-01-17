@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 70}
+  m_SizeDelta: {x: 410, y: 70}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &3454281777491756906
 CanvasRenderer:
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4d0f4811f30e946a560b7874bbf44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
+  nameText: {fileID: 8975396848361933624}
   roomName: 
 --- !u!1 &6808859169082199883
 GameObject:
@@ -220,4 +220,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 

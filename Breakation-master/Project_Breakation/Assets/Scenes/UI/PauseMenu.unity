@@ -170,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5186307718960966645, guid: e23f9cdde16519e47a315f501c8d9bdb,
         type: 3}
@@ -283,10 +283,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305937213}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -620, y: -316, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1036032664}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &580270684
@@ -353,7 +353,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1036032664}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1036032663
 GameObject:
@@ -383,13 +383,12 @@ Transform:
   m_LocalPosition: {x: 620, y: 317, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 305937216}
   - {fileID: 1039198521}
   - {fileID: 580270687}
   - {fileID: 223315132}
   - {fileID: 1094114235}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1036032665
 MonoBehaviour:
@@ -480,7 +479,7 @@ PrefabInstance:
     - target: {fileID: 7910726165290987993, guid: a324cf0bba957854c9790a9ca18a0462,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7910726165290987993, guid: a324cf0bba957854c9790a9ca18a0462,
         type: 3}
@@ -818,21 +817,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasUImitPauseMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 5303494360587452146, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
-        type: 3}
-      propertyPath: CanvasOptionMenu
-      value: 
-      objectReference: {fileID: 1094114234}
-    - target: {fileID: 5303494360587452146, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
-        type: 3}
-      propertyPath: CanvasPauseMenu
-      value: 
-      objectReference: {fileID: 1039198517}
-    - target: {fileID: 5303494360587452146, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
-        type: 3}
-      propertyPath: MainTheme
-      value: 
-      objectReference: {fileID: 223315133}
     - target: {fileID: 5303494360587452147, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -871,7 +855,7 @@ PrefabInstance:
     - target: {fileID: 5303494360587452147, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5303494360587452147, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
         type: 3}
@@ -938,6 +922,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5303494360587452146, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
+        type: 3}
+      propertyPath: CanvasOptionMenu
+      value: 
+      objectReference: {fileID: 1094114234}
+    - target: {fileID: 5303494360587452146, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
+        type: 3}
+      propertyPath: CanvasPauseMenu
+      value: 
+      objectReference: {fileID: 1039198517}
+    - target: {fileID: 5303494360587452146, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
+        type: 3}
+      propertyPath: MainTheme
+      value: 
+      objectReference: {fileID: 223315133}
     - target: {fileID: 5303494360706060074, guid: c0d4cac0b10fdf341a1ae3566a84c9db,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
