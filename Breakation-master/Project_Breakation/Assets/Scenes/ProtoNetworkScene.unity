@@ -281,7 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameLoaded: 0
   currentScene: 0
-  multiplayerScene: 1
+  multiplayerScene: 4
   playersInRoom: 0
   myNumberInRoom: 0
   playersInGame: 0
