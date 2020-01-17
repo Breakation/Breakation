@@ -52,16 +52,18 @@ public class LightsOutManager : MonoBehaviour {
     {
         //uiGame.endingText.gameObject.SetActive(false);
         // Coroutine fängt ab ier an; der Grid wird generiert. Diese Funktion läuft die ganze Zeit bis das Spiel beendet wird. Brauchen wir später auch nicht!
-        //StartCoroutine (GenerateStaticGrid(GridSize));
-        Configure(GridSize);
+        StartCoroutine (Configure(GridSize));
+        //Configure(GridSize);
         CountElapsedTime();
     }
 
 
-    public void Configure(int size)
+    IEnumerator Configure(int size)
     {
         ArrayOfCells = new CellController[ size* size, size* size];
         Debug.Log("array of Cells size = " + ArrayOfCells.Length);
+
+        yield return new WaitForEndOfFrame(); // Ab hier läuft die Funktion über den jetzigen Frame, in dem die sie gerufen wurde, hinaus
 
         FillArray();
         applyPattern();
@@ -71,6 +73,7 @@ public class LightsOutManager : MonoBehaviour {
     {
         // lokales Hilfs-Array
         CellController[] arrayOfObjects = GameObject.FindObjectsOfType<CellController>();
+        Debug.Log("objekt: "+arrayOfObjects[0]);
         Debug.Log("Hilfsarray arrayOfObjects.Length: " + arrayOfObjects.Length);
 
         int k = 0;
@@ -98,14 +101,15 @@ public class LightsOutManager : MonoBehaviour {
                 if (arrayPattern[row, col] == 1)
                 {
                     ArrayOfCells[row, col].cellStatus = CellController.Status.open;
-                    ArrayOfCells[row, col].GetComponent<CellController>().openCap();
+                    ArrayOfCells[row, col].openCap();
                     //ArrayOfCells[row, col].GetComponent<CellController>().cellStatus = CellController.Status.closed;
                     //ArrayOfCells[row, col].GetComponent<CellController>().closeCap();
                 }
                 else
                 {
                     ArrayOfCells[row, col].cellStatus = CellController.Status.closed;
-                    ArrayOfCells[row, col].GetComponent<CellController>().closeCap();
+                    ArrayOfCells[row, col].closeCap();
+                    Debug.Log("this is cell: ("+row+","+col+") "+ ArrayOfCells[row, col].name);
                 }
             }
         }
@@ -130,7 +134,6 @@ public class LightsOutManager : MonoBehaviour {
             {
                 if (this.ArrayOfCells[row, col].cellStatus == CellController.Status.open)
                 {
-                    Debug.Log(ArrayOfCells[row, col].name);
                     win = false;
                     return win;
                 }
