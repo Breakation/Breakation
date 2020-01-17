@@ -80,8 +80,6 @@ public class PauseMenuScript : MonoBehaviour
         /////////////////////////////////////////////////////////////////////////
         //mit Netzwerk abklären was hier hin muss um ins main menu zu wechseln///
         /////////////////////////////////////////////////////////////////////////
-        sc_photonRoomCM.goOff = true;
-
 
         PhotonNetwork.LeaveRoom();
 
