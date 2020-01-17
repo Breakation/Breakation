@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class sc_enemyCarMove : MonoBehaviour
 {
-    private bool follow = true;
+    public static bool follow = true;
     public GameObject lostScreen;
+    public GameObject restartBtn;
 
     public GameObject playerCar;
     public static int spd = 1;
@@ -22,6 +23,7 @@ public class sc_enemyCarMove : MonoBehaviour
             CharacterController tempCC = playerCar.GetComponent<CharacterController>();
             tempCC.enabled = false;
             lostScreen.SetActive(true);
+            restartBtn.SetActive(true);
         }
     }
 
@@ -33,6 +35,7 @@ public class sc_enemyCarMove : MonoBehaviour
             CharacterController tempCC = playerCar.GetComponent<CharacterController>();
             tempCC.enabled = false;
             lostScreen.SetActive(true);
+            restartBtn.SetActive(true);
         }
     }
 
