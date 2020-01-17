@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class sc_drehPlattformMechanik : MonoBehaviour
 {
-   
+    public GameObject[] drehPlatformen;
     void Update()
     {
         if (SampleUserPolling_ReadWrite.encoderright)
@@ -19,13 +19,21 @@ public class sc_drehPlattformMechanik : MonoBehaviour
         }
         if (sc_psuedoDrehModul.leftRotation)
         {
-            transform.Rotate(new Vector3(0, -5, 0));
+            for (int i = 0; i < drehPlatformen.Length; i++)
+            {
+                drehPlatformen[i].transform.Rotate(new Vector3(0, -5, 0));
+            }
             sc_psuedoDrehModul.leftRotation = false;
         }
         if (sc_psuedoDrehModul.rightRotation)
         {
-            transform.Rotate(new Vector3(0, 5, 0));
+            for (int i = 0; i < drehPlatformen.Length; i++)
+            {
+                drehPlatformen[i].transform.Rotate(new Vector3(0, 5, 0));
+            }
             sc_psuedoDrehModul.rightRotation = false;
         }
+
+
     }
 }
