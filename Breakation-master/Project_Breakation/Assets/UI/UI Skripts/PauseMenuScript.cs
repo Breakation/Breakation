@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class PauseMenuScript : MonoBehaviour
 {
@@ -76,11 +77,13 @@ public class PauseMenuScript : MonoBehaviour
     {
         // hier kommt der Code für den Quit button rein muss aber noch geklärt werden mit Netzwerk wie das möglich ist zu quitten oder wenn ein spieler quittet
 
-          /////////////////////////////////////////////////////////////////////////
-         //mit Netzwerk abklären was hier hin muss um ins main menu zu wechseln///
         /////////////////////////////////////////////////////////////////////////
-        
-        SceneManager.LoadScene("MainMenuUI");
+        //mit Netzwerk abklären was hier hin muss um ins main menu zu wechseln///
+        /////////////////////////////////////////////////////////////////////////
+
+        PhotonNetwork.LeaveRoom();
+
+        SceneManager.LoadScene("MainMenuUI"); SceneManager.LoadScene("MainMenuUI");
         Debug.Log("Quit Game");
 
         // Achtung Game ist bei Quit noch frozen durch TimeScale = 0

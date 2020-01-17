@@ -108,9 +108,5 @@ public class sc_photonLobbyCustomMatch : MonoBehaviourPunCallbacks, ILobbyCallba
         SceneManager.LoadScene("MainMenuUI");
     }
 
-    public void LeavePhotonRoom()
-    {
-
-    }
 
 }
