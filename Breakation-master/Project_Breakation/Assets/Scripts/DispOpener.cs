@@ -10,7 +10,7 @@ public class DispOpener : MonoBehaviourPun, IPunObservable
     public bool trigger = false;
 
     private bool isOpen = false;
-    private bool PlayerInRange = false;
+    public static bool PlayerInRange = false;
   
    // public GameObject OpenPanel = null;
     private Animator _animator;
@@ -40,21 +40,21 @@ public class DispOpener : MonoBehaviourPun, IPunObservable
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
+    //private void OnTriggerExit(Collider other)
+    //{
        
-        if (other.tag == "Player")
-        {
-            PlayerInRange = false;
+    //    if (other.tag == "Player")
+    //    {
+    //        PlayerInRange = false;
 
-            // OpenPanel.SetActive(false);
-            obj[0].material = inactivMaterial;
-            obj[1].material = inactivMaterial;
-            obj[2].material = inactivMaterial;
-            obj[3].material = inactivMaterial;
-        }
+    //        // OpenPanel.SetActive(false);
+    //        obj[0].material = inactivMaterial;
+    //        obj[1].material = inactivMaterial;
+    //        obj[2].material = inactivMaterial;
+    //        obj[3].material = inactivMaterial;
+    //    }
         
-    }
+    //}
 
     private void Update()
     {
@@ -90,41 +90,41 @@ public class DispOpener : MonoBehaviourPun, IPunObservable
       */
 
 
-    private void OnMouseOver()
-    {
-        if (PlayerInRange)
-        {
+    //private void OnMouseOver()
+    //{
+    //    if (PlayerInRange)
+    //    {
 
-            obj[0].material = setMaterial;
-            obj[1].material = setMaterial;
-            obj[2].material = setMaterial;
-            obj[3].material = setMaterial;
-        }
-    }
+    //        obj[0].material = setMaterial;
+    //        obj[1].material = setMaterial;
+    //        obj[2].material = setMaterial;
+    //        obj[3].material = setMaterial;
+    //    }
+    //}
 
-    private void OnMouseExit()
-    {
-        if (PlayerInRange)
-        {
+    //private void OnMouseExit()
+    //{
+    //    if (PlayerInRange)
+    //    {
 
-            obj[0].material = inactivMaterial;
-            obj[1].material = inactivMaterial;
-            obj[2].material = inactivMaterial;
-            obj[3].material = inactivMaterial;
-        }
-    }
+    //        obj[0].material = inactivMaterial;
+    //        obj[1].material = inactivMaterial;
+    //        obj[2].material = inactivMaterial;
+    //        obj[3].material = inactivMaterial;
+    //    }
+    //}
 
 
-    private void OnMouseDown()
-    {
+    //private void OnMouseDown()
+    //{
         
-        if (PlayerInRange)
-        {
-            isOpen = !isOpen;
-           // UpdatePanelText();
-            _animator.SetBool("open", isOpen);
-        }
-    }
+    //    if (PlayerInRange)
+    //    {
+    //        isOpen = !isOpen;
+    //       // UpdatePanelText();
+    //        _animator.SetBool("open", isOpen);
+    //    }
+    //}
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {

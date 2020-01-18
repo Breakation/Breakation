@@ -9,7 +9,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
     public static string teststring ="";
     public static string sendkeypad= "";
 
-    private static bool textChanged = false;
+    public static bool textChanged = false;
 
     private PhotonView pv;
 

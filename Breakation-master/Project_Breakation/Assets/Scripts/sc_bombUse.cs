@@ -12,8 +12,11 @@ public class sc_bombUse : MonoBehaviourPun, IPunObservable
 
     private void OnMouseDown()
     {
-        bomb = true;
-        bombStone();
+        if (DispOpener.PlayerInRange)
+        {
+            bomb = true;
+            bombStone();
+        }
     }
 
     void Update()
