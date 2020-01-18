@@ -8,7 +8,11 @@ public class sc_finalDoor : MonoBehaviourPun, IPunObservable
 
 
     private string displayCode;
-    private string finalCode = "0000";
+    private string eingegCode;
+    private string finalCode = "150766961002";
+    public GameObject prisonbars;
+    private Animator barAnim;
+    private Collider barColl;
 
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -16,6 +20,11 @@ public class sc_finalDoor : MonoBehaviourPun, IPunObservable
 
     }
 
+    void Start()
+    {
+        barAnim = prisonbars.GetComponent<Animator>();
+        barColl = prisonbars.GetComponent<Collider>();
+    }
     
 
     // Update is called once per frame
@@ -23,16 +32,21 @@ public class sc_finalDoor : MonoBehaviourPun, IPunObservable
     {
         displayCode = testkeypad.teststring;
 
-        if (SampleUserPolling_ReadWrite.keypad14)
+        if (testkeypad.sendkeypad != "")
         {
-            if(displayCode == finalCode)
-            {
+            eingegCode = testkeypad.sendkeypad;
 
-            }
-            else
+
+            Debug.Log("eingegeben " + eingegCode);
+            Debug.Log("sendkeypad " + testkeypad.sendkeypad);
+
+            if(eingegCode == finalCode)
             {
-                
+                Debug.Log("open final");
+                barAnim.SetBool("Open", true);
+                barColl.enabled = false;
             }
+            testkeypad.textChanged = false;
         }
 
     }
