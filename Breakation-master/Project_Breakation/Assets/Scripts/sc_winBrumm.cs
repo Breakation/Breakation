@@ -17,5 +17,7 @@ public class sc_winBrumm : MonoBehaviour
     {
         Debug.Log("Yeah!");
         winCanvas.SetActive(true);
+        CharacterController tempCC = player.GetComponent<CharacterController>();
+        tempCC.enabled = false;
     }
 }

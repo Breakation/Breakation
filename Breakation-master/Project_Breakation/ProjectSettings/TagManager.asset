@@ -7,6 +7,7 @@ TagManager:
   - WallAlla
   - PlayerCar
   - EnemyCar
+  - ZoomContr
   layers:
   - Default
   - TransparentFX
