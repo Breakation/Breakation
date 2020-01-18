@@ -195,43 +195,43 @@ public class SampleUserPolling_ReadWrite : MonoBehaviourPun, IPunObservable
         //modulemode
 
         if(message == "module1on"){
-            module1 = true;
+            module1 == true;
             Debug.Log(message);
         }
 
         if(message == "module1off"){
-            module1 = false;
+            module1 == false;
             Debug.Log(message);
         }
 
 
         if(message == "module2on"){
-            module2 = true;
+            module2 == true;
             Debug.Log(message);
         }
 
         if(message == "module2off"){
-            module2 = false;
+            module2 == false;
             Debug.Log(message);
         }
 
         if(message == "module3on"){
-            module3 = true;
+            module3 == true;
             Debug.Log(message);
         }
 
         if(message == "module3off"){
-            module3 = false;
+            module3 == false;
             Debug.Log(message);
         }
 
         if(message == "module4on"){
-            module4 = true;
+            module4 == true;
             Debug.Log(message);
         }
 
         if(message == "module4off"){
-            module4 = false;
+            module4 == false;
             Debug.Log(message);
         }
 
