@@ -34,6 +34,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad1 = false;
             textChanged = true;
+            sc_digitalDisplay.dispChanged = false;
         }
         if (SampleUserPolling_ReadWrite.keypad2 == true)
         {
@@ -42,6 +43,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad2 = false;
             textChanged = true;
+            sc_digitalDisplay.dispChanged = false;
         }
         if (SampleUserPolling_ReadWrite.keypad3 == true)
         {
@@ -50,6 +52,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad3 = false;
             textChanged = true;
+            sc_digitalDisplay.dispChanged = false;
         }
         if (SampleUserPolling_ReadWrite.keypad4 == true)
         {
@@ -58,6 +61,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad4 = false;
             textChanged = true;
+            sc_digitalDisplay.dispChanged = false;
         }
         if (SampleUserPolling_ReadWrite.keypad5 == true)
         {
@@ -66,6 +70,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad5 = false;
             textChanged = true;
+            sc_digitalDisplay.dispChanged = false;
         }
         if (SampleUserPolling_ReadWrite.keypad6 == true)
         {
@@ -74,6 +79,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad6 = false;
             textChanged = true;
+            sc_digitalDisplay.dispChanged = false;
         }
         if (SampleUserPolling_ReadWrite.keypad7 == true)
         {
@@ -82,6 +88,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad7 = false;
             textChanged = true;
+            sc_digitalDisplay.dispChanged = false;
         }
         if (SampleUserPolling_ReadWrite.keypad8 == true)
         {
@@ -90,6 +97,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad8 = false;
             textChanged = true;
+            sc_digitalDisplay.dispChanged = false;
         }
         if (SampleUserPolling_ReadWrite.keypad9 == true)
         {
@@ -98,6 +106,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad9 = false;
             textChanged = true;
+            sc_digitalDisplay.dispChanged = false;
         }
         if (SampleUserPolling_ReadWrite.keypad10 == true)
         {
@@ -114,6 +123,7 @@ public class testkeypad : MonoBehaviourPun, IPunObservable
             SampleUserPolling_ReadWrite.sendtext = "A-" + teststring;
             SampleUserPolling_ReadWrite.keypad11 = false;
             textChanged = true;
+            sc_digitalDisplay.dispChanged = false;
         }
         if (SampleUserPolling_ReadWrite.keypad12 == true)
         {
