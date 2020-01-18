@@ -216,6 +216,8 @@ public class FieldOfView : MonoBehaviour
         viewMeshFilter.mesh = viewMesh;
 
         StartCoroutine("FindTargetsWithDelay", 0.2f);
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame

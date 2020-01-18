@@ -7,7 +7,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public void LoadOptions()
     {
-        SceneManager.LoadScene("OptionsMenu");
+        SceneManager.LoadScene("OptionsMenuMain");
     }
 
     public void QuitGame()
@@ -17,6 +17,6 @@ public class MainMenuScript : MonoBehaviour
 
     public void LoadLobby()
     {
-        //SceneManager.LoadScene("...");
+        SceneManager.LoadScene("ProtoNetworkScene");
     }
 }
