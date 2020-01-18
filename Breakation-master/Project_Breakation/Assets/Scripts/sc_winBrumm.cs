@@ -5,6 +5,7 @@ using UnityEngine;
 public class sc_winBrumm : MonoBehaviour
 {
     public GameObject player;
+    public GameObject winCanvas;
 
     private void Start()
     {
@@ -15,5 +16,6 @@ public class sc_winBrumm : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Yeah!");
+        winCanvas.SetActive(true);
     }
 }
