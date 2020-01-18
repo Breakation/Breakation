@@ -17,6 +17,8 @@ public class PauseMenuScript : MonoBehaviour
     void Start()
     {
         CanvasOptionMenu.SetActive(false);
+
+        
     }
 
     // Update is called once per frame
@@ -45,6 +47,8 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenuUI.SetActive(false);
         CanvasOptionMenu.SetActive(false);
 
+        MainTheme.Pause();
+
         // Spiel nicht mehr freezen
         //Time.timeScale = 1f;
     }
@@ -53,9 +57,12 @@ public class PauseMenuScript : MonoBehaviour
     {
         // public variable um anzuzeigen ob spiel pausiert
         GameIsPaused = true;
+        OptionsMenuClosed = true;
 
         // Pause Menu öffnen und Scene anzeigen
         pauseMenuUI.SetActive(true);
+
+        MainTheme.Play();
 
         // Spiel freezen
         //Time.timeScale = 0f;
