@@ -29,27 +29,32 @@ public class CanvasMenuManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            
-            if (GameIsPaused)
-            {
-                GameIsPaused = false;
-                MainTheme.Play(0);
-                MainThemePlays = true;
+        
+          
+         if (Input.GetKeyDown(KeyCode.Escape))
+         {
+            CanvasPauseMenu.SetActive(true);
+            MainTheme.Play();
+            /*
+             if (GameIsPaused)
+             {
+                 GameIsPaused = false;
+                 MainTheme.Play(0);
+                 MainThemePlays = true;
 
-            }
-            else
-            {
-                CanvasPauseMenu.SetActive(true);
-                CanvasOptionMenu.SetActive(false);
-                MainTheme.Pause();
-                GameIsPaused = true;
-                MainThemePlays = true;
-
-
-            }
+             }
+             else
+             {
+                 CanvasPauseMenu.SetActive(true);
+                 CanvasOptionMenu.SetActive(false);
+                 MainTheme.Pause();
+                 GameIsPaused = true;
+                 MainThemePlays = true;
+                
+             }
+             */
         }
+
     }
 
 
