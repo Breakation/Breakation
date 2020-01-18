@@ -19,11 +19,11 @@ public class sc_pseudoJoystick : MonoBehaviourPun, IPunObservable
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             xAxis = 1000 ;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
             xAxis = 0;
         }
@@ -33,11 +33,11 @@ public class sc_pseudoJoystick : MonoBehaviourPun, IPunObservable
         }
 
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             zAxis = 1000;
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.UpArrow))
         {
             zAxis = 0;
         }
