@@ -27,6 +27,7 @@ public class SC_Zoomable : MonoBehaviour
         if (!isCopy)
         {
             mySelf = gameObject;
+            zoomContr = GameObject.FindGameObjectWithTag("ZoomContr");
             zoomScr = zoomContr.GetComponent<SC_ZoomController>();
 
         }
