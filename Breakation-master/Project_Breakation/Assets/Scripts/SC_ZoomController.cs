@@ -167,6 +167,10 @@ public class SC_ZoomController : MonoBehaviour
                         tempCopy.transform.eulerAngles = new Vector3(90, 0, -90);
                     }
                     break;
+                case "Lock":
+                    {
+                        tempCopy.transform.position += new Vector3(0, 1, 0);
+                    }break;
                 default:
                     {
 

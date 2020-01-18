@@ -5,6 +5,9 @@ using UnityEngine;
 public class SC_Zoomable : MonoBehaviour
 {
 
+    public static bool inRange;
+
+
     public bool isCopy = false;
     public GameObject zoomContr;
      SC_ZoomController zoomScr;
@@ -37,7 +40,7 @@ public class SC_Zoomable : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!isCopy)
+        if (!isCopy && inRange)
         {
             zoomScr.zoomIn(prefabName,objType,mySelf);
         }
