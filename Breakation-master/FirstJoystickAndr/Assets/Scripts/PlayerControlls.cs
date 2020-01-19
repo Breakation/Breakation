@@ -32,9 +32,19 @@ public class PlayerControlls : MonoBehaviour
         lp = 10;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if(transform.position.y != 5)
+        {
+            transform.position = new Vector3(transform.position.x,5,transform.position.z);
+        }
+
         if(lp<= 0)
         {
             gameOver.SetActive(true);

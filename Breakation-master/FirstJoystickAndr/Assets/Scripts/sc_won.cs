@@ -7,6 +7,8 @@ public class sc_won : MonoBehaviour
 {
     public void BackToMain()
     {
+        sc_winCondtion.enmyCount = 7;
+
         SceneManager.LoadScene(0);
     }
 }
