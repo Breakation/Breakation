@@ -14,7 +14,7 @@ public class changeRoom : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         charcon = player.GetComponent<CharacterController>();
         
-       // targetRoom.SetActive(false);
+       //// targetRoom.SetActive(false);
         
         
     }
