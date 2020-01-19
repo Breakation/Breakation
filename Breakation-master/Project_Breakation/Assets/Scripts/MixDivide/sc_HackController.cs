@@ -33,6 +33,10 @@ public class sc_HackController : MonoBehaviour
 
     void Start()
     {
+        if(sc_playerInfo.PI.mySelectedCharacter == 1)
+        {
+            hackGUI.SetActive(false);
+        }
         system = EventSystem.current;
         mixerScr = mixerObj.GetComponent<sc_Mixer>();
     }
