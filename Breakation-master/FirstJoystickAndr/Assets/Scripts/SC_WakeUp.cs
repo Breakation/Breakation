@@ -21,7 +21,7 @@ public class SC_WakeUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "PlayerTrigger")
+        if(other.gameObject.name == "Trigger")
         {
             for (int i = 0; i < wakeUpTargets.Length; i++)
             {

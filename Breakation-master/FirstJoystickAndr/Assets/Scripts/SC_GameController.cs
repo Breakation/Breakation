@@ -17,6 +17,8 @@ public class SC_GameController : MonoBehaviour
     public string[] ipAdressen;
     public string[] pw;
 
+    public static string currentPw;
+
     private int rememberPos = 0;
 
     // Start is called before the first frame update
@@ -55,6 +57,7 @@ public class SC_GameController : MonoBehaviour
             {
                 rememberPos = i;
                 startGame();
+                currentPw = "Password: " + pw[i];
                 return;
             }
         }

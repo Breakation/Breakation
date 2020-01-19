@@ -10,10 +10,13 @@ public class sc_bombUse : MonoBehaviourPun, IPunObservable
     public GameObject steinObj;
     public bool bomb = false;
 
+    [SerializeField] public AudioSource ExplosionSoundff;
+
     private void OnMouseDown()
     {
         if (DispOpener.PlayerInRange)
         {
+            ExplosionSoundff.Play();
             bomb = true;
             bombStone();
         }

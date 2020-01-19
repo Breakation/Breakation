@@ -826,7 +826,9 @@ MonoBehaviour:
   ipAdressen:
   - 2.1
   - 7.1
-  pw: []
+  pw:
+  - clock
+  - mix
 --- !u!4 &713940969
 Transform:
   m_ObjectHideFlags: 0

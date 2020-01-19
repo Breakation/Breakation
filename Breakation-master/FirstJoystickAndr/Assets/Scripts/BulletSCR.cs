@@ -16,10 +16,11 @@ public class BulletSCR : MonoBehaviour
         
 
         Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.name == "PlayerTrigger")
+        if (collision.gameObject.name == "Trigger")
         {
             myBody.velocity = Vector3.zero;
             Debug.Log("Hit");
+            PlayerControlls.lp--;
             Destroy(this.gameObject);
         }
     }
@@ -28,10 +29,11 @@ public class BulletSCR : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name);
-        if (other.gameObject.name == "PlayerTrigger")
+        if (other.gameObject.name == "Trigger")
         {
             myBody.velocity = Vector3.zero;
             Debug.Log("Hit");
+            PlayerControlls.lp--;
             Destroy(this.gameObject);
         }
 
