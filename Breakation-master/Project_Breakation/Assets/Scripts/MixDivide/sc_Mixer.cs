@@ -9,6 +9,9 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
 {
     private PhotonView pv;
 
+    public bool mixerHacked = false;
+
+
     public GameObject dispObj;
     private DispOpener dispOpen;
 
@@ -172,215 +175,223 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
         {
             FZflask.SetActive(true);
         }
-        if (testkeypad.sendkeypad.Length == 3)
+
+        if (mixerHacked)
         {
-            for (int i = 0; i < possibleDivs.Length; i++)
+            if (testkeypad.sendkeypad.Length == 3)
             {
-                if(testkeypad.sendkeypad == possibleDivs[i])
+                for (int i = 0; i < possibleDivs.Length; i++)
                 {
-                    firstType = possibleDivs[i][0];
-                    firstSub = possibleDivs[i][1];
-                    Debug.Log("start divide" + firstType + "  " + firstSub);
-
-
-                    switch (firstType)
+                    if (testkeypad.sendkeypad == possibleDivs[i])
                     {
-                        case '1':
-                            {
-                                if (fluids[(int)Char.GetNumericValue(firstSub)])
+                        firstType = possibleDivs[i][0];
+                        firstSub = possibleDivs[i][1];
+                        Debug.Log("start divide" + firstType + "  " + firstSub);
+
+
+                        switch (firstType)
+                        {
+                            case '1':
                                 {
-                                    divProcess(firstSub, firstType);
+                                    if (fluids[(int)Char.GetNumericValue(firstSub)])
+                                    {
+                                        divProcess(firstSub, firstType);
+                                    }
                                 }
-                            }break;
-                        case '2':
-                            {
-                                if (gasses[(int)Char.GetNumericValue(firstSub)])
+                                break;
+                            case '2':
                                 {
-                                    divProcess(firstSub, firstType);
+                                    if (gasses[(int)Char.GetNumericValue(firstSub)])
+                                    {
+                                        divProcess(firstSub, firstType);
+                                    }
                                 }
-                            }break;
-                        case '3':
-                            {
-                                if (solids[(int)Char.GetNumericValue(firstSub)])
+                                break;
+                            case '3':
                                 {
-                                    divProcess(firstSub, firstType);
+                                    if (solids[(int)Char.GetNumericValue(firstSub)])
+                                    {
+                                        divProcess(firstSub, firstType);
+                                    }
                                 }
-                            }break;
-                        default:
-                            {
-                                Debug.Log("Falsche Eigabe");
-                            }break;
+                                break;
+                            default:
+                                {
+                                    Debug.Log("Falsche Eigabe");
+                                }
+                                break;
+                        }
+
+
+
+                        testkeypad.sendkeypad = "";
                     }
-
-                    
-
-                    testkeypad.sendkeypad = "";
                 }
             }
-        }
 
-        if(testkeypad.sendkeypad.Length == 5)
-        {
-            for (int i = 0; i < possibleCombs.Length; i++)
+
+            if (testkeypad.sendkeypad.Length == 5)
             {
-                if(testkeypad.sendkeypad == possibleCombs[i])
+                for (int i = 0; i < possibleCombs.Length; i++)
                 {
-                    firstType = possibleCombs[i][0];
-                    firstSub = possibleCombs[i][1];
-
-                    secType = possibleCombs[i][3];
-                    secSub = possibleCombs[i][4];
-
-                    
-
-                    switch (firstType)
+                    if (testkeypad.sendkeypad == possibleCombs[i])
                     {
-                        case '1':
-                            {
-                                if (fluids[(int)Char.GetNumericValue(firstSub)])
+                        firstType = possibleCombs[i][0];
+                        firstSub = possibleCombs[i][1];
+
+                        secType = possibleCombs[i][3];
+                        secSub = possibleCombs[i][4];
+
+
+
+                        switch (firstType)
+                        {
+                            case '1':
                                 {
-                                    switch (secType)
+                                    if (fluids[(int)Char.GetNumericValue(firstSub)])
                                     {
-                                        case '1':
-                                            {
-                                                if (fluids[(int)Char.GetNumericValue(secSub)])
+                                        switch (secType)
+                                        {
+                                            case '1':
                                                 {
-                                                    mixProcess(firstSub, firstType, secSub, secType);
+                                                    if (fluids[(int)Char.GetNumericValue(secSub)])
+                                                    {
+                                                        mixProcess(firstSub, firstType, secSub, secType);
+                                                    }
                                                 }
-                                            }
-                                            break;
-                                        case '2':
-                                            {
-                                                if (gasses[(int)Char.GetNumericValue(secSub)])
+                                                break;
+                                            case '2':
                                                 {
-                                                    mixProcess(firstSub, firstType, secSub, secType);
+                                                    if (gasses[(int)Char.GetNumericValue(secSub)])
+                                                    {
+                                                        mixProcess(firstSub, firstType, secSub, secType);
+                                                    }
                                                 }
-                                            }
-                                            break;
-                                        case '3':
-                                            {
-                                                if (solids[(int)Char.GetNumericValue(secSub)])
+                                                break;
+                                            case '3':
                                                 {
-                                                    mixProcess(firstSub, firstType, secSub, secType);
+                                                    if (solids[(int)Char.GetNumericValue(secSub)])
+                                                    {
+                                                        mixProcess(firstSub, firstType, secSub, secType);
+                                                    }
                                                 }
-                                            }
-                                            break;
-                                        default:
-                                            {
-                                                Debug.Log("Falsche Eigabe");
-                                            }
-                                            break;
+                                                break;
+                                            default:
+                                                {
+                                                    Debug.Log("Falsche Eigabe");
+                                                }
+                                                break;
+                                        }
                                     }
                                 }
-                            }
-                            break;
-                        case '2':
-                            {
-                                if (gasses[(int)Char.GetNumericValue(firstSub)])
+                                break;
+                            case '2':
                                 {
-                                    switch (secType)
+                                    if (gasses[(int)Char.GetNumericValue(firstSub)])
                                     {
-                                        case '1':
-                                            {
-                                                if (fluids[(int)Char.GetNumericValue(secSub)])
+                                        switch (secType)
+                                        {
+                                            case '1':
                                                 {
-                                                    mixProcess(firstSub, firstType, secSub, secType);
+                                                    if (fluids[(int)Char.GetNumericValue(secSub)])
+                                                    {
+                                                        mixProcess(firstSub, firstType, secSub, secType);
+                                                    }
                                                 }
-                                            }
-                                            break;
-                                        case '2':
-                                            {
-                                                if (gasses[(int)Char.GetNumericValue(secSub)])
+                                                break;
+                                            case '2':
                                                 {
-                                                    mixProcess(firstSub, firstType, secSub, secType);
+                                                    if (gasses[(int)Char.GetNumericValue(secSub)])
+                                                    {
+                                                        mixProcess(firstSub, firstType, secSub, secType);
+                                                    }
                                                 }
-                                            }
-                                            break;
-                                        case '3':
-                                            {
-                                                if (solids[(int)Char.GetNumericValue(secSub)])
+                                                break;
+                                            case '3':
                                                 {
-                                                    mixProcess(firstSub, firstType, secSub, secType);
+                                                    if (solids[(int)Char.GetNumericValue(secSub)])
+                                                    {
+                                                        mixProcess(firstSub, firstType, secSub, secType);
+                                                    }
                                                 }
-                                            }
-                                            break;
-                                        default:
-                                            {
-                                                Debug.Log("Falsche Eigabe");
-                                            }
-                                            break;
+                                                break;
+                                            default:
+                                                {
+                                                    Debug.Log("Falsche Eigabe");
+                                                }
+                                                break;
+                                        }
                                     }
                                 }
-                            }
-                            break;
-                        case '3':
-                            {
-                                if (solids[(int)Char.GetNumericValue(firstSub)])
+                                break;
+                            case '3':
                                 {
-                                    switch (secType)
+                                    if (solids[(int)Char.GetNumericValue(firstSub)])
                                     {
-                                        case '1':
-                                            {
-                                                if (fluids[(int)Char.GetNumericValue(secSub)])
+                                        switch (secType)
+                                        {
+                                            case '1':
                                                 {
-                                                    mixProcess(firstSub, firstType, secSub, secType);
+                                                    if (fluids[(int)Char.GetNumericValue(secSub)])
+                                                    {
+                                                        mixProcess(firstSub, firstType, secSub, secType);
+                                                    }
                                                 }
-                                            }
-                                            break;
-                                        case '2':
-                                            {
-                                                if (gasses[(int)Char.GetNumericValue(secSub)])
+                                                break;
+                                            case '2':
                                                 {
-                                                    mixProcess(firstSub, firstType, secSub, secType);
+                                                    if (gasses[(int)Char.GetNumericValue(secSub)])
+                                                    {
+                                                        mixProcess(firstSub, firstType, secSub, secType);
+                                                    }
                                                 }
-                                            }
-                                            break;
-                                        case '3':
-                                            {
-                                                if (solids[(int)Char.GetNumericValue(secSub)])
+                                                break;
+                                            case '3':
                                                 {
-                                                    mixProcess(firstSub, firstType, secSub, secType);
+                                                    if (solids[(int)Char.GetNumericValue(secSub)])
+                                                    {
+                                                        mixProcess(firstSub, firstType, secSub, secType);
+                                                    }
                                                 }
-                                            }
-                                            break;
-                                        default:
-                                            {
-                                                Debug.Log("Falsche Eigabe");
-                                            }
-                                            break;
+                                                break;
+                                            default:
+                                                {
+                                                    Debug.Log("Falsche Eigabe");
+                                                }
+                                                break;
+                                        }
                                     }
                                 }
-                            }
-                            break;
-                        default:
-                            {
-                                Debug.Log("Falsche Eigabe");
-                            }
-                            break;
+                                break;
+                            default:
+                                {
+                                    Debug.Log("Falsche Eigabe");
+                                }
+                                break;
+                        }
+
+
+
+                        testkeypad.sendkeypad = "";
                     }
-
-
-
-                    testkeypad.sendkeypad = "";
                 }
             }
-        }
 
-        if(testkeypad.sendkeypad.Length == 8)
-        {
-            if(fluids[0] && gasses[0] && solids[5])
+            if (testkeypad.sendkeypad.Length == 8)
             {
-                Debug.Log("final MIX");
+                if (fluids[0] && gasses[0] && solids[5])
+                {
+                    Debug.Log("final MIX");
 
-                dispOpen.trigger = true;
+                    dispOpen.trigger = true;
 
-                // benutze dispenser um bombe auszugeben
+                    // benutze dispenser um bombe auszugeben
+
+                }
+
 
             }
-           
-
         }
-
         if (Input.GetKey(KeyCode.Space))
         {
             dispOpen.trigger = true;
