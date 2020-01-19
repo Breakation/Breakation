@@ -37,15 +37,20 @@ public class sc_finalDoor : MonoBehaviourPun, IPunObservable
             eingegCode = testkeypad.sendkeypad;
 
 
-            Debug.Log("eingegeben " + eingegCode);
-            Debug.Log("sendkeypad " + testkeypad.sendkeypad);
+            //Debug.Log("eingegeben " + eingegCode);
+            //Debug.Log("sendkeypad " + testkeypad.sendkeypad);
 
             if(eingegCode == finalCode)
             {
                 Debug.Log("open final");
                 barAnim.SetBool("Open", true);
                 barColl.enabled = false;
+            }else if(/*eingegCode.Length == 12 && */testkeypad.teststring == "")
+            {
+                sc_digitalDisplay.wrongCode = true;
             }
+            
+            
             testkeypad.textChanged = false;
         }
 

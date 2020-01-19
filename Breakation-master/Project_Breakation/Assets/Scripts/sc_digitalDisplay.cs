@@ -18,6 +18,8 @@ public class sc_digitalDisplay : MonoBehaviour
 
     public Sprite standrdSprite;
 
+    public static bool wrongCode;
+
     private void Start()
     {
         dispChanged = false;
@@ -39,8 +41,19 @@ public class sc_digitalDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    wrongCode = true;
+        //}
+        if (wrongCode)
+        {
+            testkeypad.teststring = "";
+            for (int i = 0; i < characters.Length; i++)
+            {
+                characters[i] = standrdSprite;
+            }
+            wrongCode = false;
+        }
 
         if (testkeypad.teststring.Length != 0)
         {
@@ -191,8 +204,20 @@ public class sc_digitalDisplay : MonoBehaviour
                     characters[9] = characters[10];
                     characters[10] = characters[11];
                     characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+
+
+                    
+
                 }
                 break;
+            case 13:
+                {
+                    testkeypad.teststring = "";
+                    for (int i = 0; i < characters.Length; i++)
+                    {
+                        characters[i] = standrdSprite;
+                    }
+                }break;
         }
         dispChanged = true;
     }
