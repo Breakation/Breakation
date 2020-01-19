@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletSCR : MonoBehaviour
+public class PlBulletSCR : MonoBehaviour
 {
 
     public GameObject player;
     public Rigidbody myBody;
     public static string targetType;
-
+    public EnemyScr enemy;
     
 
     private void OnCollisionEnter(Collision collision)
@@ -16,11 +16,12 @@ public class BulletSCR : MonoBehaviour
         
 
         Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.name == "Trigger")
+        if (collision.gameObject.tag == "Enemy")
         {
+            
+
             myBody.velocity = Vector3.zero;
             Debug.Log("Hit");
-            PlayerControlls.lp--;
             Destroy(this.gameObject);
         }
     }
@@ -29,11 +30,12 @@ public class BulletSCR : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name);
-        if (other.gameObject.name == "Trigger")
+        if (other.gameObject.tag == "Enemy")
         {
+            enemy = other.transform.parent.GetComponent<EnemyScr>();
+            enemy.enemyLp--;
             myBody.velocity = Vector3.zero;
             Debug.Log("Hit");
-            PlayerControlls.lp--;
             Destroy(this.gameObject);
         }
 

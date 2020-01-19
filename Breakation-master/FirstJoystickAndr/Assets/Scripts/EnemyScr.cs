@@ -6,7 +6,9 @@ public class EnemyScr : MonoBehaviour
 {
 
     public bool isAwake = false;
-    
+
+    public int enemyLp;
+
 
     public string type;
     public int hp = 10;
@@ -16,7 +18,7 @@ public class EnemyScr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyLp = 3;
     }
 
     
@@ -24,10 +26,16 @@ public class EnemyScr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if(enemyLp<= 0)
         {
-            isAwake = true;
+            sc_winCondtion.enmyCount--;
+            Destroy(this.gameObject);
         }
+
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    isAwake = true;
+        //}
 
 
         if (isAwake)
