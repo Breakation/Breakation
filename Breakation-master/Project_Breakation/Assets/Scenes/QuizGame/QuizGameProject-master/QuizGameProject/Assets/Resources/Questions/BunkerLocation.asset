@@ -23,4 +23,4 @@ MonoBehaviour:
   _useTimer: 1
   _timer: 20
   _answerType: 1
-  _addScore: 10
+  _addScore: 50

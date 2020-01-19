@@ -24,7 +24,7 @@ public class TriggerQuiz : MonoBehaviour
             ControllerActiveQuiz = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.L) && !GameManagerQuiz.QuizDoneOnceExit && ControllerActiveQuiz)
+        if (Input.GetKeyDown(KeyCode.Q) && !GameManagerQuiz.QuizDoneOnceExit && ControllerActiveQuiz)
         {
             Quiz.SetActive(true);
         }
