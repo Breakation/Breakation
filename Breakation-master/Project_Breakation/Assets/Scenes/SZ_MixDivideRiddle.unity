@@ -648,6 +648,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1724171889, guid: cf3ef918794b2b749abe7e52c56c22cc, type: 3}
+      propertyPath: mixerObj
+      value: 
+      objectReference: {fileID: 1393045538}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf3ef918794b2b749abe7e52c56c22cc, type: 3}
 --- !u!1 &276334779
@@ -2297,6 +2301,12 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!1 &1393045538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1702446897, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1911920222}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1393400880
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,10 +3026,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SerialController
       objectReference: {fileID: 0}
-    - target: {fileID: 11442534, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
-      propertyPath: portName
-      value: COM5
-      objectReference: {fileID: 0}
     - target: {fileID: 405068, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3064,6 +3070,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11442534, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
+      propertyPath: portName
+      value: COM5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
 --- !u!1 &1598410925 stripped
@@ -3100,7 +3110,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1911920222}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1393045538}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afd0d76eb70e29047a0d0bbbe0c6bade, type: 3}
@@ -3788,30 +3798,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Labor_Proto Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
-      propertyPath: firstSubField
-      value: 
-      objectReference: {fileID: 351189075}
-    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
-      propertyPath: secondSubField
-      value: 
-      objectReference: {fileID: 79310188}
-    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
-      propertyPath: firstTypeField
-      value: 
-      objectReference: {fileID: 1874915792}
-    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
-      propertyPath: secondTypeField
-      value: 
-      objectReference: {fileID: 1276973975}
-    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
-      propertyPath: subField
-      value: 
-      objectReference: {fileID: 435557446}
-    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
-      propertyPath: typeField
-      value: 
-      objectReference: {fileID: 1468361356}
     - target: {fileID: 7457018335262161128, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3867,103 +3853,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.120000005
       objectReference: {fileID: 0}
-    - target: {fileID: 6550912269239875354, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 6550912270159367298, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 6550912269194061147, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 6550912268764756348, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 6550912269377226323, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 1646429063141066846, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 1646429063344917692, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 1646429063668930465, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 1646429064539562918, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 9130271210338276654, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 9130271211571344249, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 9130271209783405984, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 9130271210324999480, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 9130271211103770116, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 7576318576728310272, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 7591675169285026901, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 8152207633933449398, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
-        type: 3}
-      propertyPath: zoomContr
-      value: 
-      objectReference: {fileID: 1210539037}
-    - target: {fileID: 1306621460, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 690650993}
-    - target: {fileID: 1306621460, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
-      propertyPath: gameOverScreen
-      value: 
-      objectReference: {fileID: 100231879}
-    - target: {fileID: 1306621460, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
-      propertyPath: gameOverButton
-      value: 
-      objectReference: {fileID: 1930762063}
     - target: {fileID: 5880926764249372777, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
         type: 3}
       propertyPath: viewIdField
@@ -4053,6 +3942,137 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8931438696095527778, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: viewIdField
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 221948522644456286, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306621460, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 690650993}
+    - target: {fileID: 1306621460, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 100231879}
+    - target: {fileID: 1306621460, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
+      propertyPath: gameOverButton
+      value: 
+      objectReference: {fileID: 1930762063}
+    - target: {fileID: 8152207633933449398, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
+      propertyPath: firstSubField
+      value: 
+      objectReference: {fileID: 351189075}
+    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
+      propertyPath: secondSubField
+      value: 
+      objectReference: {fileID: 79310188}
+    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
+      propertyPath: firstTypeField
+      value: 
+      objectReference: {fileID: 1874915792}
+    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
+      propertyPath: secondTypeField
+      value: 
+      objectReference: {fileID: 1276973975}
+    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
+      propertyPath: subField
+      value: 
+      objectReference: {fileID: 435557446}
+    - target: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
+      propertyPath: typeField
+      value: 
+      objectReference: {fileID: 1468361356}
+    - target: {fileID: 9130271211571344249, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 9130271211103770116, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 9130271210324999480, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 9130271210338276654, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 9130271209783405984, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 7576318576728310272, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 6550912269377226323, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 6550912269194061147, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 6550912269239875354, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 6550912268764756348, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 6550912270159367298, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 7591675169285026901, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 1646429063668930465, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 1646429063344917692, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 1646429063141066846, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
+    - target: {fileID: 1646429064539562918, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+        type: 3}
+      propertyPath: zoomContr
+      value: 
+      objectReference: {fileID: 1210539037}
     m_RemovedComponents:
     - {fileID: 1702446901, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}

@@ -58,7 +58,7 @@ public class OptionsMenu : MonoBehaviour
         }
     }
 
-    public void DeMuteAll()
+    private void DeMuteAll()
     {
             audiomixer.SetFloat("Volume_Master", 0);
             mute = true;
@@ -82,10 +82,5 @@ public class OptionsMenu : MonoBehaviour
     public void backToMainMenu()
     {
         SceneManager.LoadScene("MainMenuUI");
-    }
-
-    public void backToPauseMenu()
-    {
-        SceneManager.LoadScene("PauseMenu");
     }
 }

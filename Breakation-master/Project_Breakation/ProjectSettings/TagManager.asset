@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - WallAlla
+  - PlayerCar
+  - EnemyCar
+  - ZoomContr
   layers:
   - Default
   - TransparentFX

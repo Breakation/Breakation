@@ -17,6 +17,10 @@ public class sc_HackController : MonoBehaviour
     public GameObject PWField;
 
 
+    public GameObject mixerObj;
+    public sc_Mixer mixerScr;
+
+
     private string eingegIP;
     private string eingegPW;
 
@@ -29,8 +33,13 @@ public class sc_HackController : MonoBehaviour
 
     void Start()
     {
+       /* if(sc_playerInfo.PI.mySelectedCharacter == 1)
+        {
+            hackGUI.SetActive(false);
+        }
+        */
         system = EventSystem.current;
-
+        mixerScr = mixerObj.GetComponent<sc_Mixer>();
     }
 
     
@@ -88,7 +97,10 @@ public class sc_HackController : MonoBehaviour
 
         if(eingegIP == mdAutomatMixDivIP && eingegPW == mdAutomatMixDivPW)
         {
-            sc_uiController.activateMixDivUI = true;
+            mixerScr.mixerHacked = true;
+            testkeypad.sendkeypad = "";
+            //sc_uiController.activateMixDivUI = true;
+            
             CancelHack();
         }
     }

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5988350452553183447}
   - component: {fileID: 8521665001808614011}
   - component: {fileID: 296675068661432752}
+  - component: {fileID: 8295385355249115135}
+  - component: {fileID: 4495417970740243124}
   m_Layer: 0
   m_Name: Entrance_Exit
   m_TagString: Untagged
@@ -109,6 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   location: {fileID: 0}
+  targetRoom: {fileID: 0}
+  actualRoom: {fileID: 0}
 --- !u!65 &296675068661432752
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -122,6 +126,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.1695497, z: 0.14096463}
   m_Center: {x: 0, y: 0.58477485, z: -0.4295177}
+--- !u!65 &8295385355249115135
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177106229421392649}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.063992366, y: 2.1695497, z: 0.8499319}
+  m_Center: {x: 0.53190285, y: 0.58477485, z: 0.0668239}
+--- !u!65 &4495417970740243124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177106229421392649}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0660467, y: 2.1695497, z: 0.85483545}
+  m_Center: {x: -0.5329249, y: 0.58477485, z: 0.064528525}
 --- !u!1 &3722795815996894099
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3722795815996894099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: -0, y: 1.5, z: 1.344}
   m_LocalScale: {x: 1, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 6402550174837023507}

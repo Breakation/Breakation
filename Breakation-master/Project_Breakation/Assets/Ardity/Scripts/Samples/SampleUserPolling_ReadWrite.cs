@@ -49,6 +49,14 @@ public class SampleUserPolling_ReadWrite : MonoBehaviourPun, IPunObservable
     public static bool erdbebenMode;
     public static bool  timercd = false;
     public static string sendtext = "lul";
+    public static bool kipp1;
+    public static bool kipp2;
+    public static bool kipp3;
+    public static bool kipp4;
+    public static bool module1;
+    public static bool module2;
+    public static bool module3;
+    public static bool module4;
 
     public SerialController serialController;
 
@@ -142,6 +150,95 @@ public class SampleUserPolling_ReadWrite : MonoBehaviourPun, IPunObservable
             Debug.Log(message);
             
         }
+
+        //Kippschalter
+        if( message == "kippschalter1on"){
+            kipp1 = true;
+            Debug.Log(message);
+        }
+
+        if( message == "kippschalter1off"){
+            kipp1 = false;
+            Debug.Log(message);
+        }
+
+        if( message == "kippschalter2on"){
+            kipp2 = true;
+            Debug.Log(message);
+        }
+
+        if( message == "kippschalter2off"){
+            kipp2 = false;
+            Debug.Log(message);
+        }
+
+        if( message == "kippschalter3on"){
+            kipp3 = true;
+            Debug.Log(message);
+        }
+
+        if( message == "kippschalter3off"){
+            kipp3 = false;
+            Debug.Log(message);
+        }
+
+        if( message == "kippschalter4on"){
+            kipp4 = true;
+            Debug.Log(message);
+        }
+
+        if( message == "kippschalter4off"){
+            kipp4 = false;
+            Debug.Log(message);
+        }
+
+        //modulemode
+
+        if(message == "module1on"){
+            module1 = true;
+            Debug.Log(message);
+        }
+
+        if(message == "module1off"){
+            module1 = false;
+            Debug.Log(message);
+        }
+
+
+        if(message == "module2on"){
+            module2 = true;
+            Debug.Log(message);
+        }
+
+        if(message == "module2off"){
+            module2 = false;
+            Debug.Log(message);
+        }
+
+        if(message == "module3on"){
+            module3 = true;
+            Debug.Log(message);
+        }
+
+        if(message == "module3off"){
+            module3 = false;
+            Debug.Log(message);
+        }
+
+        if(message == "module4on"){
+            module4 = true;
+            Debug.Log(message);
+        }
+
+        if(message == "module4off"){
+            module4 = false;
+            Debug.Log(message);
+        }
+
+
+        
+
+        //potentiometer
 
         if((message != null) && (message.Contains("pot1"))){
             string[] numbers = message.Split(',');
@@ -291,7 +388,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviourPun, IPunObservable
             keypad14 = true;
             
         }
-        pv.RPC("RPC_syncSerialController", RpcTarget.AllBuffered, keypad1, keypad10, keypad11, keypad12, keypad13, keypad14, keypad2, keypad3, keypad4, keypad5, keypad6, keypad7, keypad8, keypad9, encoderleft, encoderright, pot1value, pot2value, pot3value, pot4value, JoyXvalue, JoyYvalue, erdbebenMode, timercd, sendtext);
+
         return;
 
         // Check if the message is plain data or a connect/disconnect event.

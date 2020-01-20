@@ -13,6 +13,8 @@ public class sc_staticPatrol : MonoBehaviour
     private int randomSpot;
     private int counter = 0;
 
+    public Animator anim;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,8 @@ public class sc_staticPatrol : MonoBehaviour
 
         counter = 0;
 
+        anim = this.gameObject.GetComponentInChildren<Animator>();
+        
 
     }
 
@@ -32,10 +36,15 @@ public class sc_staticPatrol : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, moveSpots[counter].position, speed * Time.deltaTime);
 
+        
+
         if(Vector3.Distance(transform.position, moveSpots[counter].position) < 0.2f){
             if(waitTime <= 0)
             {
-
+                if (!anim.GetBool("enemy_walk"))
+                {
+                    anim.SetBool("enemy_walk", true);
+                }
                 counter++;
 
                 if(counter >= moveSpots.Length)
@@ -48,10 +57,15 @@ public class sc_staticPatrol : MonoBehaviour
 
                 transform.rotation = rotation;
                 waitTime = startWaitTime;
+
+          
             }
             else
             {
+                anim.SetBool("enemy_walk", false);
                 waitTime -= Time.deltaTime;
+
+               
             }
 
 

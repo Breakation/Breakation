@@ -15,13 +15,15 @@ public class SC_ZoomController : MonoBehaviour
 
     public GameObject[] zoomableObject;
 
+    private CharacterController player;
+
     Ray ray;
     RaycastHit raycastHit;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,8 @@ public class SC_ZoomController : MonoBehaviour
         Object.Destroy(tempCopy.gameObject);
         copyCreated = false;
         closeZoomButton.SetActive(false);
+        Debug.Log("machste?");
+        player.enabled = true;
     }
 
 
@@ -42,6 +46,7 @@ public class SC_ZoomController : MonoBehaviour
     {
         if (!copyCreated)
         {
+            player.enabled = false;
             Vector3 tempPos = maincamera.transform.position;
             Vector3 newPos = tempPos + distToCam;
             Vector3 RotationAdd = new Vector3(0, 180, 0);
@@ -156,6 +161,15 @@ public class SC_ZoomController : MonoBehaviour
                 case "notiz":
                     {
                         tempCopy.transform.eulerAngles = new Vector3(45, 0, 0);
+                    }break;
+                case "monitor":
+                    {
+                        tempCopy.transform.eulerAngles = new Vector3(90, 0, -90);
+                    }
+                    break;
+                case "Lock":
+                    {
+                        tempCopy.transform.position += new Vector3(0, 1, 0);
                     }break;
                 default:
                     {

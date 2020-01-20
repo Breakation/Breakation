@@ -49,6 +49,8 @@ MonoBehaviour:
   StartHackButton: {fileID: 6897486589016713904}
   IpField: {fileID: 6897486589517391499}
   PWField: {fileID: 6897486588967245782}
+  mixerObj: {fileID: 0}
+  mixerScr: {fileID: 0}
 --- !u!1 &6897486588563028414
 GameObject:
   m_ObjectHideFlags: 0
