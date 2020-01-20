@@ -46,6 +46,7 @@ public class LightsOutManager : MonoBehaviour {
     private void Update()
     {
         arduinoKlasse.navigation();
+        
     }
 
     void OnEnable()
@@ -66,7 +67,11 @@ public class LightsOutManager : MonoBehaviour {
         yield return new WaitForEndOfFrame(); // Ab hier läuft die Funktion über den jetzigen Frame, in dem die sie gerufen wurde, hinaus
 
         FillArray();
-        applyPattern();
+        //applyPattern();
+        if (CheckForWin())
+        {
+            Debug.Log("you win!");
+        }
     }
 
     public void FillArray() //das wird für die Methode GetAdjacentCells in der Cellcontrollerklasse verwendet
@@ -76,21 +81,28 @@ public class LightsOutManager : MonoBehaviour {
         Debug.Log("objekt: "+arrayOfObjects[0]);
         Debug.Log("Hilfsarray arrayOfObjects.Length: " + arrayOfObjects.Length);
 
-        int k = 0;
+        int nummer=0;
         for (var i = 0; i < GridSize; i++)
         {
             for (var j = 0; j < GridSize; j++)
             {
-                ArrayOfCells[i, j] = arrayOfObjects[k];
-                ListOfCells.Add(ArrayOfCells[i, j]);
-                cellController = ArrayOfCells[i, j];//.GetComponent<CellController>();
-                cellController.xCoord = i;
-                cellController.yCoord = j;
-                k++;
-              
+                for(int k=0; k<64; k++)
+                {
+                    if (arrayOfObjects[k].cellNum == nummer)
+                    {
+                        ArrayOfCells[i, j] = arrayOfObjects[k];//checkNumber(nummer, arrayOfObjects[k], i, j);
+                        ListOfCells.Add(ArrayOfCells[i, j]);
+                        cellController = ArrayOfCells[i, j];
+                        cellController.xCoord = i;
+                        cellController.yCoord = j;
+                        break;
+                    }
+                }
+                nummer++;
             }
         }
     }
+
 
     void applyPattern()
     {
@@ -141,6 +153,30 @@ public class LightsOutManager : MonoBehaviour {
         }
 
         return win;  // true
+    }
+
+    public void LightsOut()//this function enables/disables the InventoryPanel using setActive()
+    { // !!!! the  InventoryPanel should be disables first!!!!
+
+        if (Input.GetKeyDown(KeyCode.P))// be able to open/close the InventoryPanel by pressing Tab
+        {
+            closeAll();
+        }
+    }
+
+    public void closeAll()// check ob mindestens eine Zelle noch an ist. wenn ja return win false und das Spiel geht weiter
+    {
+        for (int row = 0; row < GridSize; row++)
+        {
+            for (int col = 0; col < GridSize; col++)
+            {
+                if (this.ArrayOfCells[row, col].cellStatus == CellController.Status.open)
+                {
+                    ArrayOfCells[row, col].closeCap();
+                }
+            }
+        }
+
     }
 
 
