@@ -86,4 +86,6 @@ public class sc_playerController : MonoBehaviour
         }
     }
 
+    
+
 }

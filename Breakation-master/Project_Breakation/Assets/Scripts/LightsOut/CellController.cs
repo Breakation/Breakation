@@ -14,6 +14,7 @@ public class CellController : MonoBehaviour {
     private void Start()
     {        
         animator = GetComponent<Animator>();
+        
     }
 
     // status der Zelle 
@@ -27,8 +28,10 @@ public class CellController : MonoBehaviour {
     // x und y coordinate der Zelle in der 2-dimensionalen Array (samt getters und setters)
 	public int xCoord {	get; set; }
 	public int yCoord {	get; set; }
+    public int cellNum;
 
-	public void AffectCells() { // diese werden beim Clicken immer aufgerufen
+
+    public void AffectCells() { // diese werden beim Clicken immer aufgerufen
 
         Debug.Log("hello ich bin AffectCells");
 		SwitchCellState (); // Zustand der Zelle selbst wird geändert
