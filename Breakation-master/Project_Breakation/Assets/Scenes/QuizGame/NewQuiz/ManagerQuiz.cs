@@ -107,6 +107,7 @@ public class ManagerQuiz : MonoBehaviour
         if(!SampleUserPolling_ReadWrite.kipp1)
         {
             KippOn1.SetActive(false);
+            button1 = false;
         }
         if (SampleUserPolling_ReadWrite.kipp2)
         {
@@ -116,6 +117,7 @@ public class ManagerQuiz : MonoBehaviour
         if (!SampleUserPolling_ReadWrite.kipp2)
         {
             KippOn2.SetActive(false);
+            button2 = false;
         }
         if (SampleUserPolling_ReadWrite.kipp3)
         {
@@ -125,6 +127,7 @@ public class ManagerQuiz : MonoBehaviour
         if (!SampleUserPolling_ReadWrite.kipp3)
         {
             KippOn3.SetActive(false);
+            button3 = false;
         }
         if (SampleUserPolling_ReadWrite.kipp4)
         {
@@ -134,6 +137,7 @@ public class ManagerQuiz : MonoBehaviour
         if (!SampleUserPolling_ReadWrite.kipp4)
         {
             KippOn4.SetActive(false);
+            button4 = false;
         }
     }
 
