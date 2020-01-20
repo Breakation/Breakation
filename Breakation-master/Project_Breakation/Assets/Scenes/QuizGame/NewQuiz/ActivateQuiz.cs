@@ -18,7 +18,7 @@ public class ActivateQuiz : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && SampleUserPolling_ReadWrite.kipp1 && SampleUserPolling_ReadWrite.kipp2 && SampleUserPolling_ReadWrite.kipp3 && SampleUserPolling_ReadWrite.kipp4)
         {
             QuizGameNew.SetActive(true);
         }

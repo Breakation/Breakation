@@ -48,9 +48,6 @@ public class ManagerQuiz : MonoBehaviour
     public bool button4 = false;
 
 
-    public Color ColorPicked;
-    public Color white;
-
     private int Score = 0;
     private int QuestionNumber = 0;
 
