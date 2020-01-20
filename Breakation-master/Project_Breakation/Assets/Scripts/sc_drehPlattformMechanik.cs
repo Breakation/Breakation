@@ -10,14 +10,20 @@ public class sc_drehPlattformMechanik : MonoBehaviour
         if (SampleUserPolling_ReadWrite.encoderright)
         {
             SampleUserPolling_ReadWrite.encoderright = false;
-            transform.Rotate(new Vector3(0f, 20f, 0f));
+             for (int i = 0; i < drehPlatformen.Length; i++)
+            {
+                drehPlatformen[i].transform.Rotate(new Vector3(0, 5, 0));
+            }
         }
         if (SampleUserPolling_ReadWrite.encoderleft)
         {
             SampleUserPolling_ReadWrite.encoderleft = false;
-            transform.Rotate(new Vector3(0f, -20f, 0f));
+            for (int i = 0; i < drehPlatformen.Length; i++)
+            {
+                drehPlatformen[i].transform.Rotate(new Vector3(0, -5, 0));
+            }
         }
-        if (sc_psuedoDrehModul.leftRotation)
+        /*if (sc_psuedoDrehModul.leftRotation)
         {
             for (int i = 0; i < drehPlatformen.Length; i++)
             {
@@ -32,7 +38,7 @@ public class sc_drehPlattformMechanik : MonoBehaviour
                 drehPlatformen[i].transform.Rotate(new Vector3(0, 5, 0));
             }
             sc_psuedoDrehModul.rightRotation = false;
-        }
+        } */
 
 
     }
