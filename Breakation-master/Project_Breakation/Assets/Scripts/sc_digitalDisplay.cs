@@ -80,51 +80,87 @@ public class sc_digitalDisplay : MonoBehaviour
             case 1:
                 {
 
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
                 }
                 break;
             case 2:
                 {
-                    characters[10] = characters[11];
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
                 }
                 break;
             case 3:
                 {
 
-                    characters[9] = characters[10];
-                    characters[10] = characters[11];
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[10] = characters[13];
+                    characters[11] = characters[14];
+                    characters[12] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
                 }
                 break;
             case 4:
                 {
-                    characters[8] = characters[9];
-                    characters[9] = characters[10];
-                    characters[10] = characters[11];
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
                 }
                 break;
             case 5:
+                {
+                    characters[10] = characters[11];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                }
+                break;
+            case 6:
+                {
+                    characters[9] = characters[10];
+                    characters[10] = characters[11];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                }
+                    break;
+            case 7:
+                {
+                    characters[8] = characters[9];
+                    characters[9] = characters[10];
+                    characters[10] = characters[11];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                }
+                break;
+            case 8:
                 {
                     characters[7] = characters[8];
                     characters[8] = characters[9];
                     characters[9] = characters[10];
                     characters[10] = characters[11];
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
                 }
                 break;
-            case 6:
+            case 9:
                 {
                     characters[6] = characters[7];
                     characters[7] = characters[8];
                     characters[8] = characters[9];
                     characters[9] = characters[10];
                     characters[10] = characters[11];
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
                 }
-                    break;
-            case 7:
+                break;
+            case 10:
                 {
                     characters[5] = characters[6];
                     characters[6] = characters[7];
@@ -132,10 +168,13 @@ public class sc_digitalDisplay : MonoBehaviour
                     characters[8] = characters[9];
                     characters[9] = characters[10];
                     characters[10] = characters[11];
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
                 }
                 break;
-            case 8:
+            case 11:
                 {
                     characters[4] = characters[5];
                     characters[5] = characters[6];
@@ -144,10 +183,14 @@ public class sc_digitalDisplay : MonoBehaviour
                     characters[8] = characters[9];
                     characters[9] = characters[10];
                     characters[10] = characters[11];
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+
                 }
                 break;
-            case 9:
+            case 12:
                 {
                     characters[3] = characters[4];
                     characters[4] = characters[5];
@@ -157,10 +200,17 @@ public class sc_digitalDisplay : MonoBehaviour
                     characters[8] = characters[9];
                     characters[9] = characters[10];
                     characters[10] = characters[11];
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+
+
+                    
+
                 }
                 break;
-            case 10:
+            case 13:
                 {
                     characters[2] = characters[3];
                     characters[3] = characters[4];
@@ -171,10 +221,17 @@ public class sc_digitalDisplay : MonoBehaviour
                     characters[8] = characters[9];
                     characters[9] = characters[10];
                     characters[10] = characters[11];
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+
+
+
+
                 }
                 break;
-            case 11:
+            case 14:
                 {
                     characters[1] = characters[2];
                     characters[2] = characters[3];
@@ -186,11 +243,16 @@ public class sc_digitalDisplay : MonoBehaviour
                     characters[8] = characters[9];
                     characters[9] = characters[10];
                     characters[10] = characters[11];
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+
+
 
                 }
                 break;
-            case 12:
+            case 15:
                 {
                     characters[0] = characters[1];
                     characters[1] = characters[2];
@@ -203,14 +265,17 @@ public class sc_digitalDisplay : MonoBehaviour
                     characters[8] = characters[9];
                     characters[9] = characters[10];
                     characters[10] = characters[11];
-                    characters[11] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
+                    characters[11] = characters[12];
+                    characters[12] = characters[13];
+                    characters[13] = characters[14];
+                    characters[14] = digits[Mathf.RoundToInt((float)char.GetNumericValue(tempDigit))];
 
 
-                    
+
 
                 }
                 break;
-            case 13:
+            case 16:
                 {
                     testkeypad.teststring = "";
                     for (int i = 0; i < characters.Length; i++)
