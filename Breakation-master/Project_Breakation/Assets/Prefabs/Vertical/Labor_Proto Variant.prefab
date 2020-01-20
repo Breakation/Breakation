@@ -675,6 +675,7 @@ MonoBehaviour:
   - {fileID: 1555517779}
   - {fileID: 177059453}
   - {fileID: 1683333158}
+  anim: {fileID: 0}
 --- !u!114 &1306621460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,7 +1534,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 521252e3500e6634d81ccf78c141fd26, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1544,7 +1545,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 18.078224
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1553,22 +1554,22 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.72746277
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -1.058554
+      outSlope: -1.058554
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -3831,11 +3832,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7457018335262161128}
     m_Modifications:
-    - target: {fileID: 84187860851613699, guid: 4dbb6a17ebf17334b985481867632799,
-        type: 3}
-      propertyPath: m_Name
-      value: GameOverCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 84187860851613703, guid: 4dbb6a17ebf17334b985481867632799,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3940,6 +3936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84187860851613699, guid: 4dbb6a17ebf17334b985481867632799,
+        type: 3}
+      propertyPath: m_Name
+      value: GameOverCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dbb6a17ebf17334b985481867632799, type: 3}
@@ -4086,11 +4087,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7457018335262161128}
     m_Modifications:
-    - target: {fileID: 3177106229421392649, guid: 5443c9e8b6251f84aa7d9894d0fc3af2,
-        type: 3}
-      propertyPath: m_Name
-      value: Entrance_Exit (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6402550174837023507, guid: 5443c9e8b6251f84aa7d9894d0fc3af2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4160,6 +4156,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177106229421392649, guid: 5443c9e8b6251f84aa7d9894d0fc3af2,
+        type: 3}
+      propertyPath: m_Name
+      value: Entrance_Exit (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5443c9e8b6251f84aa7d9894d0fc3af2, type: 3}
