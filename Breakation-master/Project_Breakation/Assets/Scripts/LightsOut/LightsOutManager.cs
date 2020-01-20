@@ -67,7 +67,7 @@ public class LightsOutManager : MonoBehaviour {
         yield return new WaitForEndOfFrame(); // Ab hier läuft die Funktion über den jetzigen Frame, in dem die sie gerufen wurde, hinaus
 
         FillArray();
-        //applyPattern();
+        applyPattern();
         if (CheckForWin())
         {
             Debug.Log("you win!");
