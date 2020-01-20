@@ -2364,12 +2364,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e9ef70a8771a3b84fa085f2b97e7c50b, type: 2}
+      objectReference: {fileID: 2100000, guid: 23a7cc2d736bd3244aee71c5764f9aff, type: 2}
     - target: {fileID: 23917846597765686, guid: c73151b2c863d094393f47d50c325553,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: e9ef70a8771a3b84fa085f2b97e7c50b, type: 2}
+      objectReference: {fileID: 2100000, guid: 23a7cc2d736bd3244aee71c5764f9aff, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c73151b2c863d094393f47d50c325553, type: 3}
 --- !u!4 &308935802 stripped
@@ -4436,6 +4436,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1301407266}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &634412091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 492631126}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 634412092}
+  m_Layer: 0
+  m_Name: QuizGameNew (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &634412092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 492631126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634412091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &637239735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5116634943626772343, guid: f4e8e4ea1b176f54598dcf266ea6d686,
@@ -9110,6 +9140,10 @@ PrefabInstance:
       propertyPath: mixerObj
       value: 
       objectReference: {fileID: 2104210879}
+    - target: {fileID: 1724171889, guid: cf3ef918794b2b749abe7e52c56c22cc, type: 3}
+      propertyPath: mixerScr
+      value: 
+      objectReference: {fileID: 2104210884}
     - target: {fileID: 6897486589517391497, guid: cf3ef918794b2b749abe7e52c56c22cc,
         type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
@@ -9431,6 +9465,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -8.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702446897, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
+      propertyPath: m_Name
+      value: Mixer l
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4948037190553579161, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
@@ -11446,12 +11484,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 26483785e3d316d4d84da7e6d024448c, type: 2}
+      objectReference: {fileID: 2100000, guid: b588d654898091c4ea42457735480714, type: 2}
     - target: {fileID: 23917846597765686, guid: c73151b2c863d094393f47d50c325553,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 26483785e3d316d4d84da7e6d024448c, type: 2}
+      objectReference: {fileID: 2100000, guid: b588d654898091c4ea42457735480714, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c73151b2c863d094393f47d50c325553, type: 3}
 --- !u!1 &1724643740
@@ -13081,7 +13119,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1919709579
 PrefabInstance:
@@ -13874,6 +13912,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1314921240}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2104210884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1702446899, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1314921240}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104210879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd0d76eb70e29047a0d0bbbe0c6bade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2104210885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1702446898, guid: 0fac771d699ad3d47bdc2f5b1488da5a,

@@ -182,8 +182,8 @@ public class SampleUserPolling_ReadWrite : MonoBehaviourPun, IPunObservable
             Debug.Log(message);
         }
 
-        if( message == "kippschalter1on"){
-            kipp1 = true;
+        if( message == "kippschalter4on"){
+            kipp4 = true;
             Debug.Log(message);
         }
 
