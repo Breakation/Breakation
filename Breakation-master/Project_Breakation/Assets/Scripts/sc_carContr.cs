@@ -37,18 +37,18 @@ public class sc_carContr : MonoBehaviourPun, IPunObservable
         xRotation = SampleUserPolling_ReadWrite.JoyXvalue;
         zDirection = SampleUserPolling_ReadWrite.JoyYvalue;
 
-        xRotation = sc_pseudoJoystick.xAxis;
-        zDirection = sc_pseudoJoystick.zAxis;
+        //xRotation = sc_pseudoJoystick.xAxis;
+        //zDirection = sc_pseudoJoystick.zAxis;
 
 
         if(xRotation > 690)
         {
-            xRotation = (xRotation - 690)/-50;
+            xRotation = (xRotation - 690)/50;
             
         }
         else if(xRotation < 400)
         {
-            xRotation = (400 - xRotation) / 50;
+            xRotation = (400 - xRotation) /-50;
         }
         else
         {
@@ -57,12 +57,12 @@ public class sc_carContr : MonoBehaviourPun, IPunObservable
 
         if (zDirection > 690)
         {
-            zDirection = (zDirection - 690) / 50;
+            zDirection = (zDirection - 690) /-50;
 
         }
         else if(zDirection < 400)
         {
-            zDirection = (400 - zDirection) / -50;
+            zDirection = (400 - zDirection) /50;
         }
         else
         {

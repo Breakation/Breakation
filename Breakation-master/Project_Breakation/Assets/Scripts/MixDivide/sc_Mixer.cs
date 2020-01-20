@@ -392,11 +392,11 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
 
             }
         }
-        if (Input.GetKey(KeyCode.Space))
+      /*if (Input.GetKey(KeyCode.Space))
         {
             dispOpen.trigger = true;
            
-        }
+        }*/
 
 
         //pv.RPC("RPC_syncShelf", RpcTarget.AllBuffered, fluids, gasses, solids, dispOpen.trigger);

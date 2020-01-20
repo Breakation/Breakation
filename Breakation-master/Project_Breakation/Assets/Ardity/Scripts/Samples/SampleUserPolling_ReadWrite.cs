@@ -126,7 +126,7 @@ public class SampleUserPolling_ReadWrite : MonoBehaviourPun, IPunObservable
         if (Input.GetKeyDown(KeyCode.T))
         {
             Debug.Log("Sending T");
-            serialController.SendSerialMessage("T-1140");
+            serialController.SendSerialMessage("T-6000");
         }
 
 
