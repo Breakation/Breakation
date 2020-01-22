@@ -160,7 +160,7 @@ public class SC_ZoomController : MonoBehaviour
                     break;
                 case "notiz":
                     {
-                        tempCopy.transform.eulerAngles = new Vector3(45, 0, 0);
+                       tempCopy.transform.eulerAngles = new Vector3(0, 270, 0);
                     }break;
                 case "monitor":
                     {

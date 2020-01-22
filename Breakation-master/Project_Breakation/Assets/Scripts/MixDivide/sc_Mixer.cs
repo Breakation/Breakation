@@ -699,7 +699,7 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
                 break;
         }
     }
-
+    
     private void divProcess(char sub, char stype)
     {
         switch (stype)
