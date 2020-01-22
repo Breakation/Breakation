@@ -540,7 +540,7 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
                             {
                                 // OA
 
-                                if ((secondType == '3') && (secondSubs == '4'))
+                                if ((secondType == '3') && (secondSubs == '6'))
                                 {
                                     // fz?
                                     Debug.Log("Mix");
@@ -686,6 +686,7 @@ public class sc_Mixer : MonoBehaviourPun, IPunObservable
                                 {
                                     Debug.Log("Mix");
                                     // => FY
+                                    fluids[5] = true;
                                     FYflask.SetActive(true);
                                 }
                             }break;
