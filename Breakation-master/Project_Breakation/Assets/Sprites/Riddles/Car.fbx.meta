@@ -14,7 +14,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Car
-    second: {fileID: 2100000, guid: ec68ac2588f129448b732e2cb68ef52d, type: 2}
+    second: {fileID: 2100000, guid: fde5eeaa8be8e08408b83f76db25c4f8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

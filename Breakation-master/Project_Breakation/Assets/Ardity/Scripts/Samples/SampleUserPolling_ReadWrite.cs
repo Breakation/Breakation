@@ -102,10 +102,10 @@ public class SampleUserPolling_ReadWrite : MonoBehaviourPun, IPunObservable
             serialController.SendSerialMessage("B-C-T-07");
         }
 
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            
-          // serialController.SendSerialMessage("L-1F");
+            Debug.Log("Sending Z");
+            serialController.SendSerialMessage("B-O-34");
         }
 
         if (Input.GetKeyDown(KeyCode.N))
