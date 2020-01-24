@@ -8790,6 +8790,16 @@ PrefabInstance:
       propertyPath: pivot
       value: 
       objectReference: {fileID: 1411872781}
+    - target: {fileID: 3640999299864231304, guid: 89e22a054bf1dfa44b7782f90575d47b,
+        type: 3}
+      propertyPath: playerModel
+      value: 
+      objectReference: {fileID: 1531262415}
+    - target: {fileID: 3640999299864231304, guid: 89e22a054bf1dfa44b7782f90575d47b,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1531262418}
     - target: {fileID: 4730609767188776955, guid: 89e22a054bf1dfa44b7782f90575d47b,
         type: 3}
       propertyPath: m_Layer
@@ -9389,6 +9399,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7241205609257119887, guid: 89e22a054bf1dfa44b7782f90575d47b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e22a054bf1dfa44b7782f90575d47b, type: 3}
@@ -11009,6 +11024,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5237453733402896560, guid: e594a9c1b7eda554db6795ff33016dea,
     type: 3}
   m_PrefabInstance: {fileID: 809489771}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1531262415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4372067506262929382, guid: 89e22a054bf1dfa44b7782f90575d47b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1259464190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1531262418 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7241205609257119887, guid: 89e22a054bf1dfa44b7782f90575d47b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1259464190}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1534744476
 PrefabInstance:
