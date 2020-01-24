@@ -19,7 +19,7 @@ public class LightsOutManager : MonoBehaviour {
     CellController cellController;
 
     //konstante Werte
-    private int GridSize = 8;
+    public int GridSize = 8;
     public int[,] arrayPattern =
     {
         {-1,1,1,1,1,1,1,1 },//0
@@ -90,7 +90,7 @@ public class LightsOutManager : MonoBehaviour {
                 {
                     if (arrayOfObjects[k].cellNum == nummer)
                     {
-                        ArrayOfCells[i, j] = arrayOfObjects[k];//checkNumber(nummer, arrayOfObjects[k], i, j);
+                        ArrayOfCells[i, j] = arrayOfObjects[k].GetComponent<CellController>(); ;//checkNumber(nummer, arrayOfObjects[k], i, j);
                         ListOfCells.Add(ArrayOfCells[i, j]);
                         cellController = ArrayOfCells[i, j];
                         cellController.xCoord = i;
