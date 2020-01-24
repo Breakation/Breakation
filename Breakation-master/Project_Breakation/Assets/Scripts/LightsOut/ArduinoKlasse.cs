@@ -35,7 +35,7 @@ public class ArduinoKlasse : MonoBehaviour
             ArrowDown = true;
         }*/
 
-        if (SampleUserPolling_ReadWrite.arrowright)
+        if (SampleUserPolling_ReadWrite.arrowleft)
         {
             if (y < 7)
             {
@@ -44,9 +44,9 @@ public class ArduinoKlasse : MonoBehaviour
                 position += y;
                 SampleUserPolling_ReadWrite.sendtext = position;
             }
-            SampleUserPolling_ReadWrite.arrowright = false;
+            SampleUserPolling_ReadWrite.arrowleft = false;
         }
-        if (SampleUserPolling_ReadWrite.arrowleft)
+        if (SampleUserPolling_ReadWrite.arrowright)
         {
             if (y > 0)
             {
@@ -55,7 +55,7 @@ public class ArduinoKlasse : MonoBehaviour
                 position += y;
                 SampleUserPolling_ReadWrite.sendtext = position;
             }
-            SampleUserPolling_ReadWrite.arrowleft = false;
+            SampleUserPolling_ReadWrite.arrowright = false;
         }
         if (SampleUserPolling_ReadWrite.arrowup)
         {
