@@ -68,7 +68,7 @@ public class sc_playerController : MonoBehaviour
             anim.SetBool("movement", true);
         }*/
 
-        anim.SetBool("movement", false);
+        //anim.SetBool("movement", false);
 
 
 

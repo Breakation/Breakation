@@ -5974,7 +5974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 841824507}
-  - component: {fileID: 841824506}
+  - component: {fileID: 841824508}
   m_Layer: 0
   m_Name: CameraSwitch
   m_TagString: Untagged
@@ -5982,18 +5982,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &841824506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841824505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d4dd17ea0a2364ca93c4fae2b99f95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &841824507
 Transform:
   m_ObjectHideFlags: 0
@@ -6008,6 +5996,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &841824508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841824505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc66a3a3d21a0af42863a1235cc8741e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstCam: {fileID: 1689588523}
+  secondCam: {fileID: 817221887}
 --- !u!1001 &851742098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8790,6 +8792,12 @@ PrefabInstance:
       propertyPath: pivot
       value: 
       objectReference: {fileID: 1411872781}
+    - target: {fileID: 3640999299864231304, guid: 89e22a054bf1dfa44b7782f90575d47b,
+        type: 3}
+      propertyPath: playerModel
+      value: 
+      objectReference: {fileID: 3640999299864231349, guid: 89e22a054bf1dfa44b7782f90575d47b,
+        type: 3}
     - target: {fileID: 4730609767188776955, guid: 89e22a054bf1dfa44b7782f90575d47b,
         type: 3}
       propertyPath: m_Layer
