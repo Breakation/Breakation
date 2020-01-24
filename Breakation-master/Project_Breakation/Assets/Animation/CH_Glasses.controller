@@ -174,12 +174,26 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+<<<<<<< HEAD
+  - m_Name: movement
+    m_Type: 4
+=======
+  - m_Name: Dead
+    m_Type: 9
+>>>>>>> 5f8f5e88fb2e6f13f6fb4b06c01b9004a72b006d
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+<<<<<<< HEAD
+=======
   - m_Name: movement
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+>>>>>>> 5f8f5e88fb2e6f13f6fb4b06c01b9004a72b006d
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
