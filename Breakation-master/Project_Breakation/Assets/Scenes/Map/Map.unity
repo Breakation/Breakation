@@ -5991,9 +5991,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 841824505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d4dd17ea0a2364ca93c4fae2b99f95, type: 3}
+  m_Script: {fileID: 11500000, guid: a6558835e63c547468179108f2e0a3e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstCam: {fileID: 1689588523}
+  secondCam: {fileID: 817221887}
 --- !u!4 &841824507
 Transform:
   m_ObjectHideFlags: 0
