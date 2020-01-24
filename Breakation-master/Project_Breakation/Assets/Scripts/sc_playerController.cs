@@ -48,7 +48,7 @@ public class sc_playerController : MonoBehaviour
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
         //apply movement on controller; Time.deltaTime calculates how long it was since last frame was rendered
         controller.Move(moveDirection * Time.deltaTime);
-         
+
 
         //move the player in dieffrenet direction in correspondance to the camera's view
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)// if the player is moving
@@ -56,7 +56,7 @@ public class sc_playerController : MonoBehaviour
             // transform.rotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y/*whatever rotation makes our camera rotate horizontally*/, 0f);
             // Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z)); // LookRotation : you give this function a point in the world and it makes the object look at that point (face its direction)
             anim.SetBool("movement", true);
-            
+
             // playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
 
         } else
@@ -73,35 +73,40 @@ public class sc_playerController : MonoBehaviour
                          anim.SetBool("movement", true);
                      }*/
 
-        if (Input.GetKeyDown(KeyCode.W))
+    }
+
+    private void Update()
+    {
+        
+        if (Input.GetKey(KeyCode.W))
         {
             playerModel.transform.rotation = Quaternion.Euler(0,-90,0);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             playerModel.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             playerModel.transform.rotation = Quaternion.Euler(0, 90, 0);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             playerModel.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        if (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
             playerModel.transform.rotation = Quaternion.Euler(0, 225, 0);
         }
-        if (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
         {
             playerModel.transform.rotation = Quaternion.Euler(0, -45, 0);
         }
-        if (Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
             playerModel.transform.rotation = Quaternion.Euler(0, 135, 0);
         }
-        if (Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
             playerModel.transform.rotation = Quaternion.Euler(0, 45, 0);
         }
