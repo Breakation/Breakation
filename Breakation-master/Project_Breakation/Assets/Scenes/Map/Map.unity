@@ -1217,7 +1217,12 @@ PrefabInstance:
     - target: {fileID: 3700388744239774343, guid: 3adb706c552d4554b85cc83e3a544c0f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 42
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5115864950071980049, guid: 3adb706c552d4554b85cc83e3a544c0f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3adb706c552d4554b85cc83e3a544c0f, type: 3}
@@ -3528,6 +3533,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 362842981}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &418760950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 390930873267420107}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418760951}
+  m_Layer: 0
+  m_Name: AnleitungChemie (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &418760951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 390930873267420107}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418760950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 680826317}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &436174027 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5867002412246891149, guid: 87aba5a61376c674a9f8a3e04a211760,
@@ -4407,6 +4442,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1314921240}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &681393556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6174008259602114148}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 681393557}
+  m_Layer: 0
+  m_Name: SolidKuerzel (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &681393557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6174008259602114148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681393556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1074166659}
+  m_RootOrder: 38
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &685219599 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1191901840038026, guid: ba119e6cbefaaa641aeef16f2b469789,
@@ -6152,6 +6217,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 60476527}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &888543565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3884131413995337565}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 888543566}
+  m_Layer: 0
+  m_Name: FluidKuerzel (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &888543566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3884131413995337565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888543565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1074166659}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &890769830 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3340367613804137243, guid: 38b734246f75e8a41a739c107ecf3919,
@@ -9807,7 +9902,7 @@ PrefabInstance:
     - target: {fileID: 7457018335262161129, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7457018335262161128, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
         type: 3}
@@ -10177,7 +10272,7 @@ PrefabInstance:
     - target: {fileID: 3597734839784608904, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
         type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8309578263362319397, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
         type: 3}
@@ -10188,7 +10283,7 @@ PrefabInstance:
     - target: {fileID: 8309578263362319397, guid: 0fac771d699ad3d47bdc2f5b1488da5a,
         type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4948037190553579161, guid: 0fac771d699ad3d47bdc2f5b1488da5a, type: 3}
@@ -12847,6 +12942,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2092734860}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1791856259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 4449450133776319636}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1791856260}
+  m_Layer: 0
+  m_Name: GasKuerzel (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1791856260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 4449450133776319636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791856259}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1074166659}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1794034525
 PrefabInstance:
   m_ObjectHideFlags: 0
